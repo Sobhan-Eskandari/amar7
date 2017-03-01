@@ -1,0 +1,67 @@
+$sormeie : #204056;
+$ghermez : #f65a5b;
+$titleColor : #111;
+$textColor : #222222;
+$sepratorGreen : #48c2b2;
+$footerBck : #f1f1f1;
+
+*{
+  font-family:'BYekan',Sans-Serif;
+}
+#laptop_slideshow{
+  background: url("laptopcover.png") no-repeat;
+  background-size: 100% 600px;
+  height: 600px;
+  margin-top: -50px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.slider {
+  width: 80%;
+  margin: 70px auto;
+  img{
+    width: 460px;
+    height: 50%;
+    margin: auto;
+  }
+  p{
+    margin: 0px auto;
+    width: 80%;
+    height: 20%;
+    color: white;
+    text-align: center;
+  }
+}
+.slick-slide {
+  margin: 0px 20px;
+  width: auto;
+}
+
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+#aboutUS,#contactUs{
+  font-family:'BYekan',Sans-Serif;
+  width:100%;
+  font-size: 20px;
+  height: 70px !important;
+  background: url("about-us.png") no-repeat;
+  background-size: contain;
+  border: transparent;
+  color: white;
+}

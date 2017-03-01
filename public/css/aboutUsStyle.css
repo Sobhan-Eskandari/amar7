@@ -1,0 +1,58 @@
+input, textarea {
+  padding-right: 10px; }
+
+@font-face {
+  font-family: BYekan;
+  src: url("../fonts/Yekan.ttf"); }
+* {
+  font-family: 'BYekan',Sans-Serif; }
+
+.jumbotron #work_motto {
+  margin-top: 8%;
+  margin-bottom: 8%;
+  text-align: center;
+  padding-left: 0px; }
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .navbar a {
+    color: #222222 !important; }
+
+#eslimi li {
+  display: inline;
+  float: right; }
+#eslimi img {
+  width: 65px !important;
+  height: 65px !important;
+  margin-bottom: -65px; }
+#eslimi #right {
+  margin-right: 22%; }
+#eslimi #left {
+  float: left;
+  margin-left: 21%; }
+
+#abouUsSection {
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 40px; }
+  #abouUsSection img {
+    width: 90px;
+    height: 90px;
+    margin: 30px; }
+  #abouUsSection p {
+    margin: 10px;
+    padding: 20px; }
+  #abouUsSection button {
+    font-family: 'BYekan',Sans-Serif;
+    background-color: #204056;
+    text-align: center;
+    margin: auto auto;
+    margin-bottom: 40px;
+    width: 130px;
+    height: 50px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+/*# sourceMappingURL=aboutUsStyle.css.map */

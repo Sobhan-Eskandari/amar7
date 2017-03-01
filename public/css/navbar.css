@@ -1,0 +1,96 @@
+* {
+  font-family: 'BYekan',Sans-Serif; }
+
+.navbar {
+  background: transparent;
+  border-bottom: 1px solid rgba(247, 244, 244, 0.63); }
+  .navbar a {
+    color: #ffffff !important; }
+  .navbar li {
+    margin: 15px; }
+  .navbar img {
+    width: 80px;
+    height: 70px;
+    margin-left: 30px; }
+  .navbar #nav_cart {
+    display: flex; }
+    .navbar #nav_cart i {
+      font-size: 28px; }
+    .navbar #nav_cart button {
+      font-family: 'BYekan',Sans-Serif;
+      border: transparent;
+      background-color: #48c2b2;
+      font-size: 18px;
+      border-radius: 20px;
+      width: 33px;
+      text-align: center;
+      font-weight: bold;
+      margin-left: 5px;
+      color: white; }
+
+.jumbotron {
+  height: 25%;
+  padding-top: 0;
+  background: url("../images/Header.png") no-repeat;
+  background-size: cover; }
+  .jumbotron #navbarNavDropdown {
+    direction: rtl; }
+  .jumbotron #navSignupBtn {
+    font-family: 'BYekan',Sans-Serif;
+    color: white;
+    background-color: #204056 !important;
+    padding: 12px;
+    border-radius: 10px;
+    border: transparent; }
+  .jumbotron #work_motto, .jumbotron .lead {
+    padding-left: 90px;
+    direction: rtl;
+    color: white; }
+  .jumbotron #work_motto {
+    margin-top: 20%; }
+  .jumbotron .card {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    margin-top: 50px; }
+  .jumbotron .card-title {
+    text-align: center;
+    background-color: #f65a5b;
+    color: #ffffff;
+    padding: 15px;
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem; }
+
+#signupCard input {
+  font-family: 'BYekan',Sans-Serif;
+  direction: rtl;
+  padding: 5% 5%;
+  border-radius: 5px;
+  border: 2px solid #898989;
+  width: 190px;
+  /* Medium Devices, Desktops */
+  /* Small Devices, Tablets */ }
+  @media (max-width: 575px) {
+    #signupCard input {
+      padding: 5% 5% !important; } }
+  @media only screen and (max-width: 1200px) {
+    #signupCard input {
+      width: 150px; } }
+  @media only screen and (max-width: 992px) {
+    #signupCard input {
+      width: 290px; } }
+  @media only screen and (max-width: 768px) {
+    #signupCard input {
+      width: 160px; } }
+#signupCard .signup_fields {
+  text-align: center; }
+#signupCard #signupBtn {
+  font-family: 'BYekan',Sans-Serif !important;
+  background-color: #204056;
+  color: white;
+  border-radius: 5px;
+  border: transparent;
+  width: 100%;
+  height: 50px;
+  margin-top: 5%;
+  font-size: 23px; }
+
+/*# sourceMappingURL=navbar.css.map */

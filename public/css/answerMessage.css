@@ -1,0 +1,235 @@
+/*@import url(fontiran.css);*/
+@font-face {
+    font-family: BYekan;
+    src: url('../fonts/Yekan.ttf');
+}
+*{
+    font-family:'BYekan',Sans-Serif;
+}
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-weight: 300;
+    direction: rtl;
+    margin: 0;
+
+}
+html{
+    overflow-x: hidden; 
+    overflow-y: hidden;
+}
+
+/******-----------------
+comment and answer panel
+-----------------*******/
+
+.first_panel{
+    margin-top: 70px;
+    border-radius: 0;
+    border: 1 px solid gray;
+}
+.panel-default>.first_header_box{
+    background-color: #252525;
+    border: 1 px solid gray;
+    color: white;
+
+}
+.panel-default>.panel-body{
+    background-color: #f4f4f4;
+}
+.panel-body p{
+    font-weight: 500;
+    line-height: normal;
+}
+.second_panel{
+    border-radius: 0;
+    border: 1 px solid #7c7c7c;
+    margin-top: 60px;
+    margin-bottom: 5%;
+}
+.textOfAnswer{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.first_panelBody{
+    background-color: white;
+}
+.second_heading{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.panel-default>.second_header_box{
+    background-color: #252525;
+    color: white;
+    border: 1 px solid gray;
+    border-radius: 0;
+}
+.second_answer_head{
+
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+/****----------------
+   input comments
+----------------*****/
+
+#inputComments_answer{
+    border-radius: 0;
+    background-color: #f4f4f4;
+    padding-bottom: 25%;
+    
+}
+textarea::-webkit-input-placeholder {
+    color: dimgrey!important;
+    font-size: 1.25vw !important;
+}
+textarea:-moz-placeholder { 
+    /* Firefox 18- */
+    color: dimgrey !important;
+    font-size: 1.25vw !important;
+}
+
+textarea::-moz-placeholder {  
+    /* Firefox 19+ */
+    color: dimgrey !important; 
+    font-size: 1.25vw !important;
+}
+
+textarea:-ms-input-placeholder {  
+    color: dimgrey !important; 
+    font-size: 1.2vw !important;
+}
+
+/*****-----------
+   last button
+-------------*****/
+
+.answer_send{
+    background-color: #0198d4;;
+    text-align: center;
+    margin-top: 15%;
+    border-radius: 0;
+    color: white;
+    border: 2px solid #0198d4;
+    box-shadow: 0 0 3px #0198d4; 
+    width: 100%;
+    color: white;
+    margin-bottom: 150px;
+}
+.subject_answer{
+    margin-top: -2.7%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 34px;
+    width: 25%;
+    margin-left: 1%;
+}
+
+#sendMessageBtn{
+    margin-bottom: 200px;
+    border-radius: 0;
+    border: transparent;
+    color: white;
+    background-color: #179F85;
+    padding: 20px 40px;
+    font-size: 20px;
+
+}
+
+/****------------
+  search input
+--------------****/
+
+#inpuSubAns{
+    border-radius: 0;
+    font-size: 1vw;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 5%;
+}
+.panel-default {
+    border-color: lightgray;
+}
+.container-fluid{
+    overflow: hidden;
+}
+
+/******-----------------
+   responsive font-size
+-------------------******/
+
+@media(max-width: 543px){
+    .panel-body p{
+        font-size: 12px;
+    }
+    .heading_panel{
+        font-size: 13px;
+    }
+    .second_answer_head{
+        font-size: 9px;
+    }
+    .answer_send{
+        font-size: 8px;
+    }
+}
+@media(min-width: 544px){
+    .panel-body p{
+        font-size: 13px;
+    }
+    .heading_panel{
+        font-size: 14px;
+    }
+    .second_answer_head{
+        font-size: 15px;
+    }
+    .answer_send{
+        font-size: 13px;
+    }
+}
+
+@media(min-width: 768px){
+    .panel-body p{
+        font-size: 14px;
+    }
+    .heading_panel{
+        font-size: 15px;
+    }
+    .second_answer_head{
+        font-size: 16px;
+    }
+    .answer_send{
+        font-size: 14px;
+    }
+}
+
+@media(min-width: 1150px){
+    .panel-body p{
+        font-size: 15px;
+    } 
+    .heading_panel{
+        font-size: 16px;
+    }
+    .second_answer_head{
+        font-size: 17px;
+    }
+    .answer_send{
+        font-size: 15px;
+    }
+}
+
+@media(min-width: 1200px){
+    .panel-body p{
+        font-size: 16px;
+    }
+    .heading_panel{
+        font-size: 17px;
+    }
+    .second_answer_head{
+        font-size: 17px;
+    }
+    .answer_send{
+        font-size: 17px;
+    }
+}

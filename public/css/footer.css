@@ -1,0 +1,65 @@
+* {
+  font-family: 'BYekan',Sans-Serif; }
+
+.footerPart {
+  background-color: #f1f1f1;
+  text-align: center; }
+  .footerPart .footerLogoPart img {
+    margin-top: 15%;
+    width: 120px;
+    height: 110px; }
+  .footerPart .footerLogoPart p {
+    text-align: center;
+    font-size: 23px;
+    color: #222222;
+    margin-top: 15px; }
+  .footerPart .socialNetworks {
+    margin-bottom: 20px; }
+    .footerPart .socialNetworks p {
+      color: #222222;
+      margin-top: 50%; }
+      @media (max-width: 575px) {
+        .footerPart .socialNetworks p {
+          margin-top: 10%; } }
+    .footerPart .socialNetworks ul {
+      margin-left: 10px; }
+      @media (max-width: 575px) {
+        .footerPart .socialNetworks ul {
+          margin-left: 20px; } }
+    .footerPart .socialNetworks li {
+      display: inline;
+      list-style-type: none;
+      padding-right: 10px;
+      float: left; }
+    .footerPart .socialNetworks img {
+      width: 35px;
+      height: 35px; }
+  .footerPart .footer_categories {
+    text-align: center;
+    margin-top: 5%; }
+    .footerPart .footer_categories p {
+      font-size: 20px; }
+    .footerPart .footer_categories ul {
+      direction: rtl;
+      list-style: none; }
+      .footerPart .footer_categories ul li {
+        color: #222222;
+        font-size: 18px;
+        text-align: right;
+        padding-right: 10px; }
+      .footerPart .footer_categories ul li:before {
+        direction: rtl;
+        display: none;
+        content: '';
+        /* Insert content that looks like bullets */
+        padding-left: 8px;
+        color: #204056;
+        /* Or a color you prefer */ }
+
+#copyright {
+  text-align: center;
+  background-color: white;
+  margin-top: 15px;
+  padding: 5px; }
+
+/*# sourceMappingURL=footer.css.map */

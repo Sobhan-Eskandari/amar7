@@ -1,0 +1,123 @@
+$sormeie : #204056;
+$ghermez : #f65a5b;
+$titleColor : #111;
+$textColor : #222222;
+$sepratorGreen : #48c2b2;
+$footerBck : #f1f1f1;
+
+
+*{
+  font-family:'BYekan',Sans-Serif;
+}
+.navbar{
+  background: transparent;
+  border-bottom: 1px solid rgba(247, 244, 244, 0.63);
+  a{
+    color: #ffffff !important;
+  }
+  li{
+    margin: 15px;
+  }
+  img{
+    width: 80px;
+    height: 70px;
+    margin-left: 30px;
+  }
+  #nav_cart{
+    display: flex;
+    i{
+      font-size: 28px;
+    }
+    button{
+      font-family:'BYekan',Sans-Serif;
+      border: transparent;
+      background-color: $sepratorGreen;
+      font-size: 18px;
+      border-radius: 20px;
+      width: 33px;
+      text-align: center;
+      font-weight: bold;
+      margin-left: 5px;
+      color: white;
+    }
+  }
+}
+.jumbotron{
+  height: 25%;
+  padding-top: 0;
+  background: url("../images/Header.png") no-repeat;
+  background-size: cover;
+
+  #navbarNavDropdown{
+    direction: rtl;
+  }
+  #navSignupBtn{
+    font-family:'BYekan',Sans-Serif;
+    color: white;
+    background-color: $sormeie !important;
+    padding: 12px;
+    border-radius: 10px;
+    border:transparent;
+  }
+  #work_motto,.lead{
+    padding-left: 90px;
+    direction: rtl;
+    color: white;
+  }
+  #work_motto{
+    margin-top: 20%;
+  }
+  .card{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+    margin-top: 50px;
+  }
+  .card-title{
+    text-align: center;
+    background-color: $ghermez;
+    color: #ffffff;
+    padding: 15px;
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+  }
+}
+
+#signupCard{
+  input{
+    font-family:'BYekan',Sans-Serif;
+    direction: rtl;
+    padding: 5% 5%;
+    border-radius: 5px;
+    border: 2px solid #898989;
+    width: 190px;
+    @media (max-width: 575px) {
+      padding: 5% 5% !important;
+    }
+    @media only screen and (max-width : 1200px) {
+      width: 150px;
+    }
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+      width: 290px;
+    }
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+      width: 160px;
+    }
+  }
+  .signup_fields{
+    text-align: center;
+  }
+  #signupBtn{
+    font-family:'BYekan',Sans-Serif !important;
+    background-color: $sormeie;
+    color: white;
+    border-radius: 5px;
+    border: transparent;
+    width: 100%;
+    height: 50px;
+    margin-top: 5%;
+    font-size: 23px;
+  }
+}
+
+

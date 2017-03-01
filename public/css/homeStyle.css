@@ -1,0 +1,51 @@
+* {
+  font-family: 'BYekan',Sans-Serif; }
+
+.newCoursesTtle {
+  width: auto;
+  text-align: center;
+  margin-bottom: 70px;
+  margin-top: 30px;
+  border-right: 2px solid gray;
+  border-left: 2px solid gray; }
+
+#sepratorPart {
+  background-color: #48c2b2;
+  height: 250px; }
+  #sepratorPart h4 {
+    color: white;
+    text-align: center;
+    line-height: 45px;
+    width: 70%;
+    height: 150px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  #sepratorPart img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+
+.footerPart {
+  margin-top: -35px; }
+
+#showAllLessons {
+  width: 170px;
+  height: 60px;
+  font-size: 16px;
+  font-family: 'BYekan',Sans-Serif;
+  background: url("../images/All-course-bottum.png") no-repeat;
+  background-size: 170px 60px;
+  color: white;
+  border: transparent;
+  margin: 20px; }
+
+/*# sourceMappingURL=homeStyle.css.map */

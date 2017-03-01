@@ -1,0 +1,83 @@
+$sormeie : #204056;
+$ghermez : #f65a5b;
+$titleColor : #111;
+$textColor : #222222;
+$sepratorGreen : #48c2b2;
+$footerBck : #f1f1f1;
+
+*{
+  font-family:'BYekan',Sans-Serif;
+}
+
+input,textarea{
+  padding-right: 10px;
+}
+
+.newCoursesTtle{
+  width: auto;
+  text-align: center;
+  margin-top: 30px;
+  border-right: 2px solid gray;
+  border-left: 2px solid gray;
+}
+
+.deletBtn{
+  background: url(../images/deleteBtn.png);
+  border: transparent;
+  width: 49px;
+  height: 50px;
+  background-size: contain;
+}
+.cost{
+  margin-top: 25px;
+  display: flex;
+  h5{
+    padding-top: 15px;
+  }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 992px) {
+  #firstFactor {
+    margin-top: 60px;
+  }
+  #addToCart{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+#cart_bar{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border: 1px solid gray;
+  margin-top: 30%;
+  margin-left: 10%;
+  border-radius: 5px;
+  background-color: #EEEEEE;
+  padding-bottom: 20px;
+  p{
+    text-align: center;
+    margin-top: 10%;
+  }
+  #confirmPurchaseBtn{
+    text-align: right;
+    button{
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      border-radius: 10px;
+      border: transparent;
+      background-color: #20A747;
+      padding: 10px 15px;
+      color: white;
+      width: 100%;
+    }
+  }
+  #addToCart{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 10px;
+    width: 100%;
+    border: transparent;
+    background-color: #20A8A7;
+    color: white;
+    font-size: 25px;
+    padding: 5px 10px;
+  }
+}

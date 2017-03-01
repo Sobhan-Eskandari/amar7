@@ -1,0 +1,49 @@
+input, textarea {
+  padding-right: 10px; }
+
+@font-face {
+  font-family: BYekan;
+  src: url("../fonts/Yekan.ttf"); }
+* {
+  font-family: 'BYekan',Sans-Serif; }
+
+.jumbotron #work_motto {
+  margin-top: 8%;
+  margin-bottom: 8%;
+  text-align: center;
+  padding-left: 0px; }
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .navbar a {
+    color: #222222 !important; }
+
+#contactUSPart {
+  margin-bottom: 50px; }
+
+#leftContactUs {
+  border: 1px solid #111;
+  border-radius: 10px;
+  margin: 20px; }
+  #leftContactUs p {
+    text-align: center; }
+  #leftContactUs .contactUSTitles {
+    color: #f65a5b;
+    text-align: center;
+    margin-top: 30px; }
+
+#rightAbountUS {
+  margin: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #111;
+  border-radius: 10px;
+  direction: rtl; }
+  #rightAbountUS input, #rightAbountUS textarea {
+    border: 1px solid gray;
+    border-radius: 0px;
+    background-color: #f1f1f1; }
+  #rightAbountUS input, #rightAbountUS button {
+    font-family: 'BYekan',Sans-Serif; }
+
+/*# sourceMappingURL=contactusStyle.css.map */

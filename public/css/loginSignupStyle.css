@@ -1,0 +1,108 @@
+input, textarea {
+  padding-right: 10px; }
+
+@font-face {
+  font-family: BYekan;
+  src: url("../fonts/Yekan.ttf"); }
+* {
+  font-family: 'BYekan',Sans-Serif; }
+
+#signup_login_panel {
+  border-radius: 10px;
+  border: 1px solid gray;
+  position: relative;
+  padding: 0px; }
+  #signup_login_panel .nav {
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border: transparent; }
+  #signup_login_panel .nav-item {
+    width: 50%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+    border: transparent; }
+  #signup_login_panel .nav-link {
+    padding: 15px; }
+  #signup_login_panel #login.active {
+    border-top-right-radius: 2px !important;
+    border-top-left-radius: 2px !important;
+    visibility: hidden; }
+  #signup_login_panel .nav-link.active {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #204056;
+    color: white;
+    border: transparent; }
+
+#signup input {
+  height: 40px;
+  border-radius: 25px;
+  border: 1px solid gray;
+  font-family: 'BYekan',Sans-Serif;
+  padding-right: 10px;
+  margin-top: 20px;
+  direction: rtl;
+  margin-left: -10px; }
+#signup #mail {
+  width: 88%;
+  text-align: center; }
+#signup .rememberMe {
+  display: flex;
+  text-align: right; }
+  #signup .rememberMe p {
+    direction: rtl;
+    text-align: right; }
+  #signup .rememberMe input {
+    width: auto;
+    height: auto; }
+#signup #signupBtn {
+  text-align: center; }
+  #signup #signupBtn button {
+    font-family: 'BYekan',Sans-Serif;
+    padding: 10px 40px;
+    margin-bottom: 30px;
+    color: white;
+    border-radius: 25px;
+    border: transparent;
+    background-color: #f65a5b;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+#loginpanel input {
+  height: 40px;
+  border-radius: 25px;
+  border: 1px solid gray;
+  font-family: 'BYekan',Sans-Serif;
+  text-align: center;
+  padding-right: 10px;
+  margin-top: 20px;
+  direction: rtl;
+  width: 88%;
+  margin-left: -10px; }
+#loginpanel #loginBtn {
+  text-align: center; }
+  #loginpanel #loginBtn button {
+    font-family: 'BYekan',Sans-Serif;
+    padding: 10px 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: white;
+    border-radius: 25px;
+    border: transparent;
+    background-color: #f65a5b;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+#loginpanel .rememberMe {
+  display: flex;
+  text-align: right; }
+  #loginpanel .rememberMe p {
+    direction: rtl;
+    text-align: right; }
+  #loginpanel .rememberMe input {
+    width: auto;
+    height: auto; }
+
+#signup_login_panel {
+  background-image: url("../images/icone-pattern2.png"); }
+
+/*# sourceMappingURL=loginSignupStyle.css.map */

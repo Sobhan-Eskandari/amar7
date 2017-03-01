@@ -1,0 +1,219 @@
+@font-face {
+    font-family: BYekan;
+    src: url('../fonts/Yekan.ttf');
+}
+*{
+    font-family:'BYekan',Sans-Serif;
+}
+
+.pagination{
+    margin-bottom: 250px;
+}
+
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-weight: 300;
+    direction: rtl;
+    margin: 0;
+
+}
+html{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+/****-----
+scroll bar
+------****/
+.height_vh{
+    height: 120vh;
+}
+.scrollbar{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 120vh;
+    margin-right: -1%;
+}
+.scroll_padding{
+    padding-left: 0;
+    margin-left: -3px;
+    padding-right: 0;
+}
+
+/****--------------
+     position
+----------------***/
+
+.margin_right{
+    margin-left: -6.3%;
+}
+.pdding_left{
+    padding-left: 4.8%;   
+}
+.downer_from_menu{
+    margin-top: 4%;
+}
+.table{
+    margin-bottom: 0px;
+}
+
+/***--------------
+       form
+---------------***/
+
+#inputCategory{
+    width: 75%; 
+    border-radius: 0;
+    padding-top: 4.5%;
+    padding-bottom: 4.5%;
+    border: 1px solid gray;
+    background-color: #f4f4f4;
+}
+
+/***------------
+     button
+-------------***/
+
+.record_btn{
+    background-color: #179F85;
+    color: white;
+    border-radius: 8px;
+}
+
+/***-------------
+       table
+--------------***/
+
+.table-bordered>tbody>tr>td{
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: 1px solid gray;
+}
+.table-bordered>tbody>tr>td.list{
+    font-weight: 500;
+}
+.table-bordered>tbody>tr>td.edit{
+    font-weight: 400;
+}
+.table-bordered>tbody>tr>td.delet{
+    font-weight: 400;
+    color: red;
+}
+.table-bordered>tbody>tr>td>button{
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+/***-----------------
+      responsive
+------------------***/
+
+@media(max-width:577px){
+    label h4{
+        font-size: 15px;
+    }
+    .table-bordered>tbody>tr>td.list{
+        font-size: 11px; 
+    }
+    .record_btn{
+        font-size: 13px; 
+        width: 40%;
+    }
+    .table-bordered>tbody>tr>td>button{
+        font-size: 9px;
+    }
+}
+@media(min-width:577px){
+    label h4{
+        font-size: 15px;
+    }
+    .table-bordered>tbody>tr>td.list{
+        font-size: 15px; 
+    }
+    .record_btn{
+        font-size: 13px; 
+        width: 40%;
+    }
+}
+@media(min-width:768px){
+    label h4{
+        font-size: 16px;
+    }
+    .table-bordered>tbody>tr>td.list{
+        font-size: 15px; 
+    }
+    .record_btn{
+        font-size: 14px; 
+        width: 30%;
+    }
+}
+@media(min-width:992px){
+    label h4{
+        font-size: 18px;
+    }
+    .table-bordered>tbody>tr>td.list{
+        font-size: 16px; 
+    }
+    .record_btn{
+        font-size: 15px;
+        width: 25%;
+    }
+}
+@media(min-width:1200px){
+    label h4{
+        font-size: 20px;
+    } 
+    .table-bordered>tbody>tr>td.list{
+        font-size: 17px; 
+    }
+    .record_btn{
+        font-size: 16px;
+        width: 20%;
+    }
+}
+/***--------------------
+      search form
+---------------------***/
+.searh_box{
+    padding-right: 18%;
+    padding-left: 20%;
+    padding-top: 5%;
+}
+input[type="text"] {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.inputSearch{
+    border: hidden;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #252525;
+    border-radius: 0;
+}
+input[type="text"]:focus,
+.inputSearch:focus {   
+    border-color: transparent;
+    box-shadow: 0 1px 1px transparent;
+    outline: 0 none;
+    border-bottom: 1px solid #252525;
+}
+.input-group-addon{
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #252525;
+}
+.a_search{
+    color: #252525; 
+}
+.btn_search_inside{
+   padding-right: 8px;
+    border: none; 
+    background: none; 
+}
+
+

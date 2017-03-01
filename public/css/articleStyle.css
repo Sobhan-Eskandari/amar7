@@ -1,0 +1,59 @@
+input, textarea {
+  padding-right: 10px; }
+
+@font-face {
+  font-family: BYekan;
+  src: url("../fonts/Yekan.ttf"); }
+*, button {
+  font-family: 'BYekan',Sans-Serif; }
+
+.jumbotron {
+  background: transparent;
+  padding: 0px; }
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .navbar a {
+    color: #222222 !important; }
+
+#maghale {
+  direction: rtl;
+  text-align: center; }
+  #maghale img {
+    width: 700px;
+    height: 450px;
+    margin: auto; }
+  #maghale h2 {
+    text-align: center;
+    margin: 30px; }
+  #maghale p {
+    color: #222222;
+    line-height: 34px;
+    text-align: justify;
+    font-size: 20px; }
+
+hr {
+  border-top: 2px solid gainsboro;
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.newCoursesTtle {
+  width: auto;
+  text-align: center;
+  margin-bottom: 70px;
+  margin-top: 30px;
+  border-right: 2px solid gray;
+  border-left: 2px solid gray; }
+
+#writer {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 20px; }
+
+.card-item:nth-of-type(1) {
+  background-color: #f65a5b; }
+
+/*# sourceMappingURL=articleStyle.css.map */

@@ -1,0 +1,118 @@
+@font-face {
+    font-family: BYekan;
+    src: url('../fonts/Yekan.ttf');
+}
+*{
+    font-family:'BYekan',Sans-Serif;
+}
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-weight: 300;
+    direction: rtl;
+    margin: 0;
+
+}
+html{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+/****-----
+scroll bar
+------****/
+.height_vh{
+    height: 250vh;
+}
+.scrollbar{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 120vh;
+    margin-right: -1%;
+}
+.scroll_padding{
+    padding-left: 0;
+    margin-left: -3px;
+    padding-right: 0;
+}
+
+/****--------------
+     position
+----------------***/
+
+.margin_right{
+    margin-left: -6.3%;
+}
+.pdding_left{
+    padding-left: 4.8%;
+}
+.downer_from_menu{
+    margin-top: 4%;
+}
+.table{
+    margin-bottom: 350px;
+}
+
+/***--------------
+       form
+---------------***/
+
+input{
+    background-color: #f4f4f4;
+    border: 1px solid gray;
+    border-radius: 0px;
+    margin: 5px 0 !important;
+    height: 50px;
+}
+.bootstrap-select{
+    background-color: #f4f4f4 !important;
+    border: 1px solid gray;
+    border-radius: 0px;
+}
+#postName{
+    width: 80%;
+    border: 1px solid lightgray;
+}
+textarea{
+    background-color: #f4f4f4;
+    border: 1px solid gray;
+    border-radius: 0px;
+    margin: 5px 0 !important;
+    width: 80%;
+    height: 250px;
+}
+#creatArticle{
+    background-color: #179F85;
+    color: white;
+    border: transparent;
+    border-radius: 0px;
+    padding: 10px 30px;
+    font-size: 20px;
+    margin: 20px;
+}
+.uploadImageBtn{
+    background-color: #242832;
+    color: white;
+    border-radius: 0px;
+    border: transparent;
+    margin: 20px;
+    padding: 15px 25px;
+}
+.attachmentInputs{
+    width: 40%;
+}
+/***------------
+     button
+-------------***/
+
+.record_btn{
+    background-color: #179F85;
+    color: white;
+    border-radius: 8px;
+}
+
+hr{
+    border-top: 1px solid lightgrey;
+}
+

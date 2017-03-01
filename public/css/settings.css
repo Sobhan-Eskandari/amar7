@@ -1,0 +1,133 @@
+@font-face {
+    font-family: BYekan;
+    src: url('../fonts/Yekan.ttf');
+}
+*{
+    font-family:'BYekan',Sans-Serif;
+}
+
+input,textarea{
+    padding-right: 10px;
+}
+
+body{
+    height: 100%;
+    overflow-x: hidden;
+    font-family: IRANSans !important;
+    font-weight: 300;
+    direction: rtl;
+    margin: 0;
+
+}
+html{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+/****-----
+scroll bar
+------****/
+.height_vh{
+    height: 350vh;
+}
+.scrollbar{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 120vh;
+    margin-right: -1%;
+}
+.scroll_padding{
+    padding-left: 0;
+    margin-left: -3px;
+    padding-right: 0;
+}
+
+/****--------------
+     position
+----------------***/
+
+.margin_right{
+    margin-left: -6.3%;
+}
+.pdding_left{
+    padding-left: 4.8%;
+}
+.downer_from_menu{
+    margin-top: 4%;
+}
+.table{
+    margin-bottom: 350px;
+}
+
+/***--------------
+       form
+---------------***/
+
+input{
+    background-color: #f4f4f4;
+    border: 1px solid gray;
+    border-radius: 0px;
+    margin: 5px 0 !important;
+    width: 40vh;
+    height: 50px;
+}
+textarea{
+    background-color: #f4f4f4;
+    border: 1px solid gray;
+    border-radius: 0px;
+    margin: 5px 0 !important;
+    width: 80%;
+    height: 150px;
+}
+#creatArticle{
+    background-color: #179F85;
+    color: white;
+    border: transparent;
+    border-radius: 0px;
+    padding: 10px 30px;
+    font-size: 20px;
+    margin: 30px;
+}
+.uploadImageBtn{
+    background-color: #242832;
+    color: white;
+    border-radius: 0px;
+    border: transparent;
+    margin: 5px 30px;
+    padding: 15px 25px;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 5px 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.inputs{
+    display: flex;
+}
+
+/***------------
+     button
+-------------***/
+
+.record_btn{
+    background-color: #179F85;
+    color: white;
+    border-radius: 8px;
+}
+
+hr{
+    border-top: 1px solid lightgrey;
+}
+
