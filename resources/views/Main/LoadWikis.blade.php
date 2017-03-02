@@ -16,13 +16,13 @@
                                 <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $wiki->seen }}&nbsp;بازدید </p>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                <p><img class="instructor_img" src="UsersPhotos/{{ count($wiki->user->photos) != 0 ? $wiki->user->photos[0]['path'] : 'icone.png' }}"> {{ $wiki->user['full_name'] }}</p>
+                                {{--<p><img class="instructor_img" src="UsersPhotos/{{ count($wiki->user->photos) != 0 ? $wiki->user->photos[0]['path'] : 'icone.png' }}"> {{ $wiki->user['full_name'] }}</p>--}}
                             </div>
                         </div>
                         <!--Card body elements like title and text and cost and kind-->
                         <div class="card-block">
                             <h5 class="card-title">{{ $wiki->title }}</h5>
-                            <p class="card-text">{{ str_limit($wiki->body, 70) }}</p>
+                            <p class="card-text">{{ str_limit(strip_tags($wiki->body), 70) }}</p>
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-sm-4 col-4 card-item">
                                     <p>ادامه مطلب...</p>

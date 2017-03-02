@@ -22,7 +22,7 @@ class LessonController extends Controller
      */
     public function index()
     {
-        $lessons = Lesson::paginate(10);
+        $lessons = Lesson::orderByRaw('created_at desc')->paginate(10);
         foreach ($lessons as $lesson){
             $date = $lesson->created_at;
             $date = substr($date, 0, strpos( $date,' '));
@@ -191,7 +191,7 @@ class LessonController extends Controller
         }else{
             $query = "";
         }
-        $lessons = Lesson::where('lesson_name','like',"%{$query}%")->paginate(10);
+        $lessons = Lesson::where('lesson_name','like',"%{$query}%")->orderByRaw('created_at desc')->paginate(10);
         foreach ($lessons as $lesson){
             $date = $lesson->created_at;
             $date = substr($date, 0, strpos( $date,' '));

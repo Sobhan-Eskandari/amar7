@@ -13,7 +13,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <link href="../css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
     <script src="../js/bootstrap-select.min.js"></script>
-    <script src="../js/ckeditor.js"></script>
+    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
 @endsection
 
 @section('content')
@@ -35,7 +35,9 @@
                 {!! Form::open(['method'=>'POST','action'=>'LessonController@store','files'=>true]) !!}
                     {!! Form::text('lesson_name',null,['id'=>'postName','placeholder'=>'عنوان محتوای آماری را وارد کنید']) !!}<br>
                     {!! Form::textarea('lesson_desc',null,['id'=>'editor1','rows'=>'10','cols'=>'80','placeholder'=>'توضیحات']) !!}
-
+                    <script>
+                        CKEDITOR.replace( 'lesson_desc' );
+                    </script>
                     <h4>عکس محتوای آماری:</h4>
 
                     <div class="inputs">
@@ -51,7 +53,9 @@
                     <h4>درباره استاد</h4>
                     {!! Form::text('instructor',null,['class'=>'attachmentInputs','placeholder'=>'نام استاد را وارد کنید']) !!}<br>
                     {!! Form::textarea('instructor_desc',null,['id'=>'editor1','rows'=>'10','cols'=>'80','placeholder'=>'در مورد استاد']) !!}
-
+                    <script>
+                        CKEDITOR.replace( 'instructor_desc' );
+                    </script>
 
 
                 <div class="row">

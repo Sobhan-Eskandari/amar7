@@ -25,7 +25,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::paginate(10);
+        $messages = Message::orderByRaw('created_at desc')->paginate(10);
         foreach ($messages as $message){
             $date = $message->created_at;
             $date = substr($date, 0, strpos( $date,' '));
@@ -159,7 +159,7 @@ class MessageController extends Controller
         }else{
             $query = "";
         }
-        $messages = Message::where('name','like',"%{$query}%")->paginate(10);
+        $messages = Message::where('name','like',"%{$query}%")->orderByRaw('created_at desc')->paginate(10);
         foreach ($messages as $message){
             $date = $message->created_at;
             $date = substr($date, 0, strpos( $date,' '));

@@ -18,7 +18,7 @@ class CoursesCategoriesController extends Controller
      */
     public function index()
     {
-        $coursesCategories = CoursesCategories::paginate(10);
+        $coursesCategories = CoursesCategories::orderByRaw('created_at desc')->paginate(10);
         return view('Dashboard.AdminDashboard.CoursesCategories.Index',compact('coursesCategories'));
     }
 
@@ -106,7 +106,7 @@ class CoursesCategoriesController extends Controller
         }else{
             $query = "";
         }
-        $coursesCategories = CoursesCategories::where('name','like',"%{$query}%")->paginate(10);
+        $coursesCategories = CoursesCategories::where('name','like',"%{$query}%")->orderByRaw('created_at desc')->paginate(10);
         return view('Dashboard.AdminDashboard.CoursesCategories.Index',compact('coursesCategories'));
     }
 }

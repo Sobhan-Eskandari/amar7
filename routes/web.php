@@ -19,9 +19,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware'=>'AdminRole'],function (){
 
         /*
-         *  reports route
+         *  dashboard reports route
          */
         Route::resource('/reports','ReportsController');
+
+        /*
+         *  dashboard share route
+         */
+        Route::resource('/share', 'ShareController');
+        Route::get('/share-search', 'ShareController@SearchShares')->name('share.Search');
 
         /*
          *  dashboard wiki routes

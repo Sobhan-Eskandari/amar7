@@ -13,7 +13,7 @@
     <script src="../../js/bootstrap.min.js"></script>
     <link href="../../css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
     <script src="../../js/bootstrap-select.min.js"></script>
-    <script src="../../js/ckeditor.js"></script>
+    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
 @endsection
 
 @section('content')
@@ -34,12 +34,13 @@
                 {!! Form::model($lesson,['method'=>'PATCH','action'=>['LessonController@update',$lesson->id],'files'=>true]) !!}
                 {!! Form::text('lesson_name',null,['id'=>'postName','placeholder'=>'عنوان محتوای آماری را وارد کنید']) !!}<br>
                 {!! Form::textarea('lesson_desc',null,['id'=>'editor1','rows'=>'10','cols'=>'80','placeholder'=>'توضیحات']) !!}
-
+                    <script>
+                        CKEDITOR.replace( 'lesson_desc' );
+                    </script>
                     <div class="inputs">
                         <div class="fileUpload uploadImageBtn">
                             <span>آپلود عکس +</span>
                             {!! Form::file('lesson_img',['id'=>'uploadCourseImg','class'=>'upload']) !!}
-                            {{--<input name="img" id="uploadCourseImg" type="file" class="upload" />--}}
                         </div>
                         <input id="courseImgUploadPlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
                     </div>
@@ -48,7 +49,9 @@
                     <h4>درباره استاد</h4>
                 {!! Form::text('instructor',null,['class'=>'attachmentInputs','placeholder'=>'نام استاد را وارد کنید']) !!}<br>
                 {!! Form::textarea('instructor_desc',null,['id'=>'editor1','rows'=>'10','cols'=>'80','placeholder'=>'در مورد استاد']) !!}
-
+                    <script>
+                        CKEDITOR.replace( 'instructor_desc' );
+                    </script>
 
                 <div class="row">
                     <br>
@@ -67,7 +70,7 @@
                         {!! Form::select('categories[]',$categories,$lesson->categories->pluck('id')->toArray(),['class'=>'selectpicker','multiple']) !!}
                     </div>
                     <br>
-                    {!! Form::button('ایجاد محتوای آماری',['id'=>'creatArticle','type'=>'submit']) !!}
+                    {!! Form::button('ویرایش محتوای آماری',['id'=>'creatArticle','type'=>'submit']) !!}
                 </div>
                 {!! Form::close() !!}
             </div>

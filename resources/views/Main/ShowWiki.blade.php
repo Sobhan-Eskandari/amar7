@@ -25,8 +25,16 @@
             <img src="../WikiPhotos/{{ count($wiki->photos) != 0 ? $wiki->photos[0]['path'] : 'default.png' }}">
             <h2>{{ $wiki->title }}</h2>
 
-            <p>{{ $wiki->body }}</p>
+            <p id="tohideText">{{ $wiki->body }}</p>
+            <p id="toShowText">{{ $wiki->body }}</p>
         </div>
+
+        <script>
+            $( document ).ready(function() {
+                $('#toShowText').html($('#tohideText').text());
+                $('#tohideText').css("display","none")
+            });
+        </script>
     </div>
 
     <div class="container">
@@ -35,7 +43,10 @@
 
             </div>
             <div class="col-12" style="text-align: center">
-                <p> <i class="fa fa-user fa-2x" aria-hidden="true"></i>  نویسنده : {{ $wiki->user['full_name'] }}</p>
+                @if($wiki->file)
+                    <a href="../WikiPDFs/{{ $wiki->file }}"><button class="downloadCourse" style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);border-radius: 10px;border: transparent;background-color: #20A747;padding: 10px 15px;color: white;width: 20%;"> دانلود مقاله<i class="fa fa-download" aria-hidden="true"></i> </button></a>
+                @endif
+                <p><i class="fa fa-user fa-2x" aria-hidden="true"></i>  نویسنده : {{ $wiki->user['full_name'] }}</p>
             </div>
         </div>
     </div>
@@ -61,13 +72,13 @@
                                     <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $rand->seen }}&nbsp;بازدید </p>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>
+                                    {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>--}}
                                 </div>
                             </div>
                             <!--Card body elements like title and text and cost and kind-->
                             <div class="card-block">
                                 <h5 class="card-title">{{ $rand->title }}</h5>
-                                <p class="card-text">{{ str_limit($rand->body, 70) }}</p>
+                                <p class="card-text">{{ str_limit(strip_tags($rand->body), 70) }}</p>
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-sm-4 col-4 card-item">
                                         <p>ادامه مطلب...</p>

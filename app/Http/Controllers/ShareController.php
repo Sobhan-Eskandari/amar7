@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateUserRequest;
-use App\User;
+use App\Http\Requests\ShareRequest;
+use App\Share;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
-class UserController extends Controller
+class ShareController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderByRaw('created_at desc')->paginate(10);
-        return view('Dashboard.AdminDashboard.Users.Index', compact('users'));
+        $shares = Share::orderByRaw('created_at desc')->paginate(10);
+        return view('Dashboard.AdminDashboard.Share.Index', compact('shares'));
     }
 
     /**
@@ -37,9 +36,11 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateUserRequest $request)
+    public function store(ShareRequest $request)
     {
-        //
+        Share::create($request->all());
+        Session::flash('created_share', 'پیوند ساخته شد');
+        return redirect('/share');
     }
 
     /**
@@ -61,7 +62,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $share = Share::findOrFail($id);
+        return view('Dashboard.AdminDashboard.Share.Edit', compact('share'));
     }
 
     /**
@@ -71,9 +73,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ShareRequest $request, $id)
     {
-        //
+        Share::findOrFail($id)->update($request->all());
+        Session::flash("edited_share","پیوند ویرایش شد");
+        return redirect('/share');
     }
 
     /**
@@ -84,18 +88,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::findOrFail($id)->delete();
-        Session::flash('deleted_user', 'کاربر پاک شد');
-        return redirect('/users');
+        Share::findOrFail($id)->delete();
+        Session::flash("deleted_share","پیوند پاک شد");
+        return redirect('/share');
     }
 
-    /**
-     * Search the users table
-     *
-     * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function SearchUsers(Request $request)
+    public function SearchShares(Request $request)
     {
         $input = $request->all();
         if(isset($input['name'])){
@@ -103,11 +101,7 @@ class UserController extends Controller
         }else{
             $query = session('name');
         }
-        $users = User::where(DB::raw("CONCAT(`first_name`, ' ', `last_name`)"), 'like', "%{$query}%")->
-        orWhere('cellphone', 'like', "%{$query}%")->
-        orWhere('email', 'like', "%{$query}%")->
-        orderByRaw('created_at desc')->
-        paginate(10);
-        return view('Dashboard.AdminDashboard.Users.Index', compact('users', 'query'));
+        $shares = Share::where('name','like',"%{$query}%")->orderByRaw('created_at desc')->paginate(10);
+        return view('Dashboard.AdminDashboard.Share.Index', compact('shares', 'query'));
     }
 }

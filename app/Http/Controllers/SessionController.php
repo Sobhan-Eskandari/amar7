@@ -33,7 +33,7 @@ class SessionController extends Controller
     public function create($id)
     {
         $lesson = Lesson::findOrFail($id);
-        $sessions = $lesson->sessions()->paginate(10);
+        $sessions = $lesson->sessions()->orderByRaw('created_at desc')->paginate(10);
         foreach ($sessions as $session){
             $date = $session->created_at;
             $date = substr($date, 0, strpos( $date,' '));

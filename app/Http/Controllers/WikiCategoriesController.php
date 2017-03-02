@@ -17,7 +17,7 @@ class WikiCategoriesController extends Controller
      */
     public function index()
     {
-        $categories = WikiCategories::paginate(10);
+        $categories = WikiCategories::orderByRaw('created_at desc')->paginate(10);
         return view('Dashboard.AdminDashboard.WikiCategories.Index', compact('categories'));
     }
 
@@ -102,7 +102,7 @@ class WikiCategoriesController extends Controller
         }else{
             $query = session('name');
         }
-        $categories = WikiCategories::where('name','like',"%{$query}%")->paginate(10);
+        $categories = WikiCategories::where('name','like',"%{$query}%")->orderByRaw('created_at desc')->paginate(10);
         return view('Dashboard.AdminDashboard.WikiCategories.Index', compact('categories', 'query'));
     }
 }

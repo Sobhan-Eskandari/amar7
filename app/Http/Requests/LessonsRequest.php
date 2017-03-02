@@ -44,8 +44,8 @@ class LessonsRequest extends FormRequest
             'cost.numeric' => 'قیمت باید عدد باشد',
             'media.required' => 'وارد کردن رسانه اجباری است',
             'categories.required' => 'وارد کردن دسته بندی اجباری است',
-            'lesson_img.mimes'=>'فایل باید عکس باشد',
-            'lesson_img.requires'=>'وارد کردن عکس اجباری است'
+            'lesson_img.image'=>'فایل باید عکس باشد',
+            'lesson_img.required'=>'وارد کردن عکس اجباری است'
 
         ];
     }

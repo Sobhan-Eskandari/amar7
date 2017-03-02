@@ -14,6 +14,7 @@ class Wiki extends Model
         'body',
         'user_id',
         'seen',
+        'file',
     ];
 
     public function photos(){

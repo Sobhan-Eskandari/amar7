@@ -112,16 +112,12 @@
                                             </div>
                                         </a>
                                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                            <li><a  href="#">نمایش</a></li>
-                                            <li class="divider"></li>
                                             <li><a  href="{{route('sessions.edit',['session_id'=>$session->id,'id'=>$lesson->id])}}">ویرایش</a></li>
                                             <li class="divider"></li>
                                             <li>
                                                 {!! Form::open(['method'=>'DELETE','action'=>['SessionController@destroy','session_id'=>$session->id,'id'=>$lesson->id]]) !!}
-                                                {!! Form::submit('حذف', ['id'=>'delete', 'style'=>'border: none; background: none;']) !!}
-                                                {{--<button>حذف</button>--}}
+                                                {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none; margin-left:55px;']) !!}
                                                 {!! Form::close() !!}
-                                                {{--<a  href="{{route('sessions.delete',['session_id'=>$session->id,'id'=>$lesson->id])}}">حذف</a>--}}
                                             </li>
                                         </ul>
                                     </div>

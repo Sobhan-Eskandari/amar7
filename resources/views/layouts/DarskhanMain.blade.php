@@ -230,7 +230,7 @@
     <!------------------------ End of Footer ------------------------------>
     <script src="../../js/script.js"></script>
     <script src="../../js/jquery-2.1.4.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=fa"
             async defer>
     </script>
 

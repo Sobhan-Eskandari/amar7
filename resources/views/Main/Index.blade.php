@@ -72,7 +72,14 @@
             <!--motto part of header-->
             <div class="col col-lg-6 col-12">
                 <h2 id="work_motto" class="display-6">بهترین خودروی 25 تا 35 میلیون تومانی بازار را شما انتخاب کنید</h2>
-                <p class="lead">{{ isset($info['header_txt']) ? $info['header_txt'] : 'پیش فرض' }}</p>
+                <p class="lead" id="toShowText">{{ isset($info['header_txt']) ? $info['header_txt'] : 'پیش فرض' }}</p>
+                <p class="lead" id="tohideText">{{ isset($info['header_txt']) ? $info['header_txt'] : 'پیش فرض' }}</p>
+                <script>
+                    $( document ).ready(function() {
+                        $('#toShowText').html($('#tohideText').text());
+                        $('#tohideText').css("display","none")
+                    });
+                </script>
             </div>
         </div>
     </div>
@@ -100,13 +107,13 @@
                                     <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $rand->seen }}&nbsp;بازدید </p>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>
+                                    {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>--}}
                                 </div>
                             </div>
                             <!--Card body elements like title and text and cost and kind-->
                             <div class="card-block">
                                 <h5 class="card-title">{{ $rand->lesson_name }}</h5>
-                                <p class="card-text">{{ str_limit($rand->lesson_desc, 70) }}</p>
+                                <p class="card-text">{{ str_limit(strip_tags($rand->lesson_desc), 70) }}</p>
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-sm-4 col-4 card-item">
                                         <p>{{ isset($rand->cost) ? "$rand->cost تومان" : 'رایگان' }}</p>
@@ -162,13 +169,13 @@
                                     <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $rand->seen }}&nbsp;بازدید </p>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>
+                                    {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>--}}
                                 </div>
                             </div>
                             <!--Card body elements like title and text and cost and kind-->
                             <div class="card-block">
                                 <h5 class="card-title">{{ $rand->title }}</h5>
-                                <p class="card-text">{{ str_limit($rand->body, 70) }}</p>
+                                <p class="card-text">{{ str_limit(strip_tags($rand->body), 70) }}</p>
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-sm-4 col-4 card-item">
                                         <p>ادامه مطلب...</p>

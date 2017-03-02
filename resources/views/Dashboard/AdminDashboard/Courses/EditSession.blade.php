@@ -46,9 +46,7 @@
                     {{--{!! Form::file('session_file',['class'=>'uploadImageBtn']) !!}--}}
 
 
-                    {!! Form::file('session_file',['class'=>'uploadImageBtn']) !!}
-                {{--<input class="attachmentInputs" type="text" name="video">--}}
-                {{--<button class="uploadImageBtn">بارگزاری +</button>--}}
+                    {{--{!! Form::file('session_file',['class'=>'uploadImageBtn']) !!}--}}
                     <div class="inputs">
                         <div class="fileUpload uploadImageBtn">
                             <span> بارگزاری +</span>

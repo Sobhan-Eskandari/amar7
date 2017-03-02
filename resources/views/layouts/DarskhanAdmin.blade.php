@@ -74,6 +74,8 @@
 
             <a href="{{ route('adminInfo') }}"><h5 class="admin_side_title left_space @yield('adminInfo')"><i class="fa fa-gear set_fa pull-right xs_pr" aria-hidden="true"></i><span class="hidden-xs">ویرایش اطلاعات</span></h5></a>
 
+            <a href="{{ route('share.index') }}"><h5 class="admin_side_title left_space @yield('share')"><i class="fa fa-share-alt set_fa pull-right xs_pr" aria-hidden="true"></i><span class="hidden-xs">پیوندها</span></h5></a>
+
         </div>
 
     </div>

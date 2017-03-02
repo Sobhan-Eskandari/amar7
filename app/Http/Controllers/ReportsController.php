@@ -15,7 +15,7 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        $users = User::where('role_id','=','2')->paginate(1);
+        $users = User::where('role_id','=','2')->orderByRaw('created_at desc')->paginate(1);
         return view('Dashboard.AdminDashboard.Reports.index',compact('users'));
     }
 

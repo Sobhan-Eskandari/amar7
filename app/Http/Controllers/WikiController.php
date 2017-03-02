@@ -26,7 +26,7 @@ class WikiController extends Controller
      */
     public function index()
     {
-        $wikis = Wiki::paginate(10);
+        $wikis = Wiki::orderByRaw('created_at desc')->paginate(10);
         return view('Dashboard.AdminDashboard.Wiki.Index', compact('wikis'));
     }
 
@@ -51,6 +51,13 @@ class WikiController extends Controller
     {
         $input = $request->all();
         $input['user_id'] = Auth::id();
+
+        if($file = $request->file('file')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('WikiPDFs', $name);
+            $input['file'] = $name;
+        }
+
         $wiki = Wiki::create($input);
         $wiki->wiki_categories()->attach($request->wiki_categories);
 
@@ -116,9 +123,20 @@ class WikiController extends Controller
      */
     public function update(WikiRequest $request, $id)
     {
+        $input = $request->all();
         $wiki = Wiki::findOrFail($id);
         $wiki->wiki_categories()->sync($request->wiki_categories);
-        $wiki->update($request->all());
+
+        if($file = $request->file('file')){
+            if($wiki->file){
+                File::delete('WikiPDFs/' . $wiki->file);
+            }
+            $name = time() . $file->getClientOriginalName();
+            $file->move('WikiPDFs', $name);
+            $input['file'] = $name;
+        }
+
+        $wiki->update($input);
 
         $photos = $wiki->photos;
 
@@ -163,6 +181,7 @@ class WikiController extends Controller
         }
         $wikis = Wiki::where('title', 'like', "%{$query}%")->
         orWhere('body', 'like', "%{$query}%")->
+        orderByRaw('created_at desc')->
         paginate(10);
         return view('Dashboard.AdminDashboard.Wiki.Index', compact('wikis', 'query'));
     }
@@ -187,9 +206,9 @@ class WikiController extends Controller
         $rand_wiki_categories = WikiCategories::orderByRaw('RAND()')->take(5)->get();
         isset($input['query']) ? : $input['query'] = '';
 
-        $wikis = Wiki::where('title', 'like', "%{$input['query']}%")->paginate(12);
+        $wikis = Wiki::where('title', 'like', "%{$input['query']}%")->orderByRaw('created_at desc')->paginate(12);
         if(isset($input['categories'])) {
-            $wikis = Wiki::where('title', 'like', "%{$input['query']}%")->get();
+            $wikis = Wiki::where('title', 'like', "%{$input['query']}%")->orderByRaw('created_at desc')->get();
             $results = [];
             foreach ($wikis as $wiki) {
                 for ($i = 0; $i < count($wiki->wiki_categories); $i++) {

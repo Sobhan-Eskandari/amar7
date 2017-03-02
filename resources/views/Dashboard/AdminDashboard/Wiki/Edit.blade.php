@@ -13,6 +13,7 @@
     <script src="../../js/bootstrap.min.js"></script>
     <link href="../../css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
     <script src="../../js/bootstrap-select.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
 @endsection
 
 @section('content')
@@ -37,22 +38,34 @@
                     <h4>عنوان مقاله:</h4>
                     {!! Form::text('title', null, ['placeholder' => 'عنوان مقاله را وارد کنید']) !!}
 
-                <h4>عکس مقاله:</h4>
+                    <h4>عکس مقاله:</h4>
 
-                <div class="inputs">
-                    <div class="fileUpload uploadImageBtn">
-                        <span>آپلود عکس +</span>
-                        <input name="img" id="uploadArticleImg" type="file" class="upload" />
+                    <div class="inputs">
+                        <div class="fileUpload uploadImageBtn">
+                            <span>آپلود عکس +</span>
+                            <input name="img" id="uploadArticleImg" type="file" class="upload" />
+                        </div>
+                        <input id="articleUploadPlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
                     </div>
-                    <input id="articleUploadPlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
-                </div>
+
+                    <div class="inputs">
+                        <div class="fileUpload uploadImageBtn">
+                            <span>آپلود فایل +</span>
+                            <input name="file" id="uploadArticleFile" type="file" class="upload" />
+                        </div>
+                        <input id="articleUploadFilePlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
+                    </div>
 
                     <h4>متن مقاله:</h4>
                     {!! Form::textarea('body') !!}
 
+                    <script>
+                        CKEDITOR.replace( 'body' );
+                    </script>
+
                     <div class="row">
                         <div class="col-lg-1 col-md-2 col-xl-2 col-xs-12 col-lg-offset-5">
-                            {!! Form::submit('ایجاد مقاله', ['id'=>'creatArticle']) !!}
+                            {!! Form::submit('ویرایش مقاله', ['id'=>'creatArticle']) !!}
                         </div>
                         <div class="col-xs-12 col-lg-3 col-lg-offset-3">
                             <h4>دسته بندی:</h4>
@@ -74,6 +87,9 @@
     <script>
         document.getElementById("uploadArticleImg").onchange = function () {
             document.getElementById("articleUploadPlace").value = this.value;
+        };
+        document.getElementById("uploadArticleFile").onchange = function () {
+            document.getElementById("articleUploadFilePlace").value = this.value;
         };
     </script>
 

@@ -50,7 +50,9 @@
                     <input id="headerPlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
                 </div>
                 {!! Form::textarea('header_txt',null,['placeholder'=>'متن خود را وارد کنید']) !!}
-                {{--<textarea>متن خود را وارد کنید</textarea>--}}
+                <script>
+                    CKEDITOR.replace( 'header_txt' );
+                </script>
                 <hr>
                 <div class="inputs">
                     <h4>اسلایدر اول</h4>

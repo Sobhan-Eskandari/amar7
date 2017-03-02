@@ -38,14 +38,6 @@ class SiteController extends Controller
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
         $wikis = Wiki::orderByRaw('created_at desc')->take(4)->get();
         $lessons = Lesson::orderByRaw('created_at desc')->take(8)->get();
-//        foreach($lessons as $rand){
-//            dd(count($rand->photo));
-//        }
-//        if($lessons[0]->photo == []){
-//            dd('gotcha');
-//        }else{
-//            dd($lessons[0]->photo);
-//        }
         return view('Main.Index', compact('info', 'wikis', 'lessons', 'course_categories','count'));
     }
 
@@ -81,6 +73,7 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
+
         $input = $request->all();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
@@ -96,26 +89,28 @@ class SiteController extends Controller
             $lessons = Lesson::where('lesson_name', 'like', "%{$input['query']}%")->
             Where('media', 'like', "%{$input['kind'][0]}%")->Where('media', 'like', "%{$input['kind'][1]}%")->
             Where('media', 'like', "%{$input['kind'][2]}%")->Where('media', 'like', "%{$input['kind'][3]}%")->
-            WhereNull('cost')->
+            WhereNull('cost')->orderByRaw('created_at desc')->
             paginate(12);
         }
         if(isset($input['amount']) && $input['amount'] == "not_free"){
             $lessons = Lesson::where('lesson_name', 'like', "%{$input['query']}%")->
             Where('media', 'like', "%{$input['kind'][0]}%")->Where('media', 'like', "%{$input['kind'][1]}%")->
             Where('media', 'like', "%{$input['kind'][2]}%")->Where('media', 'like', "%{$input['kind'][3]}%")->
-            whereNotNull('cost')->
+            whereNotNull('cost')->orderByRaw('created_at desc')->
             paginate(12);
         }
         if(isset($input['amount']) && $input['amount'] == "all"){
             $lessons = Lesson::where('lesson_name', 'like', "%{$input['query']}%")->
             Where('media', 'like', "%{$input['kind'][0]}%")->Where('media', 'like', "%{$input['kind'][1]}%")->
             Where('media', 'like', "%{$input['kind'][2]}%")->Where('media', 'like', "%{$input['kind'][3]}%")->
+            orderByRaw('created_at desc')->
             paginate(12);
         }
         if(!isset($input['amount'])){
             $lessons = Lesson::where('lesson_name', 'like', "%{$input['query']}%")->
             Where('media', 'like', "%{$input['kind'][0]}%")->Where('media', 'like', "%{$input['kind'][1]}%")->
             Where('media', 'like', "%{$input['kind'][2]}%")->Where('media', 'like', "%{$input['kind'][3]}%")->
+            orderByRaw('created_at desc')->
             paginate(12);
         }
 
@@ -124,26 +119,28 @@ class SiteController extends Controller
                 $lessons = Lesson::where('lesson_name', 'like', "%{$input['query']}%")->
                 Where('media', 'like', "%{$input['kind'][0]}%")->Where('media', 'like', "%{$input['kind'][1]}%")->
                 Where('media', 'like', "%{$input['kind'][2]}%")->Where('media', 'like', "%{$input['kind'][3]}%")->
-                WhereNull('cost')->
+                WhereNull('cost')->orderByRaw('created_at desc')->
                 get();
             }
             if(isset($input['amount']) && $input['amount'] == "not_free"){
                 $lessons = Lesson::where('lesson_name', 'like', "%{$input['query']}%")->
                 Where('media', 'like', "%{$input['kind'][0]}%")->Where('media', 'like', "%{$input['kind'][1]}%")->
                 Where('media', 'like', "%{$input['kind'][2]}%")->Where('media', 'like', "%{$input['kind'][3]}%")->
-                whereNotNull('cost')->
+                whereNotNull('cost')->orderByRaw('created_at desc')->
                 get();
             }
             if(isset($input['amount']) && $input['amount'] == "all"){
                 $lessons = Lesson::where('lesson_name', 'like', "%{$input['query']}%")->
                 Where('media', 'like', "%{$input['kind'][0]}%")->Where('media', 'like', "%{$input['kind'][1]}%")->
                 Where('media', 'like', "%{$input['kind'][2]}%")->Where('media', 'like', "%{$input['kind'][3]}%")->
+                orderByRaw('created_at desc')->
                 get();
             }
             if(!isset($input['amount'])){
                 $lessons = Lesson::where('lesson_name', 'like', "%{$input['query']}%")->
                 Where('media', 'like', "%{$input['kind'][0]}%")->Where('media', 'like', "%{$input['kind'][1]}%")->
                 Where('media', 'like', "%{$input['kind'][2]}%")->Where('media', 'like', "%{$input['kind'][3]}%")->
+                orderByRaw('created_at desc')->
                 get();
             }
             $results = [];
@@ -194,8 +191,8 @@ class SiteController extends Controller
         }else{
             $query = "";
         }
-        $lessons = Lesson::where('lesson_name','like',"%{$query}%")->get();
-        $sessions = Wiki::where('title','like',"%{$query}%")->get();
+        $lessons = Lesson::where('lesson_name','like',"%{$query}%")->orderByRaw('created_at desc')->get();
+        $sessions = Wiki::where('title','like',"%{$query}%")->orderByRaw('created_at desc')->get();
         $searches =  $lessons->merge($sessions);
         return view('Main.SearchResults', compact('info','searches', 'course_categories','count'));
     }

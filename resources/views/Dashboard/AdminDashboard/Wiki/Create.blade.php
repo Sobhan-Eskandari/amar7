@@ -13,7 +13,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <link href="../css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
     <script src="../js/bootstrap-select.min.js"></script>
-
+    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
 @endsection
 
 @section('content')
@@ -48,9 +48,19 @@
                         <input id="articleUploadPlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
                     </div>
 
+                    <div class="inputs">
+                        <div class="fileUpload uploadImageBtn">
+                            <span>آپلود فایل +</span>
+                            <input name="file" id="uploadArticleFile" type="file" class="upload" />
+                        </div>
+                        <input id="articleUploadFilePlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
+                    </div>
 
                     <h4>متن مقاله:</h4>
                     {!! Form::textarea('body') !!}
+                    <script>
+                        CKEDITOR.replace( 'body' );
+                    </script>
 
                     <div class="row">
 
@@ -79,6 +89,10 @@
     <script>
         document.getElementById("uploadArticleImg").onchange = function () {
             document.getElementById("articleUploadPlace").value = this.value;
+        };
+
+        document.getElementById("uploadArticleFile").onchange = function () {
+            document.getElementById("articleUploadFilePlace").value = this.value;
         };
     </script>
 

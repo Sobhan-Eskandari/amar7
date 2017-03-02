@@ -90,7 +90,14 @@
                     </div>
                     <div class="col-lg-8 col-md-7 col-sm-12 col-12 pull-xl-4 pull-lg-4 pull-md-5">
                         <h1>{{ $lesson->lesson_name }}</h1>
-                        <p>{{ $lesson->lesson_desc }}</p>
+                        <p id="toShowText">{{ $lesson->lesson_desc }}</p>
+                        <p id="tohideText">{{ $lesson->lesson_desc }}</p>
+                        <script>
+                            $( document ).ready(function() {
+                                $('#toShowText').html($('#tohideText').text());
+                                $('#tohideText').css("display","none")
+                            });
+                        </script>
                         <div class="row" id="buySection">
                             <div class="col-6">
                                 @if(\Illuminate\Support\Facades\Auth::check())
@@ -146,7 +153,7 @@
                         {{--a litle description of all sessions of the lesson in a new line with the name of session in h2 tag--}}
                         @foreach($lesson->sessions as $session)
                             <h5>{{ $session->session_name }}</h5>
-                            {{ $session->session_desc }}
+                            {{ strip_tags($session->session_desc) }}
                         @endforeach
                     </div>
 
@@ -215,7 +222,14 @@
                                 <div class="col-12">
                                     <img src="../UsersPhotos/{{ count($lesson->user->photos) != 0 ? $lesson->user->photos[0]['path'] : 'icone.png' }}">
                                     <h3>{{ $lesson->instructor }}</h3>
-                                    <p>{{ $lesson->instructor_desc }}</p>
+                                    <p id="tohide">{{ $lesson->instructor_desc }}</p>
+                                    <p id="toShow">{{ $lesson->instructor_desc }}</p>
+                                    <script>
+                                        $( document ).ready(function() {
+                                            $('#toShow').html($('#tohide').text());
+                                            $('#tohide').css("display","none")
+                                        });
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -247,13 +261,13 @@
                                     <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $rand->seen }}&nbsp;بازدید </p>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>
+                                    {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>--}}
                                 </div>
                             </div>
                             <!--Card body elements like title and text and cost and kind-->
                             <div class="card-block">
                                 <h5 class="card-title">{{ $rand->lesson_name }}</h5>
-                                <p class="card-text">{{ str_limit($rand->lesson_desc, 80) }}</p>
+                                <p class="card-text">{{ str_limit(strip_tags($rand->lesson_desc), 80) }}</p>
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-sm-4 col-4 card-item">
                                         <p>{{ isset($rand->cost) ? "$rand->cost تومان" : 'رایگان' }}</p>
