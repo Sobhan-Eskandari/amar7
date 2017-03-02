@@ -100,6 +100,7 @@
                         </script>
                         <div class="row" id="buySection">
                             <div class="col-6">
+                                @if($lesson->cost != NULL)
                                 @if(\Illuminate\Support\Facades\Auth::check())
                                     @if(\Illuminate\Support\Facades\Auth::user()->UserRole())
                                         @if($hasUser == 1)
@@ -116,6 +117,9 @@
                                     @endif
                                 @else
                                     <button data-toggle="modal" data-target="#exampleModalLong">ثبت نام</button>
+                                @endif
+                                @else
+                                    <button data-toggle="modal" data-target="#exampleModalLong">رایگان</button>
                                 @endif
                             </div>
                             <div class="col-6">
