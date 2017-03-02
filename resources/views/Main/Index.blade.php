@@ -71,8 +71,8 @@
             </div>
             <!--motto part of header-->
             <div class="col col-lg-6 col-12">
-                <h2 id="work_motto" class="display-6">بهترین خودروی 25 تا 35 میلیون تومانی بازار را شما انتخاب کنید</h2>
-                <p class="lead" id="toShowText">{{ isset($info['header_txt']) ? $info['header_txt'] : 'پیش فرض' }}</p>
+                {{--<h2 class="display-6">بهترین خودروی 25 تا 35 میلیون تومانی بازار را شما انتخاب کنید</h2>--}}
+                <p class="work_motto lead"  id="toShowText">{{ isset($info['header_txt']) ? $info['header_txt'] : 'پیش فرض' }}</p>
                 <p class="lead" id="tohideText">{{ isset($info['header_txt']) ? $info['header_txt'] : 'پیش فرض' }}</p>
                 <script>
                     $( document ).ready(function() {
@@ -107,7 +107,8 @@
                                     <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $rand->seen }}&nbsp;بازدید </p>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                    {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>--}}
+                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>
+
                                 </div>
                             </div>
                             <!--Card body elements like title and text and cost and kind-->
@@ -169,7 +170,7 @@
                                     <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $rand->seen }}&nbsp;بازدید </p>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                    {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>--}}
+                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>
                                 </div>
                             </div>
                             <!--Card body elements like title and text and cost and kind-->
@@ -227,6 +228,22 @@
             </div>
         </div>
     </div>
+
+   {{--modal screen for confimation or edit--}}
+   <!-- Small modal -->
+   <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+   <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+       <div class="modal-dialog modal-sm" role="document">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">×</span></button>
+                   <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
+               </div> <div class="modal-body"> ...
+               </div>
+           </div>
+       </div>
+   </div>
 @endsection
 
 @section('footer-category')

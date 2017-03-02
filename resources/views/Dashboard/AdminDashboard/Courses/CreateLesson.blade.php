@@ -50,9 +50,9 @@
                     </div>
 
                     <hr>
-                    <h4>درباره استاد</h4>
-                    {!! Form::text('instructor',null,['class'=>'attachmentInputs','placeholder'=>'نام استاد را وارد کنید']) !!}<br>
-                    {!! Form::textarea('instructor_desc',null,['id'=>'editor1','rows'=>'10','cols'=>'80','placeholder'=>'در مورد استاد']) !!}
+                    <h4>درباره نویسنده</h4>
+                    {!! Form::text('instructor',null,['class'=>'attachmentInputs','placeholder'=>'نام نویسنده را وارد کنید']) !!}<br>
+                    {!! Form::textarea('instructor_desc',null,['id'=>'editor1','rows'=>'10','cols'=>'80','placeholder'=>'در مورد نویسنده']) !!}
                     <script>
                         CKEDITOR.replace( 'instructor_desc' );
                     </script>

@@ -34,7 +34,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ route('home') }}">
             <img src="../images/Horoofnegar-blak.png" width="30" height="30" class="d-inline-block align-top" alt="">
         </a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -184,36 +184,61 @@
     <footer>
         <div class="container-fluid">
             <div class="row footerPart">
-                <div class="col-lg-3 col-md-3 col-sm-3 footerLogoPart">
+                <div class="col-lg-3 col-md-3 col-sm-3 footerLogoPart ">
                     <img src="../images/Horoofnegar-blak.png">
-                    <p>حروف نگار</p>
+                    <p style="margin-bottom: -120px;">حروف نگار</p>
+
+                    <div  class="socialNetworks">
+                        <p>شبکه های اجتماعی</p>
+                        <ul style="margin-bottom: 100px">
+                            <li><a href="{{  isset($info->aparat) ? $info->aparat : 'http://www.aparat.com/' }}"><img src="../images/aparat.png"></a></li>
+                            <li><a href="{{  isset($info->telegram) ? $info->telegram : 'https://telegram.org/' }}"><img src="../images/telegram.png"></a></li>
+                            <li><a href="{{  isset($info->twitter) ? $info->twitter : 'https://twitter.com/?lang=en' }}"><img src="../images/twitter.png"></a></li>
+                            <li><a href="{{  isset($info->facebook) ? $info->facebook : 'http://www.facebook.com/' }}"><img src="../images/facebook.png"></a></li>
+                            <li><a href="{{  isset($info->linkedin) ? $info->linkedin : 'linkedin.com' }}"><img src="../images/linkdin.png"></a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div style="margin-left: 12%" class="col-lg-3 col-md-3 col-sm-3 offset-lg-1 offset-md-1 offset-sm-1 offset-1 socialNetworks">
-                    <p>شبکه های اجتماعی</p>
-                    <ul>
-                        <li><a href="{{  isset($info->aparat) ? $info->aparat : 'http://www.aparat.com/' }}"><img src="../images/aparat.png"></a></li>
-                        <li><a href="{{  isset($info->telegram) ? $info->telegram : 'https://telegram.org/' }}"><img src="../images/telegram.png"></a></li>
-                        <li><a href="{{  isset($info->twitter) ? $info->twitter : 'https://twitter.com/?lang=en' }}"><img src="../images/twitter.png"></a></li>
-                        <li><a href="{{  isset($info->facebook) ? $info->facebook : 'http://www.facebook.com/' }}"><img src="../images/facebook.png"></a></li>
-                        <li><a href="{{  isset($info->linkedin) ? $info->linkedin : 'linkedin.com' }}"><img src="../images/linkdin.png"></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 offset-lg-1 offset-md-1 offset-sm-1 footer_categories">
+
+                <div class="col-lg-6 col-md-3 col-sm-3 offset-lg-3 offset-md-1 offset-sm-1 footer_categories">
                     <div class="row">
-                        <div class="col-6">
-                            <p>دسته بندی ها</p>
-                            <ul>
-                                @yield('footer-category')
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <p> منوها</p>
-                            <ul>
+                        <div class="col-3">
+                            {{--<p> منوها</p>--}}
+                            <ul style="margin-bottom: 100px;">
                                 <li><a href="{{ route('home') }}">خانه</a></li>
                                 <li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>
                                 <li><a href="{{ route('allWiki') }}">مقالات</a></li>
                                 <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
                                 <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
+                                <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
+                                <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
+                                <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <p> پیوندها</p>
+                            <ul style="margin-bottom: 100px;">
+                                <li><a href="{{ route('home') }}">خانه</a></li>
+                                <li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>
+                                <li><a href="{{ route('allWiki') }}">مقالات</a></li>
+                                <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
+                                <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <p> منوها</p>
+                            <ul style="margin-bottom: 100px;">
+                                <li><a href="{{ route('home') }}">خانه</a></li>
+                                <li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>
+                                <li><a href="{{ route('allWiki') }}">مقالات</a></li>
+                                <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
+                                <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <p>دسته بندی ها</p>
+                            <ul>
+                                @yield('footer-category')
                             </ul>
                         </div>
                     </div>

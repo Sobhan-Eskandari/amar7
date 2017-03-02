@@ -49,7 +49,7 @@
                                         <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $search->seen }}&nbsp;بازدید </p>
                                     </div>
                                     <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                        {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($search->user->photos) != 0 ? $search->user->photos[0]['path'] : 'icone.png' }}"> {{ $search->user['full_name'] }}</p>--}}
+                                        <p><img class="instructor_img" src="../UsersPhotos/{{ count($search->user->photos) != 0 ? $search->user->photos[0]['path'] : 'icone.png' }}"> {{ $search->user['full_name'] }}</p>
                                     </div>
                                 </div>
                                 <!--Card body elements like title and text and cost and kind-->
@@ -83,7 +83,7 @@
                                         <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $search->seen }}&nbsp;بازدید </p>
                                     </div>
                                     <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                        {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($search->user->photos) != 0 ? $search->user->photos[0]['path'] : 'icone.png' }}"> {{ $search->user['full_name'] }}</p>--}}
+                                        <p><img class="instructor_img" src="../UsersPhotos/{{ count($search->user->photos) != 0 ? $search->user->photos[0]['path'] : 'icone.png' }}"> {{ $search->user['full_name'] }}</p>
                                     </div>
                                 </div>
                                 <!--Card body elements like title and text and cost and kind-->

@@ -90,7 +90,7 @@
                             <tr>
                                 <th>عنوان زیر محتوای آماری</th>
                                 <th>تاریخ ایجاد</th>
-                                <th>نام استاد</th>
+                                <th>نام نویسنده</th>
                                 <th>فیلتر پست</th>
                                 <th></th>
                             </thead>
@@ -116,7 +116,7 @@
                                             <li class="divider"></li>
                                             <li>
                                                 {!! Form::open(['method'=>'DELETE','action'=>['SessionController@destroy','session_id'=>$session->id,'id'=>$lesson->id]]) !!}
-                                                {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none; margin-left:55px;']) !!}
+                                                {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none; margin-left:55px;height:20px']) !!}
                                                 {!! Form::close() !!}
                                             </li>
                                         </ul>
@@ -126,7 +126,6 @@
                             </tr>
                                 @endforeach
                             @endif
-
                             </tbody>
                         </table>
 

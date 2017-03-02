@@ -27,21 +27,25 @@
             <div class="col-12" id="courseSection">
 
                 <div class="row" id="top_courseInfo">
-                    <div class="col-3">
+                    {{--<div class="col-3">--}}
                         {{--name of instructor--}}
-                        <p><i class="fa fa-user" aria-hidden="true"></i> {{ $lesson->instructor }} </p>
-                    </div>
-                    <div class="col-3">
+                        {{--<p><i class="fa fa-user" aria-hidden="true"></i> {{ $lesson->instructor }} </p>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-3">--}}
                         {{--number of all sessions--}}
-                        <p><i class="fa fa-book" aria-hidden="true"></i> {{ count($lesson->sessions) }} زیر محتوای آماری</p>
-                    </div>
-                    <div class="col-3">
+                        {{--<p><i class="fa fa-book" aria-hidden="true"></i> {{ count($lesson->sessions) }} زیر محتوای آماری</p>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-3">--}}
                         {{--name of one category of the lesson--}}
-                        <p><i class="fa fa-filter" aria-hidden="true"></i> {{ $lesson->categories[0]['name'] }} </p>
-                    </div>
-                    <div class="col-3">
+                        {{--<p><i class="fa fa-filter" aria-hidden="true"></i> {{ $lesson->categories[0]['name'] }} </p>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-3">--}}
                         {{--to be determined--}}
-                        <p><i class="fa fa-eye" aria-hidden="true"></i> ۳۰ دقیقه </p>
+                        {{--<p><i class="fa fa-eye" aria-hidden="true"></i> ۳۰ دقیقه </p>--}}
+                    {{--</div>--}}
+                    <div class="col-12" >
+                        {{--name of one category of the lesson--}}
+                        <p style="text-align: right"><i class="fa fa-filter"  aria-hidden="true"></i> {{ $lesson->categories[0]['name'] }} </p>
                     </div>
                 </div>
                 <div class="row" id="top_courseAttachments">
@@ -116,7 +120,7 @@
                                         @endif
                                     @endif
                                 @else
-                                    <button>ثبت نام</button>
+                                    <button data-toggle="modal" data-target="#exampleModalLong">ثبت نام</button>
                                 @endif
                                 @else
                                     <a href="../zipFiles/.{{$session->session_file}}" download> دانلود</a>
@@ -265,7 +269,7 @@
                                     <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $rand->seen }}&nbsp;بازدید </p>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                    {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>--}}
+                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>
                                 </div>
                             </div>
                             <!--Card body elements like title and text and cost and kind-->
@@ -292,6 +296,95 @@
 
     </div>
     <hr>
+
+    <!------------------------------ Signin Signup Modal ------------------------------>
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="signup_login_panel">
+
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#loginpanel" role="tab">ورود</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#signup" role="tab">ثبت نام</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane" id="loginpanel" role="tabpanel">
+                        {!! Form::open(['method' => 'POST', 'action' => 'Auth\LoginController@login']) !!}
+                        <div class="row">
+                            <div class="col-12 offset-1">
+                                <input id="loginmail" type="email" placeholder="&#xF0e0;  رایانامه" style="font-family:BYekan,FontAwesome" name="email" value="{{ old('email') }}" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 offset-1">
+                                <input type="password" placeholder="&#xF023;  گذرواژه" style="font-family:BYekan,FontAwesome" name="password" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-4 offset-4 rememberMe">
+                                <p> مرا به خاطر نگه دار <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}></p>
+                            </div>
+
+                            <div style="margin-top: 10px;margin-bottom: 10px" class="col-10 offset-2" id="grecaptcha-popup-login"></div>
+                        </div>
+
+                        <div class="row" id="loginBtn">
+                            <div class="col-12">
+                                <button type="submit">ورود</button>
+                            </div>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                    {{--singup section--}}
+
+                    <div class="tab-pane active" id="signup" role="tabpanel">
+                        {!! Form::open(['method' => 'POST', 'action' => 'Auth\RegisterController@register']) !!}
+                        <div class="row">
+                            <div class="col-1 offset-xl-2 offset-lg-1 offset-md-1 offset-sm-1 offset-1" style="margin-left: 13%;">
+                                <input type="text" placeholder="&#xF023;  نام خانوادگی" style="font-family:BYekan,FontAwesome" name="last_name">
+                            </div>
+                            <div class="col-1 offset-4">
+                                <input type="text" placeholder="&#xF2be;  نام" style="font-family:BYekan,FontAwesome" name="first_name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-11 offset-1" style="margin-left: 12%;">
+                                <input id="mail" type="password" placeholder="&#xF023;  گذرواژه" style="font-family:BYekan,FontAwesome" name="password">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-11 offset-1" style="margin-left: 12%;">
+                                <input id="mail" type="text" placeholder="&#xF0e0;  رایانامه" style="font-family:BYekan,FontAwesome" name="email">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div style="margin-top: 10px;margin-bottom: 10px" class="col-10 offset-2" id="grecaptcha-popup-signup"></div>
+                        </div>
+
+                        <div class="row" id="signupBtn">
+                            <div class="col-12">
+                                <button>ثبت نام</button>
+                            </div>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+
+                    {{--singup section--}}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!------------------------------ End of Signin Signup Modal ------------------------------>
 @endsection
 
 @section('footer-category')

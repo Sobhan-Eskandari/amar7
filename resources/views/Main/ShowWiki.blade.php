@@ -22,6 +22,28 @@
     <!-----------------------End of top header of site------------------------->
     <div class="container">
         <div class="col-12" id="maghale">
+            <div style="background-color: #EEEEEE;border-radius: 10px;margin-bottom: 35px" class="row" id="top_courseInfo">
+                {{--<div class="col-3">--}}
+                {{--name of instructor--}}
+                {{--<p><i class="fa fa-user" aria-hidden="true"></i> {{ $lesson->instructor }} </p>--}}
+                {{--</div>--}}
+                {{--<div class="col-3">--}}
+                {{--number of all sessions--}}
+                {{--<p><i class="fa fa-book" aria-hidden="true"></i> {{ count($lesson->sessions) }} زیر محتوای آماری</p>--}}
+                {{--</div>--}}
+                {{--<div class="col-3">--}}
+                {{--name of one category of the lesson--}}
+                {{--<p><i class="fa fa-filter" aria-hidden="true"></i> {{ $lesson->categories[0]['name'] }} </p>--}}
+                {{--</div>--}}
+                {{--<div class="col-3">--}}
+                {{--to be determined--}}
+                {{--<p><i class="fa fa-eye" aria-hidden="true"></i> ۳۰ دقیقه </p>--}}
+                {{--</div>--}}
+                <div class="col-12" >
+                    {{--name of one category of the lesson--}}
+                    <p style="text-align: right; padding-top: 15px"><i class="fa fa-filter"  aria-hidden="true"></i>  </p>
+                </div>
+            </div>
             <img src="../WikiPhotos/{{ count($wiki->photos) != 0 ? $wiki->photos[0]['path'] : 'default.png' }}">
             <h2>{{ $wiki->title }}</h2>
 
@@ -39,14 +61,16 @@
 
     <div class="container">
         <div class="row" id="writer">
-            <div class="col-9">
+            {{--<div class="col-9">--}}
 
-            </div>
-            <div class="col-12" style="text-align: center">
+            {{--</div>--}}
+            <div class="col-6" style="text-align: left">
                 @if($wiki->file)
-                    <a href="../WikiPDFs/{{ $wiki->file }}"><button class="downloadCourse" style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);border-radius: 10px;border: transparent;background-color: #20A747;padding: 10px 15px;color: white;width: 20%;"> دانلود مقاله<i class="fa fa-download" aria-hidden="true"></i> </button></a>
+                    <a href="../WikiPDFs/{{ $wiki->file }}"><button class="downloadCourse" style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);border-radius: 10px;border: transparent;background-color: #20A747;padding: 10px 15px;color: white;width: 30%;"> دانلود مقاله<i style="margin-left: 5px" class="fa fa-download" aria-hidden="true"></i> </button></a>
                 @endif
-                <p><i class="fa fa-user fa-2x" aria-hidden="true"></i>  نویسنده : {{ $wiki->user['full_name'] }}</p>
+            </div>
+            <div class="col-6" style="text-align: right">
+                <p>&nbsp;<i class="fa fa-user fa-2x" aria-hidden="true"></i>&nbsp;     نویسنده : &nbsp;{{ $wiki->user['full_name'] }}</p>
             </div>
         </div>
     </div>
@@ -72,7 +96,7 @@
                                     <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $rand->seen }}&nbsp;بازدید </p>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                    {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>--}}
+                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>
                                 </div>
                             </div>
                             <!--Card body elements like title and text and cost and kind-->
