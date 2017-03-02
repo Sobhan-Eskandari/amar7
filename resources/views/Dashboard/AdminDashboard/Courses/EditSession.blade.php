@@ -41,7 +41,7 @@
                     <script>
                         CKEDITOR.replace('session_desc');
                     </script>
-                <h4>بارگذاری آموزش ها</h4>
+                <h4>بارگذاری فایل</h4>
 
                     {{--{!! Form::file('session_file',['class'=>'uploadImageBtn']) !!}--}}
 

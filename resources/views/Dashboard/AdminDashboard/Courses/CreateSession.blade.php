@@ -57,7 +57,7 @@
                     <script>
                         CKEDITOR.replace('session_desc');
                     </script>
-                <h4>بارگذاری آموزش ها</h4>
+                <h4>بارگذاری فایل</h4>
                 {{--<input class="attachmentInputs" type="text" name="video">--}}
                 {{--<button class="uploadImageBtn">بارگزاری +</button>--}}
 

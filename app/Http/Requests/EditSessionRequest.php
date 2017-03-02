@@ -26,7 +26,7 @@ class EditSessionRequest extends FormRequest
         return [
             'session_name'=>'required',
             'session_desc'=>'required',
-            'session_file'=>'mimes:zip'
+            'session_file'=>'mimes:zip,rar'
         ];
     }
     public function messages()
@@ -34,7 +34,7 @@ class EditSessionRequest extends FormRequest
         return [
             'session_name.required' => 'وارد کردن نام جلسه اجباری است',
             'session_desc.required' => 'وارد کردن توضیحات جلسه اجباری است',
-            'session_file.mimes' => 'نوع فایل باید zip باشد',
+            'session_file.mimes' => 'نوع فایل باید zip یا rar باشد',
 
         ];
     }
