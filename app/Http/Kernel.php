@@ -54,5 +54,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'AdminRole'=>\App\Http\Middleware\AdminMiddleware::class,
         'UserRole'=>\App\Http\Middleware\UserMiddleware::class,
+        'NotAuth' => \App\Http\Middleware\RedirectIfNotAuthenticated::class,
     ];
 }

@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'NotAuth'], function () {
 
     /*
      *  Routes which only admin can access
