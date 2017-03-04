@@ -94,7 +94,7 @@ class SessionController extends Controller
                 }
             }
         }
-        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         $lessons = Lesson::orderByRaw('RAND()')->take(4)->get();
         foreach (explode(',', $lesson->media) as $media){ $lesson[$media] = 1; }
         return view('Main.ShowSession',compact('session','lesson','sessions','hasUser','lessons','count','course_categories'));

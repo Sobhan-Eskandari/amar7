@@ -23,25 +23,17 @@
     <div class="container">
         <div class="col-12" id="maghale">
             <div style="background-color: #EEEEEE;border-radius: 10px;margin-bottom: 35px" class="row" id="top_courseInfo">
-                {{--<div class="col-3">--}}
-                {{--name of instructor--}}
-                {{--<p><i class="fa fa-user" aria-hidden="true"></i> {{ $lesson->instructor }} </p>--}}
-                {{--</div>--}}
-                {{--<div class="col-3">--}}
-                {{--number of all sessions--}}
-                {{--<p><i class="fa fa-book" aria-hidden="true"></i> {{ count($lesson->sessions) }} زیر محتوای آماری</p>--}}
-                {{--</div>--}}
-                {{--<div class="col-3">--}}
-                {{--name of one category of the lesson--}}
-                {{--<p><i class="fa fa-filter" aria-hidden="true"></i> {{ $lesson->categories[0]['name'] }} </p>--}}
-                {{--</div>--}}
-                {{--<div class="col-3">--}}
-                {{--to be determined--}}
-                {{--<p><i class="fa fa-eye" aria-hidden="true"></i> ۳۰ دقیقه </p>--}}
-                {{--</div>--}}
                 <div class="col-12" >
                     {{--name of one category of the lesson--}}
-                    <p style="text-align: right; padding-top: 15px"><i class="fa fa-filter"  aria-hidden="true"></i>  </p>
+                    <p style="text-align: right; padding-top: 15px"><i class="fa fa-filter"  aria-hidden="true"></i>
+                        @foreach($wiki->wiki_categories as $filter)
+                            @if($loop->last)
+                                {{ $filter['name'] }}
+                            @else
+                                {{ $filter['name'] . ' - ' }}
+                            @endif
+                        @endforeach
+                    </p>
                 </div>
             </div>
             <img src="../WikiPhotos/{{ count($wiki->photos) != 0 ? $wiki->photos[0]['path'] : 'default.png' }}">

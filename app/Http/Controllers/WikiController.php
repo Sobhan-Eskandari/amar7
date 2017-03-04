@@ -96,8 +96,12 @@ class WikiController extends Controller
         $wiki = Wiki::findOrFail($id);
         $wiki->seen++;
         $wiki->save();
+//        dd($wiki->wiki_categories);
+//        foreach ($wiki->wiki_categories as $wiki){
+//            dd($wiki['name']);
+//        }
         $wikis = Wiki::orderByRaw('RAND()')->take(4)->get();
-        $wiki_categories = WikiCategories::orderByRaw('RAND()')->take(5)->get();
+        $wiki_categories = WikiCategories::orderByRaw('RAND()')->take(9)->get();
         return view('Main.ShowWiki', compact('wiki', 'wikis', 'info', 'wiki_categories','count'));
     }
 

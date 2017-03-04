@@ -105,7 +105,7 @@ class LessonController extends Controller
         }
 
         $lessons = Lesson::orderByRaw('RAND()')->take(4)->get();
-        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         foreach (explode(',', $lesson->media) as $media){ $lesson[$media] = 1; }
         return view('Main.ShowCourse', compact('lesson', 'lessons', 'hasUser', 'course_categories','count'));
     }
