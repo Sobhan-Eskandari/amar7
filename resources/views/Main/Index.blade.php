@@ -53,7 +53,7 @@
                                 <div class="col-lg-6 col-ms-6 col-sm-6 col-6 signup_fields">
                                     {!! Form::text('first_name', null, ['placeholder' => 'نام', 'required' => 'required', 'tabindex' => '1']) !!}<br>
                                     <br>
-                                    {!! Form::text('email', null, ['placeholder'=>'رایانامه', 'tabindex'=>'3']) !!}<br>
+                                    {!! Form::text('email', null, ['placeholder'=>'ایمیل', 'tabindex'=>'3']) !!}<br>
                                 </div>
                             </div>
                             <div class="row">

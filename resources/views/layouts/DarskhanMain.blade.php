@@ -189,7 +189,7 @@
                         {!! Form::open(['method' => 'POST', 'action' => 'Auth\LoginController@login']) !!}
                             <div class="row">
                                 <div class="col-12 offset-1">
-                                    <input id="loginmail" type="email" placeholder="&#xF0e0;  رایانامه" style="font-family:BYekan,FontAwesome" name="email" value="{{ old('email') }}" required>
+                                    <input id="loginmail" type="email" placeholder="&#xF0e0;  ایمیل" style="font-family:BYekan,FontAwesome" name="email" value="{{ old('email') }}" required>
                                 </div>
                             </div>
                             <div class="row">
@@ -233,7 +233,7 @@
                         </div>
                         <div class="row">
                             <div class="col-11 offset-1" style="margin-left: 12%;">
-                                <input id="mail" type="text" placeholder="&#xF0e0;  رایانامه" style="font-family:BYekan,FontAwesome" name="email">
+                                <input id="mail" type="text" placeholder="&#xF0e0;  ایمیل" style="font-family:BYekan,FontAwesome" name="email">
                             </div>
                         </div>
 

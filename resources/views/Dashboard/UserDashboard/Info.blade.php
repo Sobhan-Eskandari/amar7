@@ -94,7 +94,7 @@
                                 {!! Form::select('gender', ['1' => 'مرد', '0' => 'زن'], null, ['style'=>'height:40px','class'=>'pull-right','tabindex' => '4']) !!}
                             </div>
                             <div class="col-lg-5 col-sm-6">
-                                <h5>رایانامه </h5>
+                                <h5>ایمیل </h5>
                                 {!! Form::text('email', null, ['required' => 'required', 'tabindex'=>'3']) !!}
                             </div>
                         </div>

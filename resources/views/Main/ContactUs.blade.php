@@ -82,7 +82,7 @@
                             {!! Form::text('name',null,['class'=>'form-control','id'=>'exampleInputPassword1','placeholder'=>'نام','tabindex'=>'1']) !!}
                         </div>
                         <div class="col-6 form-group">
-                            <label for="exampleInputEmail1">رایانامه</label>
+                            <label for="exampleInputEmail1">ایمیل</label>
                             {!! Form::text('email',null,['class'=>'form-control','id'=>'exampleInputEmail1','aria-describedby'=>'emailHelp','placeholder'=>'پست الکترونیکی','tabindex'=>'2']) !!}
                             <small id="emailHelp" class="form-text text-muted">ما پست الکترونیگی شما را به اشتراک نمیگذاریم</small>
                         </div>
