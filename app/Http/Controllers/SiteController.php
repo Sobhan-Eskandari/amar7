@@ -8,6 +8,7 @@ use App\Lesson;
 use App\Photo;
 use App\Session;
 use App\Setting;
+use App\Share;
 use App\User;
 use App\Wiki;
 use App\WikiCategories;
@@ -21,7 +22,6 @@ use Kryptonit3\Counter\Counter;
 class SiteController extends Controller
 {
     public function index(){
-
         if(Auth::Check()){
             $user = Auth::user();
             $lessons = $user->lessons;
@@ -33,12 +33,13 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
-        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         $wikis = Wiki::orderByRaw('created_at desc')->take(4)->get();
         $lessons = Lesson::orderByRaw('created_at desc')->take(8)->get();
-        return view('Main.Index', compact('info', 'wikis', 'lessons', 'course_categories','count'));
+        return view('Main.Index', compact('info', 'wikis', 'lessons', 'course_categories','count', 'shares'));
     }
 
     public function AboutUs()
@@ -56,7 +57,7 @@ class SiteController extends Controller
         }
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
-        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         return view('Main.AboutUs', compact('info', 'course_categories','count'));
     }
 
@@ -78,7 +79,7 @@ class SiteController extends Controller
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::all();
-        $rand_course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
+        $rand_course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         isset($input['query']) ? : $input['query'] = '';
         isset($input['kind'][0]) ? : $input['kind'][0] = '';
         isset($input['kind'][1]) ? : $input['kind'][1] = '';
@@ -184,7 +185,7 @@ class SiteController extends Controller
         }
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
-        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         $input = $request->all();
         if(isset($input['name'])){
             $query = $input['name'];
@@ -247,7 +248,7 @@ class SiteController extends Controller
         }
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
-        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         $category = CoursesCategories::findOrFail($id);
         $lessons = Lesson::all();
         $results = [];
@@ -278,7 +279,7 @@ class SiteController extends Controller
         }
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
-        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         $category = WikiCategories::findOrFail($id);
         $wikis = Wiki::all();
         $results = [];

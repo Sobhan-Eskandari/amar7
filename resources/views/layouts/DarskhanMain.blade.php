@@ -203,13 +203,10 @@
                 <div class="col-lg-6 col-md-3 col-sm-3 offset-lg-3 offset-md-1 offset-sm-1 footer_categories">
                     <div class="row">
                         <div class="col-3">
-                            {{--<p> منوها</p>--}}
                             <ul style="margin-bottom: 100px;">
                                 <li><a href="{{ route('home') }}">خانه</a></li>
                                 <li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>
                                 <li><a href="{{ route('allWiki') }}">مقالات</a></li>
-                                <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
-                                <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
                                 <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
                                 <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
                                 <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
@@ -218,11 +215,13 @@
                         <div class="col-3">
                             <p> پیوندها</p>
                             <ul style="margin-bottom: 100px;">
-                                <li><a href="{{ route('home') }}">خانه</a></li>
-                                <li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>
-                                <li><a href="{{ route('allWiki') }}">مقالات</a></li>
-                                <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
-                                <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
+                                @yield('footer-shares')
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <p>دسته بندی ها</p>
+                            <ul>
+                                @yield('footer-category')
                             </ul>
                         </div>
                         <div class="col-3">
@@ -233,12 +232,6 @@
                                 <li><a href="{{ route('allWiki') }}">مقالات</a></li>
                                 <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
                                 <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-3">
-                            <p>دسته بندی ها</p>
-                            <ul>
-                                @yield('footer-category')
                             </ul>
                         </div>
                     </div>

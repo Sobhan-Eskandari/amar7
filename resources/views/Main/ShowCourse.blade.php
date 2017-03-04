@@ -27,22 +27,18 @@
             <div class="col-12" id="courseSection">
 
                 <div class="row" id="top_courseInfo">
-                    {{--<div class="col-3">--}}
-                        {{--name of instructor--}}
-                        {{--<p><i class="fa fa-user" aria-hidden="true"></i> {{ $lesson->instructor }} </p>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-3">--}}
-                        {{--number of all sessions--}}
-                        {{--<p><i class="fa fa-book" aria-hidden="true"></i> {{ count($lesson->sessions) }} زیر محتوا</p>--}}
-                    {{--</div>--}}
                     <div class="col-12" >
                         {{--name of one category of the lesson--}}
-                        <p style="text-align: right"><i class="fa fa-filter"  aria-hidden="true"></i> {{ $lesson->categories[0]['name'] }} </p>
+                        <p style="text-align: right"><i class="fa fa-filter"  aria-hidden="true"></i>
+                            @foreach($lesson->categories as $filter)
+                                @if($loop->last)
+                                    {{ $filter['name'] }}
+                                @else
+                                    {{ $filter['name'] . ' - ' }}
+                                @endif
+                            @endforeach
+                        </p>
                     </div>
-                    {{--<div class="col-3">--}}
-                        {{--to be determined--}}
-                        {{--<p><i class="fa fa-eye" aria-hidden="true"></i> ۳۰ دقیقه </p>--}}
-                    {{--</div>--}}
                 </div>
                 <div class="row" id="top_courseAttachments">
                     <div class="col-3">

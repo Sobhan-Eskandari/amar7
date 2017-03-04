@@ -252,6 +252,12 @@
     @endforeach
 @endsection
 
+@section('footer-shares')
+    @foreach($shares as $share)
+        <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+    @endforeach
+@endsection
+
 @section('down-includes')
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
