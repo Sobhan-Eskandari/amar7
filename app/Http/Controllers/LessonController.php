@@ -7,6 +7,7 @@ use App\Http\Requests\editLessonRequest;
 use App\Http\Requests\LessonsRequest;
 use App\Lesson;
 use App\Photo;
+use App\Share;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -103,11 +104,11 @@ class LessonController extends Controller
                 }
             }
         }
-
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $lessons = Lesson::orderByRaw('RAND()')->take(4)->get();
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         foreach (explode(',', $lesson->media) as $media){ $lesson[$media] = 1; }
-        return view('Main.ShowCourse', compact('lesson', 'lessons', 'hasUser', 'course_categories','count'));
+        return view('Main.ShowCourse', compact('lesson', 'lessons', 'hasUser', 'course_categories','count', 'shares'));
     }
 
     /**

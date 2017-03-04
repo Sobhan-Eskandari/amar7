@@ -132,33 +132,33 @@
 
     @yield('content')
     <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Open Modal</button>
+    {{--<button id="myBtn">Open Modal</button>--}}
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
+    {{--<!-- The Modal -->--}}
+    {{--<div id="myModal" class="modal">--}}
 
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
+        {{--<!-- Modal content -->--}}
+        {{--<div class="modal-content">--}}
+            {{--<span class="close">&times;</span>--}}
             {{--<div class="alert alert-danger" style="width:350px;margin-left: 72%; margin-right: 64px; margin-top: 1%">--}}
-            <p>
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </p>
+            {{--<p>--}}
+                {{--<ul>--}}
+                    {{--@foreach($errors->all() as $error)--}}
+                        {{--<li>{{ $error }}</li>--}}
+                    {{--@endforeach--}}
+                {{--</ul>--}}
+            {{--</p>--}}
             {{--</div>--}}
-        </div>
+        {{--</div>--}}
 
-    </div>
-    <br><br><br><br><br>
+    {{--</div>--}}
+    {{--<br><br><br><br><br>--}}
 
-    @if(Session::has('deleted_wiki'))
-        <div class="alert alert-danger" style="width:350px;margin-left: 80%; margin-right: 64px">
-            <p>{{ session('deleted_wiki') }}</p>
-        </div>
-    @endif
+    {{--@if(Session::has('deleted_wiki'))--}}
+        {{--<div class="alert alert-danger" style="width:350px;margin-left: 80%; margin-right: 64px">--}}
+            {{--<p>{{ session('deleted_wiki') }}</p>--}}
+        {{--</div>--}}
+    {{--@endif--}}
 
     {{--@if(count($errors) > 0)--}}
         {{--<div class="alert alert-danger" style="width:350px;margin-left: 72%; margin-right: 64px; margin-top: 1%">--}}
@@ -281,14 +281,14 @@
                 <div class="col-lg-6 col-md-3 col-sm-3 offset-lg-3 offset-md-1 offset-sm-1 footer_categories">
                     <div class="row">
                         <div class="col-3">
-                            <ul style="margin-bottom: 100px;">
-                                <li><a href="{{ route('home') }}">خانه</a></li>
-                                <li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>
-                                <li><a href="{{ route('allWiki') }}">مقالات</a></li>
-                                <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
-                                <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
-                                <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
-                            </ul>
+                            {{--<ul style="margin-bottom: 100px;">--}}
+                                {{--<li><a href="{{ route('home') }}">خانه</a></li>--}}
+                                {{--<li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>--}}
+                                {{--<li><a href="{{ route('allWiki') }}">مقالات</a></li>--}}
+                                {{--<li><a href="{{ route('aboutUs') }}">درباره ما</a></li>--}}
+                                {{--<li><a href="{{ route('contact-us') }}">تماس با ما</a></li>--}}
+                                {{--<li><a href="{{ route('contact-us') }}">تماس با ما</a></li>--}}
+                            {{--</ul>|--}}
                         </div>
                         <div class="col-3">
                             <p> پیوندها</p>
@@ -330,38 +330,38 @@
             async defer>
     </script>
 
-    <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
+    {{--<script>--}}
+        {{--// Get the modal--}}
+        {{--var modal = document.getElementById('myModal');--}}
 
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
+        {{--// Get the button that opens the modal--}}
+        {{--var btn = document.getElementById("myBtn");--}}
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        {{--// Get the <span> element that closes the modal--}}
+        {{--var span = document.getElementsByClassName("close")[0];--}}
 
-        // When the user clicks the button, open the modal
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
+        {{--// When the user clicks the button, open the modal--}}
+        {{--btn.onclick = function() {--}}
+            {{--modal.style.display = "block";--}}
+        {{--}--}}
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
+        {{--// When the user clicks on <span> (x), close the modal--}}
+        {{--span.onclick = function() {--}}
+            {{--modal.style.display = "none";--}}
+        {{--}--}}
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-    @if(count($errors) > 0)
-        <script>
-            $("#myBtn").trigger('click');
-        </script>
-    @endif
+        {{--// When the user clicks anywhere outside of the modal, close it--}}
+        {{--window.onclick = function(event) {--}}
+            {{--if (event.target == modal) {--}}
+                {{--modal.style.display = "none";--}}
+            {{--}--}}
+        {{--}--}}
+    {{--</script>--}}
+    {{--@if(count($errors) > 0)--}}
+        {{--<script>--}}
+            {{--$("#myBtn").trigger('click');--}}
+        {{--</script>--}}
+    {{--@endif--}}
     @yield('down-includes')
 
 </body>

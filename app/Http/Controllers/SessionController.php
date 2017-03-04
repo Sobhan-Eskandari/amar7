@@ -7,6 +7,7 @@ use App\Http\Requests\EditSessionRequest;
 use App\Http\Requests\SessionRequest;
 use App\Lesson;
 use App\Session;
+use App\Share;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -94,10 +95,11 @@ class SessionController extends Controller
                 }
             }
         }
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         $lessons = Lesson::orderByRaw('RAND()')->take(4)->get();
         foreach (explode(',', $lesson->media) as $media){ $lesson[$media] = 1; }
-        return view('Main.ShowSession',compact('session','lesson','sessions','hasUser','lessons','count','course_categories'));
+        return view('Main.ShowSession',compact('session','lesson','sessions','hasUser','lessons','count','course_categories', 'shares'));
     }
 
     /**

@@ -67,6 +67,12 @@
     <!-----------------------End of top header of site------------------------->
 @endsection
 
+@section('footer-shares')
+    @foreach($shares as $share)
+        <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+    @endforeach
+@endsection
+
 @section('footer-category')
     @foreach($course_categories as $category)
         <li><a href="{{ route('CourseCategory', $category->id) }}">{{ $category->name }}</a></li>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\WikiRequest;
 use App\Photo;
 use App\Setting;
+use App\Share;
 use App\Wiki;
 use App\WikiCategories;
 use Illuminate\Database\Eloquent\Collection;
@@ -91,6 +92,7 @@ class WikiController extends Controller
             }
             $count = count($result);
         }
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $wiki = Wiki::findOrFail($id);
@@ -102,7 +104,7 @@ class WikiController extends Controller
 //        }
         $wikis = Wiki::orderByRaw('RAND()')->take(4)->get();
         $wiki_categories = WikiCategories::orderByRaw('RAND()')->take(9)->get();
-        return view('Main.ShowWiki', compact('wiki', 'wikis', 'info', 'wiki_categories','count'));
+        return view('Main.ShowWiki', compact('wiki', 'wikis', 'info', 'wiki_categories','count', 'shares'));
     }
 
     /**
@@ -203,6 +205,7 @@ class WikiController extends Controller
             }
             $count = count($result);
         }
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $input = $request->all();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
@@ -238,6 +241,6 @@ class WikiController extends Controller
             return view('Main.LoadWikis', compact('wikis', 'info'))->render();
         }
 
-        return view('Main.AllWiki', compact('wikis', 'info', 'wiki_categories', 'rand_wiki_categories','count'));
+        return view('Main.AllWiki', compact('wikis', 'info', 'wiki_categories', 'rand_wiki_categories','count', 'shares'));
     }
 }

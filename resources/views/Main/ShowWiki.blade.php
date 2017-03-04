@@ -118,6 +118,12 @@
     <hr>
 @endsection
 
+@section('footer-shares')
+    @foreach($shares as $share)
+        <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+    @endforeach
+@endsection
+
 @section('footer-category')
     @foreach($wiki_categories as $category)
         <li><a href="{{ route('WikiCategory', $category->id) }}">{{ $category->name }}</a></li>
@@ -125,7 +131,7 @@
 @endsection
 
 @section('down-includes')
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=fa"
             async defer>
     </script>
 @endsection

@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateUserPasswordRequest;
 use App\Lesson;
 use App\Photo;
 use App\Setting;
+use App\Share;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -120,9 +121,10 @@ class UserDashboardController extends Controller
                 $result[] = $lesson;
             }
         }
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $count = count($result);
         $lessons = collect($result);
-        return view('Dashboard.UserDashboard.Cart', compact('info','lessons','count', 'course_categories'));
+        return view('Dashboard.UserDashboard.Cart', compact('info','lessons','count', 'course_categories', 'shares'));
     }
     public function addToCart(Request $request,$id){
         $lesson = Lesson::findorFail($id);
@@ -130,6 +132,7 @@ class UserDashboardController extends Controller
         $lesson->users()->attach($user);
         return Redirect::route('lessons.show',$lesson->id);
     }
+
     public function removeFromCart($id){
         $lesson = Lesson::findOrFail($id);
         if (Auth::check()){
@@ -138,6 +141,7 @@ class UserDashboardController extends Controller
         }
         return Redirect::route('cart');
     }
+
     public function bought(){
         $user = Auth::user();
         foreach ($user->lessons as $lesson){

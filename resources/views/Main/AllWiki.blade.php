@@ -117,6 +117,12 @@
     <br><br>
 @endsection
 
+@section('footer-shares')
+    @foreach($shares as $share)
+        <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+    @endforeach
+@endsection
+
 @section('footer-category')
     @foreach($rand_wiki_categories as $category)
         <li><a href="{{ route('WikiCategory', $category->id) }}">{{ $category->name }}</a></li>

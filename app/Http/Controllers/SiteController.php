@@ -33,7 +33,7 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
-        $shares = Share::orderByRaw('RAND()')->take(20)->get();
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
@@ -55,10 +55,11 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
-        return view('Main.AboutUs', compact('info', 'course_categories','count'));
+        return view('Main.AboutUs', compact('info', 'course_categories','count', 'shares'));
     }
 
     public function AllCourses(Request $request)
@@ -76,6 +77,7 @@ class SiteController extends Controller
         }
 
         $input = $request->all();
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::all();
@@ -168,7 +170,7 @@ class SiteController extends Controller
             return view('Main.LoadCourses', compact('info', 'lessons'))->render();
         }
 
-        return view('Main.AllCourses', compact('info', 'lessons', 'course_categories', 'rand_course_categories','count'));
+        return view('Main.AllCourses', compact('info', 'lessons', 'course_categories', 'rand_course_categories','count', 'shares'));
     }
 
     public function search(Request $request){
@@ -183,6 +185,7 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
@@ -195,7 +198,7 @@ class SiteController extends Controller
         $lessons = Lesson::where('lesson_name','like',"%{$query}%")->orderByRaw('created_at desc')->get();
         $sessions = Wiki::where('title','like',"%{$query}%")->orderByRaw('created_at desc')->get();
         $searches =  $lessons->merge($sessions);
-        return view('Main.SearchResults', compact('info','searches', 'course_categories','count'));
+        return view('Main.SearchResults', compact('info','searches', 'course_categories','count', 'shares'));
     }
 
     public function adminInfo(){
@@ -247,6 +250,7 @@ class SiteController extends Controller
             $count = count($result);
         }
         $row = Setting::first();
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         $category = CoursesCategories::findOrFail($id);
@@ -261,7 +265,7 @@ class SiteController extends Controller
             }
         }
         $searches = collect($results);
-        return view('Main.SearchResults', compact('info','searches', 'course_categories','count'));
+        return view('Main.SearchResults', compact('info','searches', 'course_categories','count', 'shares'));
     }
 
     public function WikiCategory($id)
@@ -277,6 +281,7 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
@@ -292,6 +297,6 @@ class SiteController extends Controller
             }
         }
         $searches = collect($results);
-        return view('Main.SearchResults', compact('info','searches', 'course_categories','count'));
+        return view('Main.SearchResults', compact('info','searches', 'course_categories','count', 'shares'));
     }
 }
