@@ -1,5 +1,7 @@
 <?php
 
+use Zarinpal\Zarinpal;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -158,3 +160,9 @@ Route::get('contact-us','MessageController@create')->name('contact-us');
 Route::post('contact-us','MessageController@store')->name('contact-us.sendMessage');
 
 Route::get('sessions/{id}','SessionController@show')->name('sessions.show');
+
+/**
+ *  Payment Portal links
+ */
+Route::post('/payment', 'ZarinController@Payment');
+Route::get('/payment-result', 'ZarinController@PaymentVerify');
