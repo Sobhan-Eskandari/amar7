@@ -164,5 +164,5 @@ Route::get('sessions/{id}','SessionController@show')->name('sessions.show');
 /**
  *  Payment Portal links
  */
-Route::post('/payment', 'ZarinController@Payment');
+Route::get('/payment', 'ZarinController@Payment');
 Route::get('/payment-result', 'ZarinController@PaymentVerify');

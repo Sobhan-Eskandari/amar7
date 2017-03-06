@@ -41,7 +41,7 @@
                         <button id="addToCart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
                     </div>
                     <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12" id="confirmPurchaseBtn">
-                        {!! Form::open(['method'=>'POST','action'=>'UserDashboardController@bought']) !!}
+                        {!! Form::open(['method'=>'GET','action'=>'ZarinController@Payment']) !!}
                         <button type="submit">تایید سفارش<i class="fa fa-check" aria-hidden="true"></i></button>
                         {!! Form::close() !!}
                     </div>

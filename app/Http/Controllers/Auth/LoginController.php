@@ -49,6 +49,10 @@ class LoginController extends Controller
     {
         $this->validate($request, [
             $this->username() => 'required', 'password' => 'required', 'g-recaptcha-response' => 'required',
+        ],[
+            'email.required' => 'وارد کردن ایمیل اجباری است',
+            'password.required' => 'وارد کردن رمز عبور اجباری است',
+            'g-recaptcha-response.required' => 'زدن تیک من ربات نیستم اجباری است',
         ]);
     }
 

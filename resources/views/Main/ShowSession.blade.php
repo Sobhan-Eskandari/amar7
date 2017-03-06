@@ -107,7 +107,7 @@
                                                @if(isset($lesson->pivot->bought) && $lesson->pivot->bought==0)
                                                   <button>به سبد خرید اضافه شده</button>
                                                 @else
-                                                  <a href="../zipFiles/.{{$session->session_file}}" download> دانلود</a>
+                                                <a href="../zipFiles/{{$session->session_file}}" download><button class="downloadCourse" style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);border-radius: 10px;border: transparent;background-color: #20A747;padding: 10px 15px;color: white;width: 50%;"> دانلود زیر محتوا<i style="margin-left: 5px" class="fa fa-download" aria-hidden="true"></i> </button></a>
                                                 @endif
                                         @endif
                                     @endif
@@ -115,7 +115,7 @@
                                     <button data-toggle="modal" data-target="#exampleModalLong">ثبت نام</button>
                                 @endif
                                 @else
-                                    <a href="../zipFiles/.{{$session->session_file}}" download> دانلود</a>
+                                    <a href="../zipFiles/{{$session->session_file}}" download><button class="downloadCourse" style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);border-radius: 10px;border: transparent;background-color: #20A747;padding: 10px 15px;color: white;width: 50%;"> دانلود زیر محتوا<i style="margin-left: 5px" class="fa fa-download" aria-hidden="true"></i> </button></a>
                                 @endif
                             </div>
                             <div class="col-6">
@@ -321,7 +321,7 @@
                         <div class="row">
 
                             <div class="col-4 offset-4 rememberMe">
-                                <p> مرا به خاطر نگه دار <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}></p>
+                                {{--<p> مرا به خاطر نگه دار <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}></p>--}}
                             </div>
 
                             <div style="margin-top: 10px;margin-bottom: 10px" class="col-10 offset-2" id="grecaptcha-popup-login"></div>

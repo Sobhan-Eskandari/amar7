@@ -115,7 +115,7 @@
                                     <button data-toggle="modal" data-target="#exampleModalLong">ثبت نام</button>
                                 @endif
                                 @else
-                                    <button data-toggle="modal" data-target="#exampleModalLong">رایگان</button>
+                                    {{--<button data-toggle="modal" data-target="#exampleModalLong">رایگان</button>--}}
                                 @endif
                             </div>
                             <div class="col-6">
@@ -321,7 +321,7 @@
                         <div class="row">
 
                             <div class="col-4 offset-4 rememberMe">
-                                <p> مرا به خاطر نگه دار <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}></p>
+                                {{--<p> مرا به خاطر نگه دار <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}></p>--}}
                             </div>
 
                             <div style="margin-top: 10px;margin-bottom: 10px" class="col-10 offset-2" id="grecaptcha-popup-login"></div>

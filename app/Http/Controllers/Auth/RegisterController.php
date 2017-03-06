@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 use DB;
+use Illuminate\Support\Facades\Session;
 use Mail;
 use App\User;
 use GuzzleHttp\Client;
@@ -57,6 +58,17 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:users,email',
             'password'=>'required|min:8',
             'g-recaptcha-response' => 'required',
+        ],[
+            'first_name.required' => 'وارد کردن نام اجباری است',
+            'last_name.required' => 'وارد کردن نام خانوادگی اجباری است',
+            'email.required' => 'وارد کردن ایمیل اجباری است',
+            'password.required' => 'وارد کردن پسورد اجباری است',
+            'g-recaptcha-response.required' => 'زدن تیک من ربات نیستم اجباری است',
+            'password.min' => 'حداقل طول پسورد باید 8 کاراکتر باشد',
+            'first_name.max' => 'نام طولانی تر از حد مجاز است',
+            'last_name.max' => 'نام خانوادگی طولانی تر از حد مجاز است',
+            'email.email' => 'ایمیل وارد شده معتبر نیست',
+            'email.unique' => 'ایمیل وارد شده قبلا در سیستم ثبت شده است',
         ]);
     }
 
@@ -68,6 +80,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Session::flash('email', 'لطفا ایمیل خود را برای تایید عضویت بررسی نمایید');
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],

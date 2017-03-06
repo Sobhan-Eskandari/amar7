@@ -88,22 +88,26 @@ class LessonController extends Controller
             $user = Auth::user();
             $lessons = $user->lessons;
             $result = [];
-            foreach ($lessons as $Lesson) {
-                if ($Lesson->pivot->bought == 0) {
-                    $result[] = $lesson;
+            foreach ($lessons as $course) {
+                if ($course->pivot->bought == 0) {
+                    $result[] = $course;
                 }
             }
             $count = count($result);
 
             $hasUser = 1;
+//            dd($lesson);
             foreach ($user->lessons as $userLesson) {
-                if ($userLesson->lesson_name == $lesson->lesson_name) {
+//                dd($userLesson->pivot->lesson_id);
+                if ($userLesson->pivot->lesson_id == $lesson->id) {
                     $hasUser = 0;
                     $lesson = $userLesson;
                     break;
                 }
             }
         }
+//        dd($hasUser);
+//        dd($lesson);
         $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $lessons = Lesson::orderByRaw('RAND()')->take(4)->get();
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
