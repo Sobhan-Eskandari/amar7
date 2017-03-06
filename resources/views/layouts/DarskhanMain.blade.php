@@ -143,14 +143,14 @@
             {{--<div class="alert alert-danger" style="width:350px;margin-left: 72%; margin-right: 64px; margin-top: 1%">--}}
             <p>
             @if(count($errors) > 0)
-                <ul>
+                <ul style="text-align: right;list-style: none">
                     @foreach($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
             @endif
             </p>
-            <p>
+            <p style="text-align: right;direction: rtl">
             @if(Session::has('email'))
                 {{ session('email') }}
             @endif
