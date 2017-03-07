@@ -59,6 +59,8 @@ class WikiController extends Controller
             $input['file'] = $name;
         }
 
+//        dd($input);
+
         $wiki = Wiki::create($input);
         $wiki->wiki_categories()->attach($request->wiki_categories);
 

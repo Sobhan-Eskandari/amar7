@@ -8,6 +8,7 @@ use App\Http\Requests\SendEmailRequest;
 use App\Mail\darskhan;
 use App\Message;
 use App\Setting;
+use App\Share;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -53,10 +54,11 @@ class MessageController extends Controller
             }
             $count = count($result);
         }
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
-        return view('Main.ContactUs', compact('info', 'course_categories','count'));
+        return view('Main.ContactUs', compact('info', 'course_categories','count', 'shares'));
     }
 
     /**
