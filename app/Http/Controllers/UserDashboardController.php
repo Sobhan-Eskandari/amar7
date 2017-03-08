@@ -112,7 +112,7 @@ class UserDashboardController extends Controller
     {
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
-        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         $user = Auth::user();
         $lessons = $user->lessons;
         $result= [];

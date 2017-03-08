@@ -24,7 +24,7 @@ html{
 scroll bar
 ------****/
 .height_vh{
-    height: 170vh;
+    height: 170vh !important;
 }
 .scrollbar{
     overflow-y: scroll;
@@ -80,8 +80,9 @@ textarea{
     color: white;
     border: transparent;
     border-radius: 0px;
-    padding: 10px 30px;
-    margin-top: 20px;
+    width: 200px;
+    padding: 10px 20px;
+    margin-top: 30px !important;
     font-size: 20px;
 }
 #uploadImageBtn{

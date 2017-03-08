@@ -320,7 +320,7 @@
 
                         <div class="row">
 
-                            <div class="col-4 offset-4 rememberMe">
+                            <div class="col-8 offset-2 rememberMe">
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">رمز عبور خود را فراموش کرده اید؟</a>
                                 {{--<p> مرا به خاطر نگه دار <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}></p>--}}
                             </div>
@@ -347,11 +347,7 @@
                                 <input type="text" placeholder="&#xF2be;  نام" style="font-family:BYekan,FontAwesome" name="first_name">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-11 offset-1" style="margin-left: 12%;">
-                                <input id="mail" type="password" placeholder="&#xF023;  گذرواژه" style="font-family:BYekan,FontAwesome" name="password">
-                            </div>
-                        </div>
+
                         <div class="row">
                             <div class="col-11 offset-1" style="margin-left: 12%;">
                                 <input id="mail" type="text" placeholder="&#xF0e0;  ایمیل" style="font-family:BYekan,FontAwesome" name="email">
@@ -359,7 +355,13 @@
                         </div>
 
                         <div class="row">
-                            <div style="margin-top: 10px;margin-bottom: 10px" class="col-10 offset-2" id="grecaptcha-popup-signup"></div>
+                            <div class="col-11 offset-1" style="margin-left: 12%;">
+                                <input id="mail" type="password" placeholder="&#xF023;  گذرواژه" style="font-family:BYekan,FontAwesome" name="password">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div style="margin-right:40px !important;margin-top: 10px;margin-bottom: 10px" class="col-10 offset-2" id="grecaptcha-popup-signup"></div>
                         </div>
 
                         <div class="row" id="signupBtn">

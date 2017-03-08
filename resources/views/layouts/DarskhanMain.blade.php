@@ -74,7 +74,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="../images/Horoofnegar-blak.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="../../images/Horoofnegar-blak.png" width="30" height="30" class="d-inline-block align-top" alt="">
         </a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
@@ -155,6 +155,11 @@
                 {{ session('email') }}
             @endif
             </p>
+            <p style="text-align: right;direction: rtl">
+                @if(Session::has('status'))
+                    {{ session('status') }}
+                @endif
+            </p>
             {{--</div>--}}
         </div>
 
@@ -190,7 +195,7 @@
 
                             <div class="row">
 
-                                <div class="col-4 offset-4 rememberMe">
+                                <div class="col-8 offset-2 rememberMe">
                                     <a class="btn btn-link" href="{{ url('/password/reset') }}">رمز عبور خود را فراموش کرده اید؟</a>
                                     {{--<p> مرا به خاطر نگه دار <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}></p>--}}
                                 </div>
@@ -217,14 +222,16 @@
                                 <input type="text" placeholder="&#xF2be;  نام" style="font-family:BYekan,FontAwesome" name="first_name">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-11 offset-1" style="margin-left: 12%;">
-                                <input id="mail" type="password" placeholder="&#xF023;  گذرواژه" style="font-family:BYekan,FontAwesome" name="password">
-                            </div>
-                        </div>
+
                         <div class="row">
                             <div class="col-11 offset-1" style="margin-left: 12%;">
                                 <input id="mail" type="text" placeholder="&#xF0e0;  ایمیل" style="font-family:BYekan,FontAwesome" name="email">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-11 offset-1" style="margin-left: 12%;">
+                                <input id="mail" type="password" placeholder="&#xF023;  گذرواژه" style="font-family:BYekan,FontAwesome" name="password">
                             </div>
                         </div>
 
@@ -254,17 +261,17 @@
             <div class="row footerPart">
                 <div class="col-lg-3 col-md-3 col-sm-3 footerLogoPart ">
                     <script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
-                    <img src="../images/Horoofnegar-blak.png">
+                    <img src="../../images/Horoofnegar-blak.png">
                     <p style="margin-bottom: -120px;">حروف نگار</p>
 
                     <div  class="socialNetworks">
                         <p>شبکه های اجتماعی</p>
                         <ul style="margin-bottom: 100px">
-                            <li><a href="{{  isset($info->aparat) ? $info->aparat : 'http://www.aparat.com/' }}"><img src="../images/aparat.png"></a></li>
-                            <li><a href="{{  isset($info->telegram) ? $info->telegram : 'https://telegram.org/' }}"><img src="../images/telegram.png"></a></li>
-                            <li><a href="{{  isset($info->twitter) ? $info->twitter : 'https://twitter.com/?lang=en' }}"><img src="../images/twitter.png"></a></li>
-                            <li><a href="{{  isset($info->facebook) ? $info->facebook : 'http://www.facebook.com/' }}"><img src="../images/facebook.png"></a></li>
-                            <li><a href="{{  isset($info->linkedin) ? $info->linkedin : 'linkedin.com' }}"><img src="../images/linkdin.png"></a></li>
+                            <li><a href="{{  isset($info->aparat) ? $info->aparat : 'http://www.aparat.com/' }}"><img src="../../images/aparat.png"></a></li>
+                            <li><a href="{{  isset($info->telegram) ? $info->telegram : 'https://telegram.org/' }}"><img src="../../images/telegram.png"></a></li>
+                            <li><a href="{{  isset($info->twitter) ? $info->twitter : 'https://twitter.com/?lang=en' }}"><img src="../../images/twitter.png"></a></li>
+                            <li><a href="{{  isset($info->facebook) ? $info->facebook : 'http://www.facebook.com/' }}"><img src="../../images/facebook.png"></a></li>
+                            <li><a href="{{  isset($info->linkedin) ? $info->linkedin : 'linkedin.com' }}"><img src="../../images/linkdin.png"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -348,7 +355,7 @@
             }
         }
     </script>
-    @if(count($errors) > 0 || Session::has('email'))
+    @if(count($errors) > 0 || Session::has('email') || Session::has('status'))
         <script>
             $("#myBtn").trigger('click');
         </script>

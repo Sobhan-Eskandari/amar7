@@ -1,47 +1,87 @@
-@extends('layouts.app')
+@extends('layouts.DarskhanMain')
 
-<!-- Main Content -->
+@section('title')
+    موسسه دانش آماری | بازیابی رمز عبور
+@endsection
+
+@section('top-includes')
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/contactusStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/loginSignupStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/forgetpass.css">
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="../css/allcoursesStyle.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/homeStyle.css">
+    <link rel="stylesheet" href="../css/user_dashboard_sidebar.css">
+    <link rel="stylesheet" type="text/css" href="../css/loginSignupStyle.css">
+    <script src="../js/reponsive.js"></script>
+
+@endsection
+
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-lg-6 offset-3 password_box">
+                        <div class="row fa-pull-right">
+                            <div class="col">
+                                <p>تغییر رمز</p>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
-                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 offset-3 second_password_box">
+                        <div class="row">
+                            {{--@if (session('status'))--}}
+                                {{--<div class="col-10 offset-1 error">--}}
+                                    {{--<p>{{ session('status') }}</p>--}}
+                                {{--</div>--}}
+                            {{--@endif--}}
                         </div>
-                    </form>
+
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
+                            {{ csrf_field() }}
+
+                            <div class="form-group row rowOfInputs">
+                                <div class="col-sm-9">
+                                    <input name="email" type="email" class="form-control" id="inputEmail3" placeholder=" ایمیل خود را وارد کنید" value="{{ old('email') }}">
+                                </div>
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">:ایمیل</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" id="changePassBtn">ارسال لینک تغییر رمز</button>
+
+                        </form>
+                    </div>
                 </div>
             </div>
+
         </div>
+
     </div>
-</div>
+    <br><br><br>
+    <!-----------------------End of top header of site------------------------->
+@endsection
+
+@section('footer-category')
+    @foreach($course_categories as $category)
+    <li><a href="{{ route('CourseCategory', $category->id) }}">{{ $category->name }}</a></li>
+    @endforeach
+@endsection
+
+@section('footer-shares')
+    @foreach($shares as $share)
+    <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+    @endforeach
+@endsection
+
+@section('down-includes')
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 @endsection

@@ -1,76 +1,97 @@
-@extends('layouts.app')
+@extends('layouts.DarskhanMain')
+
+@section('title')
+    موسسه دانش آماری | بازیابی رمز عبور
+@endsection
+
+@section('top-includes')
+    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/contactusStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../css/loginSignupStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../css/forgetpass.css">
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="../../css/allcoursesStyle.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/homeStyle.css">
+    <link rel="stylesheet" href="../../css/user_dashboard_sidebar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/loginSignupStyle.css">
+    <script src="../../js/reponsive.js"></script>
+
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
-                        {{ csrf_field() }}
-
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-lg-6 offset-3 password_box">
+                        <div class="row fa-pull-right">
+                            <div class="col">
+                                <p>تغییر رمز</p>
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 offset-3 second_password_box">
+                        <div class="row">
+                            {{--<div class="col-10 offset-1 error">--}}
+                            {{--<p> تغییر رمز را درست کنید تغییر رمز را درست کنید تغییر رمز را درست کنید</p>--}}
+                            {{--</div>--}}
                         </div>
 
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
+                            {{ csrf_field() }}
 
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                            <input type="hidden" name="token" value="{{ $token }}">
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Reset Password
-                                </button>
+                            <div class="form-group row rowOfInputs">
+                                <div class="col-sm-9">
+                                    <input name="email" value="{{ $email or old('email') }}" required autofocus type="email" class="form-control" id="inputEmail3" placeholder="ایمیل خود را وارد کنید">
+                                </div>
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">ایمیل</label>
                             </div>
-                        </div>
-                    </form>
+                            <div class="form-group row rowOfInputs">
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="inputPass" placeholder="رمز عبور جدید را وارد کنید" name="password" required>
+                                </div>
+                                <label for="inputPass" class="col-sm-3 col-form-label">رمز عبور</label>
+                            </div>
+                            <div class="form-group row rowOfInputs">
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="confirmInputPass" placeholder="رمز عبور جدید را تکرار کنید"  name="password_confirmation" required>
+                                </div>
+                                <label for="confirmInputPass" class="col-sm-3 col-form-label">تایید رمز عبور</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="changePassBtn">تغییر رمز</button>
+                        </form>
+                    </div>
                 </div>
             </div>
+
         </div>
+
     </div>
-</div>
+    <!-----------------------End of top header of site------------------------->
+    <br><br><br>
+@endsection
+
+@section('footer-category')
+    @foreach($course_categories as $category)
+    <li><a href="{{ route('CourseCategory', $category->id) }}">{{ $category->name }}</a></li>
+    @endforeach
+@endsection
+
+@section('footer-shares')
+    @foreach($shares as $share)
+    <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+    @endforeach
+@endsection
+
+@section('down-includes')
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 @endsection

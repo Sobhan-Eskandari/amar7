@@ -1,0 +1,34 @@
+@font-face {
+  font-family: BYekan;
+  src: url('../fonts/Yekan.ttf');
+}
+*{
+  font-family:'BYekan',Sans-Serif;
+}
+.password_box{
+  border: 1px solid lightgrey;
+  padding-top: 1%;
+}
+.second_password_box{
+  border: 1px solid lightgrey;
+  border-top: transparent;
+  text-align: right;
+}
+.error{
+  background-color: #3d9970;
+  color: white;
+  padding-top: 2%;
+  border-radius: 30px;
+  margin : 10px auto;
+}
+input{
+  font-family:'BYekan',Sans-Serif;
+  text-align: right;
+}
+.rowOfInputs{
+  margin-top: 20px;
+}
+#changePassBtn{
+  font-family:'BYekan',Sans-Serif;
+  margin: 10px;
+}

@@ -140,12 +140,14 @@
     </div>
 
     <div class="container-fluid">
-        <div class="row" id="sepratorPart">
+        <div class="row" id="sepratorPart" style="background: url('siteInfoPhotos/{{ $info->middle_cover_img }}') no-repeat;background-size: 100% 100%;">
             <div class="col-6">
-                <img src="siteInfoPhotos/{{ $info->middle_cover_img }}" alt="کاور میانی">
+                {{--<img src= alt="کاور میانی">--}}
             </div>
             <div hidden class="col-6" id="tohideMiddle">{{ $info->middle_cover_txt }}</div>
-            <div class="col-6" id="toShowMiddle" style="color: white"></div>
+            <div class="col-6" id="toShowMiddle" style="    margin-top: 5%;
+    padding-right: 10%;
+    padding-left: 10%;color: white"></div>
             <script>
                 $( document ).ready(function() {
                     $('#toShowMiddle').html($('#tohideMiddle').text());

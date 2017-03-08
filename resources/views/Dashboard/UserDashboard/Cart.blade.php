@@ -72,7 +72,7 @@
                             <h4>{{$lesson->instructor}}</h4>
                             <ul>
                                 <li><span class="line-brake">|</span></li>
-                                <li>{{$lesson->lesson_name}}<span class="line-brake">|</span> {{$lesson->sessions ? count($lesson->sessions).' زیر محتوای آماری' : 'زیر محتوای آماری ندارد'}}</li>
+                                <li>{{str_limit($lesson->lesson_name, 25)}}<span class="line-brake">|</span> {{$lesson->sessions ? count($lesson->sessions).' زیر محتوای آماری' : 'زیر محتوای آماری ندارد'}}</li>
                                 <li></li>
                             </ul>
                         </div>
@@ -96,6 +96,12 @@
 
     </div>
 </div>
+@endsection
+
+@section('footer-shares')
+    @foreach($shares as $share)
+        <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+    @endforeach
 @endsection
 
 @section('footer-category')
