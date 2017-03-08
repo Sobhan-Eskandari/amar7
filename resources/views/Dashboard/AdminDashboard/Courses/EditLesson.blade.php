@@ -69,6 +69,10 @@
                         <h4>دسته بندی:</h4>
                         {!! Form::select('categories[]',$categories,$lesson->categories->pluck('id')->toArray(),['class'=>'selectpicker','multiple']) !!}
                     </div>
+                    <div class="col-xs-12 col-lg-3 col-md-3">
+                        <h4>تگ:</h4>
+                        {!! Form::select('tags[]',$tags,$lesson->tags->pluck('id')->toArray(),['class'=>'selectpicker','multiple']) !!}
+                    </div>
                     <br>
                     {!! Form::button('ویرایش محتوای آماری',['id'=>'creatArticle','type'=>'submit']) !!}
                 </div>

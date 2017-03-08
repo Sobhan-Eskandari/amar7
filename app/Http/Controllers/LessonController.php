@@ -8,6 +8,7 @@ use App\Http\Requests\LessonsRequest;
 use App\Lesson;
 use App\Photo;
 use App\Share;
+use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -40,8 +41,9 @@ class LessonController extends Controller
      */
     public function create()
     {
-        $categories = CoursesCategories::pluck('name','id')->all();;
-        return view('Dashboard.AdminDashboard.Courses.CreateLesson',compact('categories'));
+        $categories = CoursesCategories::pluck('name','id')->all();
+        $tags = Tag::pluck('name','id')->all();
+        return view('Dashboard.AdminDashboard.Courses.CreateLesson',compact('categories','tags'));
     }
 
     /**
@@ -63,6 +65,7 @@ class LessonController extends Controller
         $input['media'] = implode(",",$request->media);
         $lesson = Lesson::create($input);
         $lesson->categories()->attach($request->categories);
+        $lesson->tags()->attach($request->tags);
         if($file = $request->file('lesson_img')){
             $name = time().$file->getClientOriginalName();
             $file->move('lessonPhoto',$name);
@@ -125,8 +128,9 @@ class LessonController extends Controller
     {
         $lesson = Lesson::findOrFail($id);
         $categories = CoursesCategories::pluck('name','id')->all();
+        $tags = Tag::pluck('name','id')->all();
         $media = explode(',',$lesson->media);
-        return view('Dashboard.AdminDashboard.Courses.EditLesson',compact('lesson','categories','media'));
+        return view('Dashboard.AdminDashboard.Courses.EditLesson',compact('lesson','categories','media','tags'));
     }
 
     /**
@@ -146,6 +150,7 @@ class LessonController extends Controller
         $input['media'] = implode(",",$request->media);
         $lesson->update($input);
         $lesson->categories()->sync($request->categories);
+        $lesson->tags()->sync($request->tags);
         if($file = $request->file('lesson_img')){
             if(count($photo = $lesson->photo)!=0){
                 File::delete('lessonPhoto/'.$photo[0]->path);
@@ -171,6 +176,7 @@ class LessonController extends Controller
     {
         $lesson = Lesson::findorFail($id);
         $lesson->categories()->detach();
+        $lesson->tags()->detach();
         if($sessions = $lesson->sessions){
             foreach($sessions as $session){
                 if (!empty($file = $session->session_file)) {

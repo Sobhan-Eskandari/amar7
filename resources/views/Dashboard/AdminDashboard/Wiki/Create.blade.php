@@ -70,6 +70,8 @@
                         <div class="col-xs-12 col-lg-3 col-lg-offset-3">
                             <h4>دسته بندی:</h4>
                             {!! Form::select('wiki_categories[]', $wiki_categories, null, ['class'=>'selectpicker', 'multiple data-done-button'=>'true', 'data-live-search'=>'true']) !!}
+                            <h4>تگ:</h4>
+                            {!! Form::select('tags[]',$tags, null, ['class'=>'selectpicker', 'multiple data-done-button'=>'true', 'data-live-search'=>'true']) !!}
                         </div>
                     </div>
                 {!! Form::close() !!}

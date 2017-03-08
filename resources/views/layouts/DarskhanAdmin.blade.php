@@ -70,6 +70,8 @@
 
             <a href="{{ route('reports.index') }}"><h5 class="admin_side_title left_space @yield('reports')"><i class="fa fa-gear set_fa pull-right xs_pr" aria-hidden="true"></i><span class="hidden-xs">گزارشات</span></h5></a>
 
+            <a href="{{ route('tags.index') }}"><h5 class="admin_side_title left_space @yield('tags')"><i class="fa fa-gear set_fa pull-right xs_pr" aria-hidden="true"></i><span class="hidden-xs">تگ ها</span></h5></a>
+
             <a href="{{ route('settings.index') }}"><h5 class="admin_side_title left_space @yield('settings')"><i class="fa fa-gear set_fa pull-right xs_pr" aria-hidden="true"></i><span class="hidden-xs">تنظیمات</span></h5></a>
 
             <a href="{{ route('adminInfo') }}"><h5 class="admin_side_title left_space @yield('adminInfo')"><i class="fa fa-gear set_fa pull-right xs_pr" aria-hidden="true"></i><span class="hidden-xs">ویرایش اطلاعات</span></h5></a>

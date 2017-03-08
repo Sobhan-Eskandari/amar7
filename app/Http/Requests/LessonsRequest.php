@@ -31,7 +31,8 @@ class LessonsRequest extends FormRequest
             'lesson_img'=>'image|required',
             'cost'=>'numeric',
             'media'=>'required',
-            'categories'=>'required'
+            'categories'=>'required',
+            'tags'=>'required',
         ];
     }
     public function messages()
@@ -45,7 +46,8 @@ class LessonsRequest extends FormRequest
             'media.required' => 'وارد کردن رسانه اجباری است',
             'categories.required' => 'وارد کردن دسته بندی اجباری است',
             'lesson_img.image'=>'فایل باید عکس باشد',
-            'lesson_img.required'=>'وارد کردن عکس اجباری است'
+            'lesson_img.required'=>'وارد کردن عکس اجباری است',
+            'tags.required' => 'وارد کردن تگ اجباری است',
 
         ];
     }

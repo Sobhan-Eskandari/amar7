@@ -20,6 +20,8 @@ Route::group(['middleware' => 'NotAuth'], function () {
      */
     Route::group(['middleware'=>'AdminRole'],function (){
 
+        Route::resource('/tags','Tagscontroller');
+        Route::get('/tags-search', 'Tagscontroller@search')->name('tags.Search');
         /*
          *  dashboard reports route
          */

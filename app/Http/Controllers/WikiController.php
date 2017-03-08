@@ -6,6 +6,7 @@ use App\Http\Requests\WikiRequest;
 use App\Photo;
 use App\Setting;
 use App\Share;
+use App\Tag;
 use App\Wiki;
 use App\WikiCategories;
 use Illuminate\Database\Eloquent\Collection;
@@ -39,7 +40,8 @@ class WikiController extends Controller
     public function create()
     {
         $wiki_categories = WikiCategories::pluck('name', 'id')->all();
-        return view('Dashboard.AdminDashboard.Wiki.Create', compact('wiki_categories'));
+        $tags = Tag::pluck('name', 'id')->all();
+        return view('Dashboard.AdminDashboard.Wiki.Create', compact('wiki_categories','tags'));
     }
 
     /**
@@ -63,7 +65,7 @@ class WikiController extends Controller
 
         $wiki = Wiki::create($input);
         $wiki->wiki_categories()->attach($request->wiki_categories);
-
+        $wiki->tags()->attach($request->tags);
         if($file = $request->file('img')){
             $name = time() . $file->getClientOriginalName();
             $photo = Photo::create(['path' => $name]);
@@ -119,7 +121,8 @@ class WikiController extends Controller
     {
         $wiki = Wiki::findOrFail($id);
         $wiki_categories = WikiCategories::pluck('name', 'id')->all();
-        return view('Dashboard.AdminDashboard.Wiki.Edit', compact('wiki', 'wiki_categories'));
+        $tags =Tag::pluck('name', 'id')->all();
+        return view('Dashboard.AdminDashboard.Wiki.Edit', compact('wiki', 'wiki_categories','tags'));
     }
 
     /**
@@ -134,6 +137,7 @@ class WikiController extends Controller
         $input = $request->all();
         $wiki = Wiki::findOrFail($id);
         $wiki->wiki_categories()->sync($request->wiki_categories);
+        $wiki->tags()->sync($request->tags);
 
         if($file = $request->file('file')){
             if($wiki->file){
@@ -174,6 +178,7 @@ class WikiController extends Controller
     {
         $wiki = Wiki::findOrFail($id);
         $wiki->wiki_categories()->detach();
+        $wiki->tags()->detach();
         $wiki->delete();
         Session::flash('deleted_wiki', 'مقاله پاک شد');
         return redirect('/wiki');

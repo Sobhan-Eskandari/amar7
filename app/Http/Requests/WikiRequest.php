@@ -27,7 +27,8 @@ class WikiRequest extends FormRequest
             'title' => 'required',
             'body' => 'required',
             'img' => 'nullable|image',
-            'wiki_categories' => 'required'
+            'wiki_categories' => 'required',
+            'tags' => 'required',
         ];
     }
 
@@ -38,6 +39,7 @@ class WikiRequest extends FormRequest
             'body.required' => 'وارد کردن متن مقاله اجباری است',
             'img.image' => 'فایل مورد نظر تصویر نیست',
             'wiki_categories.required' => 'انتخاب دسته بندی اجباری است',
+            'tags.required' => 'انتخاب تگ اجباری است',
         ];
     }
 }

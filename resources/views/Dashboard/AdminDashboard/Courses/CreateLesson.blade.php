@@ -76,6 +76,11 @@
                         {!! Form::select('categories[]',$categories,'0',['class'=>'selectpicker','multiple']) !!}
 
                     </div>
+                    <div class="col-xs-12 col-lg-3 col-md-3">
+                        <h4>تگ:</h4>
+                        {!! Form::select('tags[]',$tags,'0',['class'=>'selectpicker','multiple']) !!}
+
+                    </div>
                     <br>
                     {!! Form::button('ایجاد محتوای آماری',['id'=>'creatArticle','type'=>'submit']) !!}
                 </div>

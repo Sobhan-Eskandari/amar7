@@ -28,4 +28,7 @@ class Wiki extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+    public function tags(){
+        return $this->morphToMany('App\Tag','taggable');
+    }
 }
