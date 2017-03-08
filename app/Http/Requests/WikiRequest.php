@@ -29,6 +29,8 @@ class WikiRequest extends FormRequest
             'img' => 'nullable|image',
             'wiki_categories' => 'required',
             'tags' => 'required',
+            'master_name' => 'required',
+            'master_photo' => 'nullable|image',
         ];
     }
 
@@ -40,6 +42,8 @@ class WikiRequest extends FormRequest
             'img.image' => 'فایل مورد نظر تصویر نیست',
             'wiki_categories.required' => 'انتخاب دسته بندی اجباری است',
             'tags.required' => 'انتخاب تگ اجباری است',
+            'master_photo.image' => 'فایل استاد مورد نظر تصویر نیست',
+            'master_name.required' => 'وارد کردن نام استاد اجباری است',
         ];
     }
 }

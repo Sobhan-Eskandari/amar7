@@ -54,8 +54,9 @@
             <div class="container">
 
                 <div class="row hidden-md-down" id="headline">
-                    <div class="col-xl-6 col-lg-6 col-md-12 offset-xl-1 offset-lg-1 pull-right">
-                        <h5>مبلغ نهایی</h5>
+                    <div style="display: flex;margin-left: 20px;" class="col-xl-6 col-lg-6 col-md-12 offset-xl-1 offset-lg-1 pull-right">
+                        <h5>حذف</h5>
+                        <h5 style="padding-left: 40px;">مبلغ نهایی</h5>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-12 offset-lg-3">
                         <h5> متحوای آماری</h5>

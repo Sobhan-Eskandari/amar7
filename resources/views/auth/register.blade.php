@@ -74,8 +74,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
-                                <br><br>
-                                {!! Recaptcha::render() !!}
                             </div>
                         </div>
                     </form>

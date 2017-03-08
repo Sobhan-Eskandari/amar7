@@ -130,7 +130,7 @@ class UserDashboardController extends Controller
         $lesson = Lesson::findorFail($id);
         $user = Auth::user();
         $lesson->users()->attach($user);
-        return Redirect::route('lessons.show',$lesson->id);
+        return redirect('/cart');
     }
 
     public function removeFromCart($id){

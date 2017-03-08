@@ -83,15 +83,11 @@ $style = [
                             <tr>
                                 <td style="{{ $fontFamily }} {{ $style['email-body_cell'] }}">
                                     <!-- Greeting -->
-                                    <h1 style="{{ $style['header-1'] }}">
-                                        Hello {{ $user->name }},
-                                    </h1>
+                                    <h1 style="{{ $style['header-1'] }}">سلام {{ $user->name }},</h1>
 
                                     <!-- Intro -->
 
-                                    <p style="{{ $style['paragraph'] }}">
-                                        Click on the below button to verify your email address
-                                    </p>
+                                    <p style="{{ $style['paragraph'] }}">روی دکمه زیر کلیک کرده تا ایمیل خود را تایید کنید و پس از آن عملیات ورود را انجام دهید</p>
 
 
                                     <!-- Action Button -->
@@ -107,7 +103,7 @@ $style = [
                                                    style="{{ $fontFamily }} {{ $style['button'] }} {{ $style[$actionColor] }}"
                                                    class="button"
                                                    target="_blank">
-                                                    Verify
+                                                    تایید کردن
                                                 </a>
                                             </td>
                                         </tr>
@@ -116,14 +112,12 @@ $style = [
 
                                     <!-- Outro -->
 
-                                    <p style="{{ $style['paragraph'] }}">
-                                        Thank you
-                                    </p>
+                                    <p style="{{ $style['paragraph'] }}">از شما سپاس گذاریم</p>
 
 
                                     <!-- Salutation -->
                                     <p style="{{ $style['paragraph'] }}">
-                                        Regards,<br>{{ config('app.name') }}
+                                        ,با آرزوی بهترین ها<br>{{ config('app.name') }}
                                     </p>
                                 </td>
                             </tr>
@@ -140,7 +134,7 @@ $style = [
                                     <p style="{{ $style['paragraph-sub'] }}">
                                         &copy; {{ date('Y') }}
                                         <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ config('app.name') }}</a>.
-                                        All rights reserved.
+                                        تمام حقوق محفوظ است
                                     </p>
                                 </td>
                             </tr>

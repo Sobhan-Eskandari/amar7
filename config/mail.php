@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'support@amar7.ir',
-        'name' => 'آمار هفت',
+        'address' => 'info@amar7.ir',
+        'name' => 'موسسه دانش آماری',
     ],
 
     /*
