@@ -73,12 +73,12 @@
                     </div>
                     <div class="col-xs-12 col-lg-3 col-md-3">
                         <h4>دسته بندی:</h4>
-                        {!! Form::select('categories[]',$categories,'0',['class'=>'selectpicker','multiple']) !!}
+                        {!! Form::select('categories[]',$categories,'0',['class'=>'selectpicker','multiple','data-live-search'=>'true']) !!}
 
                     </div>
                     <div class="col-xs-12 col-lg-3 col-md-3">
                         <h4>تگ:</h4>
-                        {!! Form::select('tags[]',$tags,'0',['class'=>'selectpicker','multiple']) !!}
+                        {!! Form::select('tags[]',$tags,'0',['class'=>'selectpicker','multiple','data-live-search'=>'true']) !!}
 
                     </div>
                     <br>
