@@ -56,6 +56,17 @@
                         <input id="articleUploadFilePlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
                     </div>
 
+                    <h4>نام استاد:</h4>
+                    {!! Form::text('master_name', null, ['placeholder' => 'نام استاد را وارد کنید']) !!}
+
+                    <div class="inputs">
+                        <div class="fileUpload uploadImageBtn">
+                            <span>آپلود عکس استاد +</span>
+                            <input name="master_photo" id="uploadMasterPhoto" type="file" class="upload" />
+                        </div>
+                        <input id="uploadMasterPhotoPlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
+                    </div>
+
                     <h4>متن مقاله:</h4>
                     {!! Form::textarea('body') !!}
                     <script>
@@ -93,6 +104,10 @@
 
         document.getElementById("uploadArticleFile").onchange = function () {
             document.getElementById("articleUploadFilePlace").value = this.value;
+        };
+
+        document.getElementById("uploadMasterPhoto").onchange = function () {
+            document.getElementById("uploadMasterPhotoPlace").value = this.value;
         };
     </script>
 

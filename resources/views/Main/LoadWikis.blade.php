@@ -16,7 +16,8 @@
                                 <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $wiki->seen }}&nbsp;بازدید </p>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                <p><img class="instructor_img" src="UsersPhotos/{{ count($wiki->user->photos) != 0 ? $wiki->user->photos[0]['path'] : 'icone.png' }}"> {{ $wiki->user['full_name'] }}</p>
+                                <p><img class="instructor_img" src="../UsersPhotos/{{ count($wiki->master_photo) != 0 ? $wiki->master_photo : 'icone.png' }}"> {{ $wiki->master_name }}</p>
+                                {{--<p><img class="instructor_img" src="UsersPhotos/{{ count($wiki->user->photos) != 0 ? $wiki->user->photos[0]['path'] : 'icone.png' }}"> {{ $wiki->user['full_name'] }}</p>--}}
                             </div>
                         </div>
                         <!--Card body elements like title and text and cost and kind-->

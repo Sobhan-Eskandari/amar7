@@ -59,15 +59,19 @@ class WikiController extends Controller
             $input['file'] = $name;
         }
 
-//        dd($input);
+        if($master_photo = $request->file('master_photo')){
+            $name = time() . $master_photo->getClientOriginalName();
+            $master_photo->move('UsersPhotos', $name);
+            $input['master_photo'] = $name;
+        }
 
         $wiki = Wiki::create($input);
         $wiki->wiki_categories()->attach($request->wiki_categories);
 
-        if($file = $request->file('img')){
-            $name = time() . $file->getClientOriginalName();
+        if($wiki_photo = $request->file('img')){
+            $name = time() . $wiki_photo->getClientOriginalName();
             $photo = Photo::create(['path' => $name]);
-            $file->move('WikiPhotos', $name);
+            $wiki_photo->move('WikiPhotos', $name);
             $wiki->photos()->save($photo);
         }
 
@@ -100,10 +104,6 @@ class WikiController extends Controller
         $wiki = Wiki::findOrFail($id);
         $wiki->seen++;
         $wiki->save();
-//        dd($wiki->wiki_categories);
-//        foreach ($wiki->wiki_categories as $wiki){
-//            dd($wiki['name']);
-//        }
         $wikis = Wiki::orderByRaw('RAND()')->take(4)->get();
         $wiki_categories = WikiCategories::orderByRaw('RAND()')->take(9)->get();
         return view('Main.ShowWiki', compact('wiki', 'wikis', 'info', 'wiki_categories','count', 'shares'));
@@ -144,19 +144,28 @@ class WikiController extends Controller
             $input['file'] = $name;
         }
 
+        if($master_photo = $request->file('master_photo')){
+            if($wiki->master_photo){
+                File::delete('UsersPhotos/' . $wiki->file);
+            }
+            $name = time() . $master_photo->getClientOriginalName();
+            $master_photo->move('UsersPhotos', $name);
+            $input['master_photo'] = $name;
+        }
+
         $wiki->update($input);
 
         $photos = $wiki->photos;
 
-        if($file = $request->file('img')){
+        if($wiki_photo = $request->file('img')){
             if(count($photos) != 0){
                 File::delete('WikiPhotos/' . $photos[0]->path);
                 Photo::find($photos[0]->id)->delete();
                 $wiki->photos()->detach();
             }
-            $name = time() . $file->getClientOriginalName();
+            $name = time() . $wiki_photo->getClientOriginalName();
             $photo = Photo::create(['path' => $name]);
-            $file->move('WikiPhotos', $name);
+            $wiki_photo->move('WikiPhotos', $name);
             $wiki->photos()->save($photo);
         }
 

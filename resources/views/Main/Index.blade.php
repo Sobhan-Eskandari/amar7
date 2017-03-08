@@ -72,8 +72,8 @@
             <!--motto part of header-->
             <div class="col col-lg-6 col-12">
                 {{--<h2 class="display-6">بهترین خودروی 25 تا 35 میلیون تومانی بازار را شما انتخاب کنید</h2>--}}
-                <p class="work_motto lead"  id="toShowText">{{ isset($info['header_txt']) ? $info['header_txt'] : 'پیش فرض' }}</p>
-                <p class="lead" id="tohideText">{{ isset($info['header_txt']) ? $info['header_txt'] : 'پیش فرض' }}</p>
+                <p class="work_motto lead"  id="toShowText"></p>
+                <p class="lead" id="tohideText" hidden>{{ isset($info['header_txt']) ? $info['header_txt'] : 'پیش فرض' }}</p>
                 <script>
                     $( document ).ready(function() {
                         $('#toShowText').html($('#tohideText').text());
@@ -142,11 +142,16 @@
     <div class="container-fluid">
         <div class="row" id="sepratorPart">
             <div class="col-6">
-                <img src="images/Headphone.png">
+                <img src="siteInfoPhotos/{{ $info->middle_cover_img }}" alt="کاور میانی">
             </div>
-            <div class="col-6">
-                <h4>این دوره پیشنیاز برنامه‌نویسی اندروید برای کسانی است که تجربه برنامه‌نویسی خاصی ندارند؛ بخش اول از مجموعه دوره‌های «آموزش برنامه‌نویسی اندروید از پایه تا پیشرفته»</h4>
-            </div>
+            <div hidden class="col-6" id="tohideMiddle">{{ $info->middle_cover_txt }}</div>
+            <div class="col-6" id="toShowMiddle" style="color: white"></div>
+            <script>
+                $( document ).ready(function() {
+                    $('#toShowMiddle').html($('#tohideMiddle').text());
+                    $('#tohideMiddle').css("display","none")
+                });
+            </script>
         </div>
     </div>
 
@@ -170,7 +175,7 @@
                                     <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $rand->seen }}&nbsp;بازدید </p>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>
+                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->master_photo) != 0 ? $rand->master_photo : 'icone.png' }}"> {{ $rand->master_name }}</p>
                                 </div>
                             </div>
                             <!--Card body elements like title and text and cost and kind-->

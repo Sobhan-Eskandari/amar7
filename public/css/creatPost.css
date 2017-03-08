@@ -23,7 +23,7 @@ html{
 scroll bar
 ------****/
 .height_vh{
-    height: 250vh;
+    height: 200vh !important;
 }
 .scrollbar{
     overflow-y: scroll;

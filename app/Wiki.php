@@ -15,6 +15,8 @@ class Wiki extends Model
         'user_id',
         'seen',
         'file',
+        'master_name',
+        'master_photo',
     ];
 
     public function photos(){

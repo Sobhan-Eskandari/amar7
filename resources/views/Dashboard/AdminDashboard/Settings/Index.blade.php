@@ -89,6 +89,19 @@
                 {!! Form::textarea('rdSlider_txt',null,['placeholder'=>'متن خود را وارد کنید']) !!}
                 <hr>
                 <div class="inputs">
+                    <h4>کاور میانی</h4>
+                    <div class="fileUpload uploadImageBtn">
+                        <span>آپلود عکس +</span>
+                        {!! Form::file('middle_cover_img',['class'=>'upload','id'=>'uploadmiddle']) !!}
+                    </div>
+                    <input id="middlePlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
+                </div>
+                {!! Form::textarea('middle_cover_txt',null,['placeholder'=>'متن خود را وارد کنید']) !!}
+                <script>
+                    CKEDITOR.replace( 'middle_cover_txt' );
+                </script>
+                <hr>
+                <div class="inputs">
                     <h4>تماس با ما</h4>
                     <div class="fileUpload uploadImageBtn">
                         <span>آپلود عکس +</span>
@@ -155,7 +168,6 @@
             </div>
             {!! Form::button('ایجاد تغییرات',['type'=>'submit','id'=>'creatArticle']) !!}
         </div>
-
     </div>
     {!! Form::close() !!}
 @endsection

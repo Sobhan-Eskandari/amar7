@@ -25,6 +25,8 @@ class Setting extends Model
         'linkedin',
         'aparat',
         'aboutUs_txt',
-        'aboutUs_img'
+        'aboutUs_img',
+        'middle_cover_txt',
+        'middle_cover_img',
     ];
 }

@@ -52,7 +52,7 @@ class settingsController extends Controller
             $info = collect(new Setting);
             $info2 = new Setting();
         }
-
+//        dd($info2);
         if($info->isEmpty()){
             if ($img = $request->file('header_img')) {
                 $name = time()+rand() . $img->getClientOriginalName();
@@ -83,6 +83,11 @@ class settingsController extends Controller
                 $name = time()+rand() . $img->getClientOriginalName();
                 $img->move('siteInfoPhotos', $name);
                 $input['aboutUs_img'] = $name;
+            }
+            if ($img = $request->file('middle_cover_img')) {
+                $name = time()+rand() . $img->getClientOriginalName();
+                $img->move('siteInfoPhotos', $name);
+                $input['middle_cover_img'] = $name;
             }
             Setting::create($input);
             Session::flash('info_add','اطلاعات ثبت شد');
@@ -136,6 +141,16 @@ class settingsController extends Controller
                 $img->move('siteInfoPhotos', $name);
                 $input['aboutUs_img'] = $name;
             }
+
+            if ($img = $request->file('middle_cover_img')) {
+                if (!empty($file = $info2->middle_cover_img)) {
+                    File::delete('siteInfoPhotos/'.$file);
+                }
+                $name = time()+rand() . $img->getClientOriginalName();
+                $img->move('siteInfoPhotos', $name);
+                $input['middle_cover_img'] = $name;
+            }
+//            dd($input);
             $info2->update($input);
             Session::flash('info_edit','اطلاعات ویرایش شد');
             return redirect('settings');

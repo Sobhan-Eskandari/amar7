@@ -296,16 +296,16 @@
 
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#loginpanel" role="tab">ورود</a>
+                        <a class="nav-link" data-toggle="tab" href="#signup" role="tab">ثبت نام</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#signup" role="tab">ثبت نام</a>
+                        <a class="nav-link active" data-toggle="tab" href="#loginpanel" role="tab">ورود</a>
                     </li>
                 </ul>
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div class="tab-pane" id="loginpanel" role="tabpanel">
+                    <div class="tab-pane active" id="loginpanel" role="tabpanel">
                         {!! Form::open(['method' => 'POST', 'action' => 'Auth\LoginController@login']) !!}
                         <div class="row">
                             <div class="col-12 offset-1">
@@ -321,6 +321,7 @@
                         <div class="row">
 
                             <div class="col-4 offset-4 rememberMe">
+                                <a class="btn btn-link" href="{{ url('/password/reset') }}">رمز عبور خود را فراموش کرده اید؟</a>
                                 {{--<p> مرا به خاطر نگه دار <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}></p>--}}
                             </div>
 
@@ -336,7 +337,7 @@
                     </div>
                     {{--singup section--}}
 
-                    <div class="tab-pane active" id="signup" role="tabpanel">
+                    <div class="tab-pane" id="signup" role="tabpanel">
                         {!! Form::open(['method' => 'POST', 'action' => 'Auth\RegisterController@register']) !!}
                         <div class="row">
                             <div class="col-1 offset-xl-2 offset-lg-1 offset-md-1 offset-sm-1 offset-1" style="margin-left: 13%;">

@@ -19,11 +19,14 @@ $(document).ready(function () {
     document.getElementById("uploadcontactus").onchange = function () {
         document.getElementById("contactusPlace").value = this.value;
     };
+
     document.getElementById("uploadAboutUs").onchange = function () {
         document.getElementById("aboutUsPlace").value = this.value;
     };
 
-
+    document.getElementById("uploadmiddle").onchange = function () {
+        document.getElementById("middlePlace").value = this.value;
+    };
 
 });
 

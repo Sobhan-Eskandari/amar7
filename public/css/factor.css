@@ -20,9 +20,11 @@ input, textarea {
 
 .cost {
   margin-top: 25px;
+  margin-left: 20px;
   display: flex; }
   .cost h5 {
-    padding-top: 15px; }
+    padding-top: 15px;
+    margin-left: 10px; }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 992px) {

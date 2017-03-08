@@ -62,7 +62,7 @@
                 @endif
             </div>
             <div class="col-6" style="text-align: right">
-                <p>&nbsp;<i class="fa fa-user fa-2x" aria-hidden="true"></i>&nbsp;     نویسنده : &nbsp;{{ $wiki->user['full_name'] }}</p>
+                <p>&nbsp;<i class="fa fa-user fa-2x" aria-hidden="true"></i>&nbsp;     نویسنده : &nbsp;{{ $wiki->master_name }}</p>
             </div>
         </div>
     </div>
@@ -88,7 +88,8 @@
                                     <p class="jalaseCounts"><i class="fa fa-eye fa-1x"></i> {{ $rand->seen }}&nbsp;بازدید </p>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-6">
-                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>
+                                    <p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->master_photo) != 0 ? $rand->master_photo : 'icone.png' }}"> {{ $rand->master_name }}</p>
+                                    {{--<p><img class="instructor_img" src="../UsersPhotos/{{ count($rand->user->photos) != 0 ? $rand->user->photos[0]['path'] : 'icone.png' }}"> {{ $rand->user['full_name'] }}</p>--}}
                                 </div>
                             </div>
                             <!--Card body elements like title and text and cost and kind-->

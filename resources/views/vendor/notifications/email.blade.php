@@ -88,9 +88,9 @@ $style = [
                                                 {{ $greeting }}
                                             @else
                                                 @if ($level == 'error')
-                                                    Whoops!
+                                                    !ای وای
                                                 @else
-                                                    Hello!
+                                                    !سلام
                                                 @endif
                                             @endif
                                         </h1>
@@ -98,7 +98,7 @@ $style = [
                                         <!-- Intro -->
                                         @foreach ($introLines as $line)
                                             <p style="{{ $style['paragraph'] }}">
-                                                {{ $line }}
+                                                .شما این ایمیل را به دلیل اینکه درخواست تغییر رمز عبور عبور دادید دریافت کرده اید
                                             </p>
                                         @endforeach
 
@@ -124,7 +124,7 @@ $style = [
                                                             style="{{ $fontFamily }} {{ $style['button'] }} {{ $style[$actionColor] }}"
                                                             class="button"
                                                             target="_blank">
-                                                            {{ $actionText }}
+                                                            تغییر رمز عبور
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -134,13 +134,13 @@ $style = [
                                         <!-- Outro -->
                                         @foreach ($outroLines as $line)
                                             <p style="{{ $style['paragraph'] }}">
-                                                {{ $line }}
+                                                .اگر شما درخواست تغییر رمز عبور نداده بودید، این ایمیل را نادیده بگیرید
                                             </p>
                                         @endforeach
 
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Regards,<br>{{ config('app.name') }}
+                                            ,با آرزوی بهترین ها<br>{{ config('app.name') }}
                                         </p>
 
                                         <!-- Sub Copy -->
@@ -148,9 +148,8 @@ $style = [
                                             <table style="{{ $style['body_sub'] }}">
                                                 <tr>
                                                     <td style="{{ $fontFamily }}">
-                                                        <p style="{{ $style['paragraph-sub'] }}">
-                                                            If you’re having trouble clicking the "{{ $actionText }}" button,
-                                                            copy and paste the URL below into your web browser:
+                                                        <p style="{{ $style['paragraph-sub'] }}">اگر با کلیک کردن روی دکمه "تغییر رمز عبور" مشکل دارید،
+                                                            :آدرس زیر را کپی و در مرورگر خود پیست کنید
                                                         </p>
 
                                                         <p style="{{ $style['paragraph-sub'] }}">
@@ -177,7 +176,7 @@ $style = [
                                         <p style="{{ $style['paragraph-sub'] }}">
                                             &copy; {{ date('Y') }}
                                             <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ config('app.name') }}</a>.
-                                            All rights reserved.
+                                            تمام حقوق محفوظ است
                                         </p>
                                     </td>
                                 </tr>
