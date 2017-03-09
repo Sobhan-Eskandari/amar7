@@ -36,7 +36,10 @@
                     {!! Form::text('lesson_name',null,['id'=>'postName','placeholder'=>'عنوان محتوای آماری را وارد کنید']) !!}<br>
                     {!! Form::textarea('lesson_desc',null,['id'=>'editor1','rows'=>'10','cols'=>'80','placeholder'=>'توضیحات']) !!}
                     <script>
-                        CKEDITOR.replace( 'lesson_desc' );
+                        CKEDITOR.replace( 'lesson_desc',{
+                            width: '80%',
+                            height: 150
+                        } );
                     </script>
                     <h4>عکس محتوای آماری:</h4>
 
@@ -54,7 +57,10 @@
                     {!! Form::text('instructor',null,['class'=>'attachmentInputs','placeholder'=>'نام نویسنده را وارد کنید']) !!}<br>
                     {!! Form::textarea('instructor_desc',null,['id'=>'editor1','rows'=>'10','cols'=>'80','placeholder'=>'در مورد نویسنده']) !!}
                     <script>
-                        CKEDITOR.replace( 'instructor_desc' );
+                        CKEDITOR.replace( 'instructor_desc',{
+                            width: '80%',
+                            height: 150
+                        } );
                     </script>
 
 

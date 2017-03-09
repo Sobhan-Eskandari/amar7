@@ -13,7 +13,6 @@
     <script src="../js/bootstrap.min.js"></script>
     <link href="../css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
     <script src="../js/bootstrap-select.min.js"></script>
-    <script src="../js/ckeditor.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/user_info.css">
 

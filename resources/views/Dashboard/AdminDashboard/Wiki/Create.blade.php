@@ -70,7 +70,10 @@
                     <h4>متن مقاله:</h4>
                     {!! Form::textarea('body') !!}
                     <script>
-                        CKEDITOR.replace( 'body' );
+                        CKEDITOR.replace( 'body',{
+                            width: '80%',
+                            height: 150
+                        } );
                     </script>
 
                     <div class="row">

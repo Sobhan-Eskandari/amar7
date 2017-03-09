@@ -51,7 +51,10 @@
                 </div>
                 {!! Form::textarea('header_txt',null,['placeholder'=>'متن خود را وارد کنید']) !!}
                 <script>
-                    CKEDITOR.replace( 'header_txt' );
+                    CKEDITOR.replace( 'header_txt',{
+                        width: '80%',
+                        height: 150
+                    } );
                 </script>
                 <hr>
                 <div class="inputs">
@@ -98,7 +101,10 @@
                 </div>
                 {!! Form::textarea('middle_cover_txt',null,['placeholder'=>'متن خود را وارد کنید']) !!}
                 <script>
-                    CKEDITOR.replace( 'middle_cover_txt' );
+                    CKEDITOR.replace( 'middle_cover_txt',{
+                        width: '80%',
+                        height: 150
+                    } );
                 </script>
                 <hr>
                 <div class="inputs">
@@ -164,7 +170,10 @@
                 </div>
                 {!! Form::textarea('rules',null,['placeholder'=>'متن خود را وارد کنید']) !!}
                 <script>
-                    CKEDITOR.replace( 'rules' );
+                    CKEDITOR.replace( 'rules',{
+                        width: '80%',
+                        height: 150
+                    } );
                 </script>
                 <hr>
                 <div class="inputs">
@@ -177,17 +186,16 @@
                 </div>
                 {!! Form::textarea('aboutUs_txt',null,['placeholder'=>'متن خود را وارد کنید']) !!}
                 <script>
-                    CKEDITOR.replace( 'aboutUs_txt' );
+                    CKEDITOR.replace( 'aboutUs_txt',{
+                        width: '80%',
+                        height: 150
+                    } );
                 </script>
             </div>
             {!! Form::button('ایجاد تغییرات',['type'=>'submit','id'=>'creatArticle']) !!}
         </div>
     </div>
     {!! Form::close() !!}
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
 @endsection
 
 @section('settings')

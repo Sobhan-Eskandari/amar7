@@ -39,7 +39,10 @@
                     {!! Form::text('session_name',null,['id'=>'postName','placeholder'=>'عنوان پست را وارد کنید']) !!}<br>
                     {!! Form::textarea('session_desc',null,['id'=>'editor1','rows'=>'10','cols'=>'80']) !!}
                     <script>
-                        CKEDITOR.replace('session_desc');
+                        CKEDITOR.replace('session_desc',{
+                            width: '80%',
+                            height: 150
+                        });
                     </script>
                 <h4>بارگذاری فایل</h4>
 
