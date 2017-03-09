@@ -42,14 +42,12 @@
             </div>
         </div>
         <div class="row" id="abouUsSection">
-            <div class="col-12" id="tohideText">
-                <img src="images/Horoofnegar-blak.png">
-
+            <div hidden class="col-12" id="tohideText">
                 {{ isset($info['aboutUs_txt']) ? $info['aboutUs_txt'] : "پیش فرض" }}
             </div>
 
             <div class="col-12">
-                <img src="images/Horoofnegar-blak.png">
+                <img src="images/amar7-logo2.png">
                 <h3>درباره ما</h3>
                 <p id="toShowText"></p>
             </div>
@@ -69,7 +67,7 @@
 
 @section('footer-shares')
     @foreach($shares as $share)
-        <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+        <li><a href="{{ $share->url }}" target="_blank">{{ $share->name }}</a></li>
     @endforeach
 @endsection
 

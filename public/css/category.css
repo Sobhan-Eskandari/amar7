@@ -28,7 +28,7 @@ html{
 scroll bar
 ------****/
 .height_vh{
-    height: 120vh;
+    height: 150vh;
 }
 .scrollbar{
     overflow-y: scroll;

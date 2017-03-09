@@ -147,7 +147,7 @@ responsive side bar
 scroll bar
 ------****/
 .height_vh{
-    height: 100vh;
+    height: 130vh;
 }
 .scrollbar{
     overflow-y: scroll;

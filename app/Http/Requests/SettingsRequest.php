@@ -29,9 +29,16 @@ class SettingsRequest extends FormRequest
             'ndSlider_img'=>'image',
             'rdSlider_img'=>'image',
             'contactUs_img'=>'image',
-            'aboutUs_img'=>'image'
+            'aboutUs_img'=>'image',
+            'middle_cover_img' => 'image',
+            'number' => 'required|digits:11',
+            'address' => 'required',
+            'email' => 'required|email',
+            'landline' => 'required|digits:11',
+            'rules' => 'required',
         ];
     }
+
     public function messages()
     {
         return [
@@ -41,6 +48,15 @@ class SettingsRequest extends FormRequest
             'rdSlider_img.image' => 'فایل اسلایدر سوم باید عکس باشد',
             'contactUs_img.image' => 'فایل تماس باما باید عکس باشد',
             'aboutUs_img.image' => 'فایل درباره ما باید عکس باشد',
+            'middle_cover_img.image' => 'فایل کاور میانی باید عکس باشد',
+            'rules.required' => 'وارد کردن قوانین و مقرارت اجباری است',
+            'landline.required' => 'وارد کردن شماره تماس خط ثابت اجباری است',
+            'landline.digits' => 'شماره تماس خط ثابت باید 11 رقم باشد',
+            'address.required' => 'وارد کردن آدرس پستی اجباری است',
+            'email.required' => 'وارد کردن ایمیل اجباری است',
+            'email.email' => 'ایمیل وارد شده معتبر نیست',
+            'number.required' => 'وارد کردن شماره تماس موبایل اجباری است',
+            'number.digits' => 'شماره تماس موبایل باید 11 رقم باشد',
         ];
     }
 }

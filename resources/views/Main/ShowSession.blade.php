@@ -15,10 +15,10 @@
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/loginSignupStyle.css">
-    @endsection
+@endsection
 
-    @section('content')
-    </div>
+@section('content')
+</div>
     <!------------------------  CoursePage top Section ------------------------------>
 
     <div class="container">
@@ -30,6 +30,7 @@
                     <div class="col-12" >
                         {{--name of one category of the lesson--}}
                         <p style="text-align: right"><i class="fa fa-filter"  aria-hidden="true"></i>
+                            دسته بندی ها:
                             @foreach($lesson->categories as $filter)
                                 @if($loop->last)
                                     {{ $filter['name'] }}
@@ -142,7 +143,10 @@
                         <a class="nav-link " data-toggle="tab" href="#courseLessons" role="tab"> زیر محتواهای آماری </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#teacherInfo" role="tab">مشخصات مدرس</a>
+                        <a class="nav-link" data-toggle="tab" href="#teacherInfo" role="tab">مشخصات نویسنده</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tags" role="tab">برچسب ها</a>
                     </li>
                 </ul>
 
@@ -234,6 +238,19 @@
                             </div>
                         </div>
 
+                    </div>
+
+                    <div class="tab-pane fade" id="tags" role="tabpanel">
+                        <div class="container" style="margin-right: 50px; padding-top: 15px">
+                            <h4>برچسب ها:</h4>
+                            @foreach($lesson->tags as $tag)
+                                @if($loop->last)
+                                    {{ $tag['name'] }}
+                                @else
+                                    {{ $tag['name'] . ' - ' }}
+                                @endif
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
@@ -384,7 +401,7 @@
 
 @section('footer-shares')
     @foreach($shares as $share)
-        <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+        <li><a href="{{ $share->url }}" target="_blank">{{ $share->name }}</a></li>
     @endforeach
 @endsection
 

@@ -54,7 +54,7 @@
         <!--sideBar-->
         <div class="col-xs-2 admin_sidebar pull-right">
 
-            <a href="{{ route('home') }}"><h5 class="zhenic_title">موسسه دانش آماری</h5></a>
+            <a href="{{ route('home') }}"><h5 class="zhenic_title"><img src="../../../../images/amar7-logo2.png" alt="موسسه دانش آماری" style="width: 100px; height: 63px"></h5></a>
 
             <a href="{{ route('lessons.index') }}"><h5 class="admin_side_title @yield('courses')"><i class="fa fa-file-text-o set_fa  dropdownMenu pull-right" aria-hidden="true"></i><span class="hidden-xs">محتواهای آماری</span></h5></a>
 

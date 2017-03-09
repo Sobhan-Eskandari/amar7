@@ -119,7 +119,7 @@
 
 @section('footer-shares')
     @foreach($shares as $share)
-        <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+        <li><a href="{{ $share->url }}" target="_blank">{{ $share->name }}</a></li>
     @endforeach
 @endsection
 

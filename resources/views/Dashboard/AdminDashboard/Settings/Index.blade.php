@@ -16,7 +16,7 @@
 @endsection
 @section('content')
     @if(Session::has('info_edit'))
-        <div class="alert alert-warning" style="position:absolute;margin-left: 72%; margin-right: 64px">
+        <div class="alert alert-warning" style="margin-left: 72%; margin-right: 64px">
             <p>{{ session('info_edit') }}</p>
         </div>
     @endif

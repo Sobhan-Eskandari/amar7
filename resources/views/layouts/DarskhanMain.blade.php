@@ -74,7 +74,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="../../images/Horoofnegar-blak.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="../../images/amar7-logo2.png" width="30" height="30" class="d-inline-block align-top" alt="">
         </a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
@@ -260,7 +260,7 @@
             <div class="row footerPart">
                 <div class="col-lg-3 col-md-3 col-sm-3 footerLogoPart ">
                     <script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
-                    <img src="../../images/Horoofnegar-blak.png">
+                    <img src="../../images/amar7-logo2.png">
                     <p style="margin-bottom: -120px;">حروف نگار</p>
 
                     <div  class="socialNetworks">
@@ -315,8 +315,8 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p id="copyright">کلیه حقوق مادی و معنوی این وبسایت متعلق به گروه حروف نگار - کنسرسیوم پارسی می باشد -
-                        {{  jDate::forge('now')->format('Y') }}&copy;
+                    <p id="copyright">طراحی شده توسط تیم حروف نگار - کنسرسیوم پارسی -
+                        {{  jDate::forge('now')->format('Y') }}
                     </p>
                 </div>
             </div>

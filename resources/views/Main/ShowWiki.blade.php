@@ -14,7 +14,6 @@
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/loginSignupStyle.css">
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
 @endsection
 
 @section('content')
@@ -26,11 +25,22 @@
                 <div class="col-12" >
                     {{--name of one category of the lesson--}}
                     <p style="text-align: right; padding-top: 15px"><i class="fa fa-filter"  aria-hidden="true"></i>
+                        دسته بندی ها:
                         @foreach($wiki->wiki_categories as $filter)
                             @if($loop->last)
                                 {{ $filter['name'] }}
                             @else
                                 {{ $filter['name'] . ' - ' }}
+                            @endif
+                        @endforeach
+                    </p>
+                    <p style="text-align: right;"><i class="fa fa-filter"  aria-hidden="true"></i>
+                        برچسب ها:
+                        @foreach($wiki->tags as $tag)
+                            @if($loop->last)
+                                {{ $tag['name'] }}
+                            @else
+                                {{ $tag['name'] . ' - ' }}
                             @endif
                         @endforeach
                     </p>
@@ -121,7 +131,7 @@
 
 @section('footer-shares')
     @foreach($shares as $share)
-        <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+        <li><a href="{{ $share->url }}" target="_blank">{{ $share->name }}</a></li>
     @endforeach
 @endsection
 

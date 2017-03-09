@@ -102,11 +102,11 @@
                         <div class="col-12" id="grecaptcha-contact"></div>
                     </div>
                 <br>
-                <p class="contactUSTitles"><i class="fa fa-map-marker" aria-hidden="true"></i> آدرس پستی</p>
-                <p>{{ $info->address }}</p>
-                <hr>
                     <!-- Indicates a successful or positive action -->
                     {!! Form::button('ارسال پیام',['type'=>'submit','class'=>'btn btn-success']) !!}
+                <hr>
+                <p class="contactUSTitles" style="margin-top: 15px;"><i class="fa fa-map-marker" aria-hidden="true"></i> آدرس پستی</p>
+                <p>{{ $info->address }}</p>
 
                 {!! Form::close() !!}
             </div>
@@ -117,7 +117,7 @@
 
 @section('footer-shares')
     @foreach($shares as $share)
-        <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+        <li><a href="{{ $share->url }}" target="_blank">{{ $share->name }}</a></li>
     @endforeach
 @endsection
 

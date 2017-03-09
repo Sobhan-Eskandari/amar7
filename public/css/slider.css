@@ -24,7 +24,8 @@ html, body {
   .slider img {
     width: 460px;
     height: 50%;
-    margin: auto; }
+    margin: auto;
+    margin-bottom: 70px; }
   .slider p {
     margin: 0px auto;
     width: 80%;
