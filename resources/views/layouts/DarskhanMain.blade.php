@@ -197,7 +197,6 @@
 
                                 <div class="col-8 offset-2 rememberMe">
                                     <a class="btn btn-link" href="{{ url('/password/reset') }}">رمز عبور خود را فراموش کرده اید؟</a>
-                                    {{--<p> مرا به خاطر نگه دار <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}></p>--}}
                                 </div>
 
                                 <div style="margin-top: 10px;margin-bottom: 10px" class="col-10 offset-2" id="grecaptcha-popup-login"></div>
@@ -302,12 +301,13 @@
                         </div>
                         <div class="col-3">
                             <p> منوها</p>
-                            <ul style="margin-bottom: 100px;">
+                            <ul style="margin-bottom: 100px">
                                 <li><a href="{{ route('home') }}">خانه</a></li>
                                 <li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>
                                 <li><a href="{{ route('allWiki') }}">مقالات</a></li>
                                 <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
-                                <li><a href="{{ route('contact-us') }}">تماس با ما</a></li>
+                                <li><a href="{{ route('contact-us') }}">نظرات و شکایات</a></li>
+                                <li><a href="{{ route('terms') }}">قوانین و مقررات</a></li>
                             </ul>
                         </div>
                     </div>
@@ -315,7 +315,9 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p id="copyright">کلیه حقوق مادی و معنوی این وبسایت متعلق به گروه حروف نگار می باشد - 1395</p>
+                    <p id="copyright">کلیه حقوق مادی و معنوی این وبسایت متعلق به گروه حروف نگار - کنسرسیوم پارسی می باشد -
+                        {{  jDate::forge('now')->format('Y') }}&copy;
+                    </p>
                 </div>
             </div>
         </div>

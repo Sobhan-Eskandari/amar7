@@ -28,5 +28,8 @@ class Setting extends Model
         'aboutUs_img',
         'middle_cover_txt',
         'middle_cover_img',
+        'address',
+        'rules',
+        'landline',
     ];
 }

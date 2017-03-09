@@ -52,7 +52,7 @@ class settingsController extends Controller
             $info = collect(new Setting);
             $info2 = new Setting();
         }
-//        dd($info2);
+//        dd($input);
         if($info->isEmpty()){
             if ($img = $request->file('header_img')) {
                 $name = time()+rand() . $img->getClientOriginalName();

@@ -1,7 +1,7 @@
 @extends('layouts.DarskhanMain')
 
 @section('title')
-    موسسه دانش آماری | تماس با ما
+    موسسه دانش آماری | نظرات و شکایات
 @endsection
 
 @section('header-recaptcha')
@@ -43,10 +43,13 @@
         <div class="row">
             <div class="col-lg-3" id="leftContactUs">
                 <p class="contactUSTitles">: پست الکترونیکی <i class="fa fa-envelope" aria-hidden="true"></i></p>
-                <p>{{ isset($info->email) ? $info->email : 'support@horoofnegar.ir' }}</p>
+                <p>{{ isset($info->email) ? $info->email : 'info@amar7.ir' }}</p>
                 <hr>
-                <p class="contactUSTitles">: شماره تماس <i class="fa fa-phone" aria-hidden="true"></i></p>
-                <p>{{ isset($info->number) ? $info->number : '09393546777' }}</p>
+                <p class="contactUSTitles">: (شماره تماس (موبایل <i class="fa fa-phone" aria-hidden="true"></i></p>
+                <p>{{ isset($info->number) ? $info->number : '09112921512' }}</p>
+                <hr>
+                <p class="contactUSTitles">: (شماره تماس (خط ثابت <i class="fa fa-phone" aria-hidden="true"></i></p>
+                <p>{{ isset($info->landline) ? $info->landline : '01154288123' }}</p>
                 <hr>
                 <p class="contactUSTitles">:  شبکه های اجتماعی <i class="fa fa-wifi" aria-hidden="true"></i></p>
                 <p><i class="fa fa-instagram" aria-hidden="true"></i>{{ isset($info->instagram) ? $info->instagram : 'https://www.instagram.com/' }}</p>
@@ -99,6 +102,9 @@
                         <div class="col-12" id="grecaptcha-contact"></div>
                     </div>
                 <br>
+                <p class="contactUSTitles"><i class="fa fa-map-marker" aria-hidden="true"></i> آدرس پستی</p>
+                <p>{{ $info->address }}</p>
+                <hr>
                     <!-- Indicates a successful or positive action -->
                     {!! Form::button('ارسال پیام',['type'=>'submit','class'=>'btn btn-success']) !!}
 

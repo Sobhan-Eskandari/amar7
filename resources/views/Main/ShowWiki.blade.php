@@ -39,8 +39,8 @@
             <img src="../WikiPhotos/{{ count($wiki->photos) != 0 ? $wiki->photos[0]['path'] : 'default.png' }}">
             <h2>{{ $wiki->title }}</h2>
 
-            <p id="tohideText">{{ $wiki->body }}</p>
-            <p id="toShowText">{{ $wiki->body }}</p>
+            <p hidden id="tohideText">{{ $wiki->body }}</p>
+            <p id="toShowText"></p>
         </div>
 
         <script>

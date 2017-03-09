@@ -114,13 +114,12 @@
 
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-xs-10">
-                        <h4>شماره تماس</h4>
-                        {!! Form::text('number',null) !!}
-                        {{--<input name="number">--}}
+                        <h4>شماره تماس (خط ثابت)</h4>
+                        {!! Form::text('landline',null) !!}
                     </div>
                     <div class="col-lg-6 col-md-6 col-xs-10">
-                        <h4>پست الکترونیکی</h4>
-                        {!! Form::text('email',null) !!}
+                        <h4>شماره تماس (موبایل)</h4>
+                        {!! Form::text('number',null) !!}
                     </div>
                     <div class="col-lg-6 col-md-6 col-xs-10">
                         <h4>تلگرام</h4>
@@ -134,10 +133,6 @@
 
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-xs-10">
-                        <h4>فیسبوک</h4>
-                        {!! Form::text('facebook',null) !!}
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-xs-10">
                         <h4>توییتر</h4>
                         {!! Form::text('twitter',null) !!}
                     </div>
@@ -149,15 +144,34 @@
                         <h4>لینکدین</h4>
                         {!! Form::text('linkedin',null) !!}
                     </div>
+                    <div class="col-lg-6 col-md-6 col-xs-10">
+                        <h4>فیسبوک</h4>
+                        {!! Form::text('facebook',null) !!}
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-10">
+                        <h4>آدرس پستی</h4>
+                        {!! Form::textarea('address',null) !!}
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-10">
+                        <h4>پست الکترونیکی</h4>
+                        {!! Form::text('email',null) !!}
+                    </div>
 
                 </div>
+                <hr>
+                <div class="inputs">
+                    <h4>قوانین و مقررات</h4>
+                </div>
+                {!! Form::textarea('rules',null,['placeholder'=>'متن خود را وارد کنید']) !!}
+                <script>
+                    CKEDITOR.replace( 'rules' );
+                </script>
                 <hr>
                 <div class="inputs">
                     <h4>درباره ما</h4>
                     <div class="fileUpload uploadImageBtn">
                         <span>آپلود عکس +</span>
                         {!! Form::file('aboutUs_img',['class'=>'upload','id'=>'uploadAboutUs']) !!}
-                        {{--<input id="uploadAboutUs" type="file" class="upload" />--}}
                     </div>
                     <input id="aboutUsPlace" placeholder="انتخاب فایل" disabled="disabled" name="headerImage">
                 </div>
@@ -170,6 +184,10 @@
         </div>
     </div>
     {!! Form::close() !!}
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 @endsection
 
 @section('settings')

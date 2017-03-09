@@ -86,8 +86,8 @@
                     </div>
                     <div class="col-lg-8 col-md-7 col-sm-12 col-12 pull-xl-4 pull-lg-4 pull-md-5">
                         <h1>{{ $session->session_name }}</h1>
-                        <p id="tohide">{{ $session->session_desc }}</p>
-                        <p id="toShow">{{ $session->session_desc }}</p>
+                        <p hidden id="tohide">{{ $session->session_desc }}</p>
+                        <p id="toShow"></p>
                         <script>
                             $( document ).ready(function() {
                                 $('#toShow').html($('#tohide').text());
@@ -222,8 +222,8 @@
                                 <div class="col-12">
                                     <img src="../../UsersPhotos/{{ count($lesson->user->photos) != 0 ? $lesson->user->photos[0]['path'] : 'icone.png' }}">
                                     <h3>{{ $lesson->instructor }}</h3>
-                                    <p id="tohideText">{{ $lesson->instructor_desc }}</p>
-                                    <p id="toShowText">{{ $lesson->instructor_desc }}</p>
+                                    <p hidden id="tohideText">{{ $lesson->instructor_desc }}</p>
+                                    <p id="toShowText"></p>
                                     <script>
                                         $( document ).ready(function() {
                                             $('#toShowText').html($('#tohideText').text());

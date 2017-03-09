@@ -149,6 +149,8 @@ Route::get('wiki-category/{wiki_category}', 'SiteController@WikiCategory')->name
 
 Route::get('/about-us', 'SiteController@AboutUs')->name('aboutUs');
 
+Route::get('/terms', 'SiteController@Terms')->name('terms');
+
 Route::get('/all-courses', 'SiteController@AllCourses')->name('allCourses');
 
 Route::get('/search-results','SiteController@search')->name('search-results');

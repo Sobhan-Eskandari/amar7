@@ -299,4 +299,23 @@ class SiteController extends Controller
         $searches = collect($results);
         return view('Main.SearchResults', compact('info','searches', 'course_categories','count', 'shares'));
     }
+
+    public function Terms(){
+        if(Auth::Check()) {
+            $user = Auth::user();
+            $lessons = $user->lessons;
+            $result = [];
+            foreach ($lessons as $lesson) {
+                if ($lesson->pivot->bought == 0) {
+                    $result[] = $lesson;
+                }
+            }
+            $count = count($result);
+        }
+        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $row = Setting::first();
+        $info = Setting::findOrFail($row->id);
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
+        return view('Main.terms', compact('info', 'course_categories', 'count', 'shares'));
+    }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.DarskhanMain')
 
 @section('title')
-    موسسه دانش آماری | درباره ما
+    موسسه دانش آماری | قوانین و مقررات
 @endsection
 
 @section('top-includes')
@@ -42,15 +42,15 @@
             </div>
         </div>
         <div class="row" id="abouUsSection">
-            <div class="col-12" id="tohideText">
+            <div hidden class="col-12" id="tohideText">
                 <img src="images/Horoofnegar-blak.png">
 
-                {{ isset($info['aboutUs_txt']) ? $info['aboutUs_txt'] : "پیش فرض" }}
+                {{ isset($info->rules) ? $info->rules : "پیش فرض" }}
             </div>
 
             <div class="col-12">
                 <img src="images/Horoofnegar-blak.png">
-                <h3>درباره ما</h3>
+                <h3>قوانین و مقررات</h3>
                 <p id="toShowText"></p>
             </div>
 

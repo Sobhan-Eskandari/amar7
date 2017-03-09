@@ -213,7 +213,7 @@
                 <button id="aboutUS"> <a style="color: whitesmoke" href="{{ route('aboutUs') }}">درباره ما</a> <i class="fa fa-id-card" aria-hidden="true"></i> </button>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-4 col-6 offset-lg-4 offset-md-1 offset-sm-2" style="z-index: 20">
-                <button id="contactUs">  <a style="color: whitesmoke" href="{{ route('contact-us') }}">تماس با ما</a> <i class="fa fa-phone" aria-hidden="true"></i></button>
+                <button id="contactUs">  <a style="color: whitesmoke" href="{{ route('contact-us') }}">نظرات و شکایات</a> <i class="fa fa-phone" aria-hidden="true"></i></button>
             </div>
         </div>
         <div class="row" id="laptop_slideshow">
