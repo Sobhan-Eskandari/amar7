@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Morilog\Jalali\Facades\jDate;
 use Zarinpal\Zarinpal;
 
 class ZarinController extends Controller
@@ -48,6 +49,7 @@ class ZarinController extends Controller
         if($Status == 'OK' && $Authority == $answer['Authority']){
             foreach ($user->lessons as $lesson){
                 $lesson->pivot->bought = 1;
+                $lesson->pivot->bought_time = jDate::forge('now')->format('datetime');
                 $lesson->pivot->save();
             }
             return redirect('/user-courses');

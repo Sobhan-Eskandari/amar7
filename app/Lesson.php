@@ -30,7 +30,7 @@ class Lesson extends Model
     }
 
     public function users(){
-        return $this->belongsToMany('App\User')->withPivot('bought');
+        return $this->belongsToMany('App\User')->withPivot('bought','bought_time');
     }
 
     public function user(){

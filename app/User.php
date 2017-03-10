@@ -59,7 +59,7 @@ class User extends Authenticatable
     }
 
     public function lessons(){
-        return $this->belongsToMany('App\Lesson')->withPivot('bought');
+        return $this->belongsToMany('App\Lesson')->withPivot('bought','bought_time');
     }
 
     public function posts(){

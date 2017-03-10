@@ -41,45 +41,19 @@
                                 <tr>
                                     <th>نام خریدار</th>
                                     <th>نام محتوا</th>
-                                    <th>تاریخ محتوا</th>
+                                    <th>تاریخ خرید</th>
                                     <th>قیمت</th>
                                     {{--<th></th>--}}
                                 </thead>
                                 <tbody>
-                                @if($users)
-                                @foreach($users as $user)
-                                    @foreach($user->lessons as $lesson)
-                                        @if($lesson->pivot->bought ==1)
+                                @if($paginate)
+                                @foreach($paginate as $item)
                                 <tr>
-                                    <td class="upper_td">{{$user->full_name}}</td>
-                                    <td class="upper_td">{{$lesson->lesson_name}}</td>
-                                    <td class="upper_td">{{str_replace('-','/',substr($lesson->created_at, 0, strpos($lesson->created_at,' ')))}}</td>
-                                    <td class="upper_td">{{$lesson->cost}}</td>
-                                    {{--<td class="upper_td">--}}
-
-                                        {{--<div class="btn-group">--}}
-                                            {{--<a class=" dropdown-toggle" data-toggle="dropdown" href="#">--}}
-                                                {{--<div class="navbar-header">--}}
-                                                    {{--<div class="test">--}}
-                                                    {{--</div>--}}
-                                                {{--</div>--}}
-                                            {{--</a>--}}
-                                            {{--<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">--}}
-                                                {{--<li><a  href="#">نمایش کاربر</a></li>--}}
-                                                {{--<li class="divider"></li>--}}
-                                                {{--<li><a  href="#">ویرایش</a></li>--}}
-                                                {{--<li class="divider"></li>--}}
-                                                {{--<li><a  href="#">افزودن فروشگاه</a></li>--}}
-                                                {{--<li class="divider"></li>--}}
-                                                {{--<li><a  href="#">حذف</a></li>--}}
-                                            {{--</ul>--}}
-                                        {{--</div>--}}
-
-                                    {{--</td>--}}
-                                </tr>
-                                            @endif
+                                    <td class="upper_td">{{$item['user']}}</td>
+                                    <td class="upper_td">{{$item['lesson']}}</td>
+                                    <td class="upper_td">{{str_replace('-','/',substr($item['time'], 0, strpos($item['time'],' ')))}}</td>
+                                    <td class="upper_td">{{$item['cost']}}</td>
                                         @endforeach
-                                @endforeach
                                 @endif
 
                                 </tbody>
@@ -89,13 +63,13 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-xs-11 col-xs-offset-0">
-                            {{$users->appends(Request::query())->links()}}
+                            {{$paginate->links()}}
                         </div>
                     </div>
 
                     <hr>
 
-                    <div class="container" style="padding-right: 50px">
+                    <div class="container">
                         <div class="row">
                             <div class="col-xs-12 pull-right">
                                 <h4>گزارش بازدید</h4>
