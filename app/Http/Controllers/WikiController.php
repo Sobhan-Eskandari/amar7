@@ -100,7 +100,7 @@ class WikiController extends Controller
             }
             $count = count($result);
         }
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $wiki = Wiki::findOrFail($id);
@@ -221,12 +221,12 @@ class WikiController extends Controller
             }
             $count = count($result);
         }
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $input = $request->all();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $wiki_categories = WikiCategories::all();
-        $rand_wiki_categories = WikiCategories::orderByRaw('RAND()')->take(5)->get();
+        $rand_wiki_categories = WikiCategories::orderByRaw('RAND()')->take(9)->get();
         isset($input['query']) ? : $input['query'] = '';
 
         $wikis = Wiki::where('title', 'like', "%{$input['query']}%")->orderByRaw('created_at desc')->paginate(12);

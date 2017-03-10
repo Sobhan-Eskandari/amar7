@@ -31,7 +31,7 @@
     </div>
 
     @if(Session::has('deleted_category'))
-        <div class="alert alert-danger" style="position:absolute;margin-left: 72%; margin-right: 64px">
+        <div class="alert alert-danger" style="width:350px;margin-left: 72%; margin-right: 64px">
             <p>{{ session('deleted_category') }}</p>
         </div>
     @endif

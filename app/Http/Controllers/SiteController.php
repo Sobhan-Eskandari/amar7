@@ -33,7 +33,7 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
@@ -55,7 +55,7 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
@@ -77,7 +77,7 @@ class SiteController extends Controller
         }
 
         $input = $request->all();
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::all();
@@ -185,7 +185,7 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
@@ -250,7 +250,7 @@ class SiteController extends Controller
             $count = count($result);
         }
         $row = Setting::first();
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         $category = CoursesCategories::findOrFail($id);
@@ -281,7 +281,7 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
@@ -312,7 +312,7 @@ class SiteController extends Controller
             }
             $count = count($result);
         }
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();

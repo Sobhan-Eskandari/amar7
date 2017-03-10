@@ -54,10 +54,10 @@ class MessageController extends Controller
             }
             $count = count($result);
         }
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $row = Setting::first();
         $info = Setting::findOrFail($row->id);
-        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(5)->get();
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         return view('Main.ContactUs', compact('info', 'course_categories','count', 'shares'));
     }
 

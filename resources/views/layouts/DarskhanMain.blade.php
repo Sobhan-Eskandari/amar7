@@ -261,7 +261,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 footerLogoPart ">
                     <script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
                     <img src="../../images/amar7-logo2.png">
-                    <p style="margin-bottom: -120px;">حروف نگار</p>
+                    <p style="margin-bottom: -120px;"></p>
 
                     <div  class="socialNetworks">
                         <p>شبکه های اجتماعی</p>
@@ -275,30 +275,8 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-8 col-sm-8 offset-lg-3 offset-md-1 offset-sm-1 footer_categories">
-                    <div class="row">
-                        <div class="col-3">
-                            {{--<ul style="margin-bottom: 100px;">--}}
-                                {{--<li><a href="{{ route('home') }}">خانه</a></li>--}}
-                                {{--<li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>--}}
-                                {{--<li><a href="{{ route('allWiki') }}">مقالات</a></li>--}}
-                                {{--<li><a href="{{ route('aboutUs') }}">درباره ما</a></li>--}}
-                                {{--<li><a href="{{ route('contact-us') }}">تماس با ما</a></li>--}}
-                                {{--<li><a href="{{ route('contact-us') }}">تماس با ما</a></li>--}}
-                            {{--</ul>|--}}
-                        </div>
-                        <div class="col-3">
-                            <p> پیوندها</p>
-                            <ul style="margin-bottom: 100px;">
-                                @yield('footer-shares')
-                            </ul>
-                        </div>
-                        <div class="col-3">
-                            <p>دسته بندی ها</p>
-                            <ul>
-                                @yield('footer-category')
-                            </ul>
-                        </div>
+                <div class="col-lg-8 col-md-11 col-sm-9 offset-lg-1 offset-md-1 offset-sm-1 footer_categories">
+                    <div class="row" style="direction: rtl">
                         <div class="col-3">
                             <p> منوها</p>
                             <ul style="margin-bottom: 100px">
@@ -310,6 +288,29 @@
                                 <li><a href="{{ route('terms') }}">قوانین و مقررات</a></li>
                             </ul>
                         </div>
+                        <div class="col-3">
+                            <p>دسته بندی ها</p>
+                            <ul>
+                                @yield('footer-category')
+                            </ul>
+                        </div>
+                        @yield('footer-shares')
+                        {{--<div class="col-3">--}}
+                            {{--<ul style="margin-bottom: 100px;">--}}
+                                {{--<li><a href="{{ route('home') }}">خانه</a></li>--}}
+                                {{--<li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>--}}
+                                {{--<li><a href="{{ route('allWiki') }}">مقالات</a></li>--}}
+                                {{--<li><a href="{{ route('aboutUs') }}">درباره ما</a></li>--}}
+                                {{--<li><a href="{{ route('contact-us') }}">تماس با ما</a></li>--}}
+                                {{--<li><a href="{{ route('contact-us') }}">تماس با ما</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-3">--}}
+                            {{--<p> پیوندها</p>--}}
+                            {{--<ul style="margin-bottom: 100px;">--}}
+                                {{--@yield('footer-shares')--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
                     </div>
                 </div>
             </div>

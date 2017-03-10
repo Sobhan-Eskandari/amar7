@@ -121,7 +121,7 @@ class UserDashboardController extends Controller
                 $result[] = $lesson;
             }
         }
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $count = count($result);
         $lessons = collect($result);
         return view('Dashboard.UserDashboard.Cart', compact('info','lessons','count', 'course_categories', 'shares'));

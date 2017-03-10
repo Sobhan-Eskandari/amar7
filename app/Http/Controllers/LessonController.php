@@ -111,7 +111,7 @@ class LessonController extends Controller
         }
 //        dd($hasUser);
 //        dd($lesson);
-        $shares = Share::orderByRaw('RAND()')->take(9)->get();
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
         $lessons = Lesson::orderByRaw('RAND()')->take(4)->get();
         $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
         foreach (explode(',', $lesson->media) as $media){ $lesson[$media] = 1; }

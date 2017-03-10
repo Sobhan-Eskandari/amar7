@@ -95,7 +95,7 @@
 
                     <hr>
 
-                    <div class="container">
+                    <div class="container" style="padding-right: 50px">
                         <div class="row">
                             <div class="col-xs-12 pull-right">
                                 <h4>گزارش بازدید</h4>

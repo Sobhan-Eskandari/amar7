@@ -43,13 +43,11 @@
         </div>
         <div class="row" id="abouUsSection">
             <div hidden class="col-12" id="tohideText">
-                <img src="images/Horoofnegar-blak.png">
-
                 {{ isset($info->rules) ? $info->rules : "پیش فرض" }}
             </div>
 
             <div class="col-12">
-                <img src="images/Horoofnegar-blak.png">
+                <img src="images/amar7-logo2.png">
                 <h3>قوانین و مقررات</h3>
                 <p id="toShowText"></p>
             </div>
@@ -69,7 +67,18 @@
 
 @section('footer-shares')
     @foreach($shares as $share)
-        <li><a href="{{ $share->url }}" target="_blank">{{ $share->name }}</a></li>
+        @if($loop->first || $loop->iteration === 10)
+            <div class="col-3">
+                @if($loop->first)
+                    <p> پیوندها</p>
+                @endif
+                <ul style="margin-bottom: 100px;">
+                    @endif
+                    <li><a href="{{ $share->url }}" target="_blank">{{ $share->name }}</a></li>
+                    @if($loop->iteration === 9 || $loop->last)
+                </ul>
+            </div>
+        @endif
     @endforeach
 @endsection
 

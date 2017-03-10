@@ -89,7 +89,11 @@ class WikiCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        WikiCategories::findOrFail($id)->delete();
+        $category = WikiCategories::findOrFail($id);
+        if($category->wikis){
+            $category->wikis()->detach();
+        }
+        $category->delete();
         Session::flash("deleted_category","دسته بندی پاک شد");
         return redirect('/wiki-categories');
     }

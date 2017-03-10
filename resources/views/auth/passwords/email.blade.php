@@ -78,7 +78,18 @@
 
 @section('footer-shares')
     @foreach($shares as $share)
-    <li><a href="{{ $share->url }}">{{ $share->name }}</a></li>
+        @if($loop->first || $loop->iteration === 9)
+            <div class="col-3">
+                @if($loop->first)
+                    <p> پیوندها</p>
+                @endif
+                <ul style="margin-bottom: 100px;">
+                    @endif
+                    <li><a href="{{ $share->url }}" target="_blank">{{ $share->name }}</a></li>
+                    @if($loop->iteration === 8 || $loop->last)
+                </ul>
+            </div>
+        @endif
     @endforeach
 @endsection
 
