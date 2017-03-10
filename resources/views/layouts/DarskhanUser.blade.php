@@ -17,7 +17,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="../../images/Horoofnegar-blak.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="../../../images/amar7-logo2.png" width="30" height="30" class="d-inline-block align-top" alt="">
         </a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
@@ -43,7 +43,11 @@
                 @endif
                 <li class="nav-item">
                     @if(\Illuminate\Support\Facades\Auth::Check())
-                        <a href="{{ route('lessons.index') }}"><button id="navSignupBtn">داشبورد</button></a>
+                        @if(Auth::user()->AdminRole())
+                            <a href="{{ route('lessons.index') }}"><button id="navSignupBtn">داشبورد</button></a>
+                        @elseif(Auth::user()->UserRole())
+                            <a href="{{ route('user-info') }}"><button id="navSignupBtn">داشبورد</button></a>
+                        @endif
                     @else
                         <button id="navSignupBtn" class="nav-link" data-toggle="modal" data-target="#exampleModalLong">ثبت نام/ ورود </button>
                     @endif

@@ -38,7 +38,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-                        <button id="addToCart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                        <a href="{{ route('home') }}"><button id="addToCart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button></a>
                     </div>
                     <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12" id="confirmPurchaseBtn">
                         {!! Form::open(['method'=>'GET','action'=>'ZarinController@Payment']) !!}
@@ -67,7 +67,7 @@
                         @if($lesson->pivot->bought == 0)
                 <div class="row factor" id="firstFactor">
                     <div class="col-xl-8 col-lg-8 col-md-12 push-lg-4  factor_right">
-                        <img class="course_img hidden-xs-down" src="images/maghale_jpg.png">
+                        <img class="course_img hidden-xs-down" src="lessonPhoto/{{ count($lesson->photo) != 0 ? $lesson->photo[0]['path'] : "coun.png" }}">
                         <div class="factor_info">
                             <h4>{{$lesson->instructor}}</h4>
                             <ul>

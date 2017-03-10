@@ -89,7 +89,7 @@
                     <label><h4>نام پیوند: </h4></label>
                     {!! Form::text('name',null,['class'=>'form-control inputCategory','id'=>'inputCategory','tabindex'=>'1']) !!}
                     <label><h4>آدرس پیوند: </h4></label>
-                    {!! Form::text('url',null,['class'=>'form-control inputCategory','id'=>'inputCategory','tabindex'=>'1']) !!}
+                    {!! Form::text('url',null,['class'=>'form-control inputCategory','id'=>'inputCategory','tabindex'=>'2', 'placeholder' => 'http://horoofnegar.ir']) !!}
                 </div>
             </div>
             <div class="row">
