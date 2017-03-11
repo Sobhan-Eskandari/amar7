@@ -56,14 +56,14 @@ class LoginController extends Controller
         ]);
     }
 
-    public function credentials(Request $request)
-    {
-        return [
-            'email' => $request->email,
-            'password' => $request->password,
-            'verified' => 1,
-        ];
-    }
+//    public function credentials(Request $request)
+//    {
+//        return [
+//            'email' => $request->email,
+//            'password' => $request->password,
+//            'verified' => 1,
+//        ];
+//    }
 
     /**
      *  Over-ridden the login method from the "AuthenticatesUsers" trait
@@ -90,7 +90,6 @@ class LoginController extends Controller
             if($result->success){
                 if ($this->hasTooManyLoginAttempts($request)) {
                     $this->fireLockoutEvent($request);
-
                     return $this->sendLockoutResponse($request);
                 }
 
@@ -99,14 +98,12 @@ class LoginController extends Controller
                 }
 
                 $this->incrementLoginAttempts($request);
-
                 return $this->sendFailedLoginResponse($request);
-
             }else{
-                return redirect('/');
+                return back();
             }
         }else{
-            return redirect('/');
+            return back();
         }
 
     }

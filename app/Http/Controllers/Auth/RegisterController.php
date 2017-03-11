@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 use DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Mail;
 use App\User;
@@ -80,7 +81,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        Session::flash('email', 'لطفا ایمیل خود را برای تایید عضویت بررسی نمایید');
+        Session::flash('email', 'عضویت شما با موفقیت انجام شد، می توانید از امکانات سایت بهره ببرید!');
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
@@ -125,9 +126,12 @@ class RegisterController extends Controller
                     //dd($request->all());
                     $user = $this->create($request->all());
                     // After creating the user send an email with the random token generated in the create method above
-                    $email = new EmailVerification(new User(['email_token' => $user->email_token]));
-                    Mail::to($user->email)->send($email);
+//                    $email = new EmailVerification(new User(['email_token' => $user->email_token]));
+//                    Mail::to($user->email)->send($email);
                     DB::commit();
+                    if(Auth::attempt(['email' => $request->input('email') , 'password' => $request->input('password')])){
+                        return back();
+                    }
                     return back();
                 }else{
                     return redirect('/');

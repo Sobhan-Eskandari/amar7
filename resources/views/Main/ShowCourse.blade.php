@@ -113,7 +113,7 @@
                                         @endif
                                     @endif
                                 @else
-                                    <button data-toggle="modal" data-target="#exampleModalLong">ثبت نام</button>
+                                    <button data-toggle="modal" data-target="#exampleModalLong">دانلود محتوا</button>
                                 @endif
                                 @else
                                     {{--<button data-toggle="modal" data-target="#exampleModalLong">رایگان</button>--}}
