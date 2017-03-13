@@ -179,7 +179,7 @@
                                     <tbody>
                                     @foreach($lesson->sessions as $session)
                                         <tr>
-                                            <th scope="row">1</th>
+                                            <th scope="row">{{ $loop->iteration }}</th>
                                             <td colspan="1"><a href="{{route('sessions.show',$session->id)}}" >{{ $session->session_name }}</a></td>
                                             @if(isset($lesson->video))
                                                 <td><i class="fa fa-check tick" aria-hidden="true"></i></td>
