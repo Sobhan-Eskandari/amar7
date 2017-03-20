@@ -61,6 +61,26 @@ class MessageController extends Controller
         return view('Main.ContactUs', compact('info', 'course_categories','count', 'shares'));
     }
 
+    public function createContact()
+    {
+        if(Auth::Check()) {
+            $user = Auth::user();
+            $lessons = $user->lessons;
+            $result = [];
+            foreach ($lessons as $lesson) {
+                if ($lesson->pivot->bought == 0) {
+                    $result[] = $lesson;
+                }
+            }
+            $count = count($result);
+        }
+        $shares = Share::orderByRaw('RAND()')->take(20)->get();
+        $row = Setting::first();
+        $info = Setting::findOrFail($row->id);
+        $course_categories = CoursesCategories::orderByRaw('RAND()')->take(9)->get();
+        return view('Main.ContactUs2', compact('info', 'course_categories','count', 'shares'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -88,7 +108,32 @@ class MessageController extends Controller
                 return redirect('contact-us');
             }
         }else{
-            return redirect('');
+            return back();
+        }
+    }
+
+    public function storeContact(ContactUsRequest $request)
+    {
+        $token = $request->input('g-recaptcha-response');
+        if($token){
+            $client = new Client();
+            $response = $client->post('https://www.google.com/recaptcha/api/siteverify',[
+                'form_params'=>array(
+                    'secret' => '6Ld0ORcUAAAAAFbFjggaz34RERdKbuM_NNggREU4',
+                    'response' => $token
+                )
+            ]);
+            $result = json_decode($response->getBody()->getContents());
+            if($result->success){
+                Message::create($request->all());
+                Session::flash('send_message','پیام ارسال شد');
+                return redirect('contact-us2');
+            }else{
+                Session::flash('robot_message','شاید شما ربات باشید');
+                return redirect('contact-us2');
+            }
+        }else{
+            return back();
         }
 
     }

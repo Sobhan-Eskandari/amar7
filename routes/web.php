@@ -159,9 +159,13 @@ Route::get('register/verify/{token}', 'Auth\RegisterController@verify');
 
 Route::get('/all-wiki', 'WikiController@AllWiki')->name('allWiki');
 
-Route::get('contact-us','MessageController@create')->name('contact-us');
+Route::get('complaint','MessageController@create')->name('contact-us');
 
-Route::post('contact-us','MessageController@store')->name('contact-us.sendMessage');
+Route::post('complaint','MessageController@store')->name('contact-us.sendMessage');
+
+Route::get('contact-us','MessageController@createContact')->name('contact-us2');
+
+Route::post('contact-us','MessageController@storeContact')->name('contact-us2.sendMessage');
 
 Route::get('sessions/{id}','SessionController@show')->name('sessions.show');
 

@@ -284,6 +284,7 @@
                                 <li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>
                                 <li><a href="{{ route('allWiki') }}">مقالات</a></li>
                                 <li><a href="{{ route('aboutUs') }}">درباره ما</a></li>
+                                <li><a href="{{ route('contact-us2') }}">تماس با ما</a></li>
                                 <li><a href="{{ route('contact-us') }}">نظرات و شکایات</a></li>
                                 <li><a href="{{ route('terms') }}">قوانین و مقررات</a></li>
                             </ul>
@@ -295,22 +296,6 @@
                             </ul>
                         </div>
                         @yield('footer-shares')
-                        {{--<div class="col-3">--}}
-                            {{--<ul style="margin-bottom: 100px;">--}}
-                                {{--<li><a href="{{ route('home') }}">خانه</a></li>--}}
-                                {{--<li><a href="{{ route('allCourses') }}">محتواهای آماری</a></li>--}}
-                                {{--<li><a href="{{ route('allWiki') }}">مقالات</a></li>--}}
-                                {{--<li><a href="{{ route('aboutUs') }}">درباره ما</a></li>--}}
-                                {{--<li><a href="{{ route('contact-us') }}">تماس با ما</a></li>--}}
-                                {{--<li><a href="{{ route('contact-us') }}">تماس با ما</a></li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-3">--}}
-                            {{--<p> پیوندها</p>--}}
-                            {{--<ul style="margin-bottom: 100px;">--}}
-                                {{--@yield('footer-shares')--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
                     </div>
                 </div>
             </div>

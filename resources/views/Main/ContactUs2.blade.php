@@ -1,7 +1,7 @@
 @extends('layouts.DarskhanMain')
 
 @section('title')
-    موسسه دانش آماری | نظرات و شکایات
+    موسسه دانش آماری | تماس با ما
 @endsection
 
 @section('header-recaptcha')
@@ -31,7 +31,7 @@
         <div class="row">
             <!--motto part of header-->
             <div class="col col-12">
-                <h1 id="work_motto" class="display-6">اگر نظر و شکایتی دارید در این مکان وارد کنید و ما را مطلع سازید</h1>
+                <h1 id="work_motto" class="display-6">با ما در ارتباط باشید</h1>
             </div>
         </div>
     </div>
@@ -59,53 +59,53 @@
             <div class="col-lg-8 offset-lg-1" id="rightAbountUS">
 
                 <br>
-                <h4>برای ارسال نظرات و شکایات از فرم زیر استفاده کنید</h4>
+                <h4>برای تماس با ما از فرم زیر استفاده کنید</h4>
                 <br>
                 {!! Form::open(['method'=>'POST','action'=>'MessageController@store']) !!}
-                    <div class="row">
-                        @if(Session::has('send_message'))
-                            <div class="alert alert-success" style="margin-left: 70%; margin-right: 64px">
-                                <p>{{ session('send_message') }}</p>
-                            </div>
-                        @endif
-                            @if(Session::has('robot_message'))
-                                <div class="alert alert-danger" style="margin-left: 70%; margin-right: 64px">
-                                    <p>{{ session('robot_message') }}</p>
-                                </div>
-                            @endif
-                        @if(count($errors) > 0)
-                            <div class="alert alert-danger" style="margin-left: 30%; margin-right: 64px">
-                                <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        <div class="col-6 form-group">
-                            <label for="exampleInputPassword1">نام و نام خانوادگی</label>
-                            {!! Form::text('name',null,['class'=>'form-control','id'=>'exampleInputPassword1','placeholder'=>'نام','tabindex'=>'1']) !!}
+                <div class="row">
+                    @if(Session::has('send_message'))
+                        <div class="alert alert-success" style="margin-left: 70%; margin-right: 64px">
+                            <p>{{ session('send_message') }}</p>
                         </div>
-                        <div class="col-6 form-group">
-                            <label for="exampleInputEmail1">ایمیل</label>
-                            {!! Form::text('email',null,['class'=>'form-control','id'=>'exampleInputEmail1','aria-describedby'=>'emailHelp','placeholder'=>'پست الکترونیکی','tabindex'=>'2']) !!}
-                            <small id="emailHelp" class="form-text text-muted">ما پست الکترونیگی شما را به اشتراک نمیگذاریم</small>
+                    @endif
+                    @if(Session::has('robot_message'))
+                        <div class="alert alert-danger" style="margin-left: 70%; margin-right: 64px">
+                            <p>{{ session('robot_message') }}</p>
+                        </div>
+                    @endif
+                    @if(count($errors) > 0)
+                        <div class="alert alert-danger" style="margin-left: 30%; margin-right: 64px">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <div class="col-6 form-group">
+                        <label for="exampleInputPassword1">نام و نام خانوادگی</label>
+                        {!! Form::text('name',null,['class'=>'form-control','id'=>'exampleInputPassword1','placeholder'=>'نام','tabindex'=>'1']) !!}
+                    </div>
+                    <div class="col-6 form-group">
+                        <label for="exampleInputEmail1">ایمیل</label>
+                        {!! Form::text('email',null,['class'=>'form-control','id'=>'exampleInputEmail1','aria-describedby'=>'emailHelp','placeholder'=>'پست الکترونیکی','tabindex'=>'2']) !!}
+                        <small id="emailHelp" class="form-text text-muted">ما پست الکترونیگی شما را به اشتراک نمیگذاریم</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-12">
+                        <div class="form-group">
+                            <label for="exampleTextarea">پیام شما</label>
+                            {!! Form::textarea('message',null,['class'=>'form-control','id'=>'exampleTextarea','rows'=>'3','tabindex'=>'3']) !!}
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col col-12">
-                            <div class="form-group">
-                                <label for="exampleTextarea">پیام شما</label>
-                                {!! Form::textarea('message',null,['class'=>'form-control','id'=>'exampleTextarea','rows'=>'3','tabindex'=>'3']) !!}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12" id="grecaptcha-contact"></div>
-                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" id="grecaptcha-contact"></div>
+                </div>
                 <br>
-                    <!-- Indicates a successful or positive action -->
-                    {!! Form::button('ارسال پیام',['type'=>'submit','class'=>'btn btn-success']) !!}
+                <!-- Indicates a successful or positive action -->
+                {!! Form::button('ارسال پیام',['type'=>'submit','class'=>'btn btn-success']) !!}
                 <hr>
                 <p class="contactUSTitles" style="margin-top: 15px;"><i class="fa fa-map-marker" aria-hidden="true"></i> آدرس پستی</p>
                 <p>{{ $info->address }}</p>
